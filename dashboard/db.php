@@ -3,7 +3,7 @@
 	$server = "localhost";
 	$username = "root";
 	$pass = "";
-	$db = "testlms";
+	$db = "newlms";
 
 	//create connection 
 

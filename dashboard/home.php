@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+require_once 'includes.php';
+
+require_once("conn.php");
+
+?>
+<?php
 require_once '../includes/header.php';
 require_once 'admin_navbar.php';
 require_once 'admin_sidebar.php';
