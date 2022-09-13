@@ -204,7 +204,7 @@ require_once 'admin_sidebar.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Grade</label>
+										<label class="form-label">Medium</label>
 										<table>
 											<tbody>
 												<?php
@@ -232,7 +232,7 @@ require_once 'admin_sidebar.php';
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Subject</label>
+										<label class="form-label">Grade</label>
 										<table>
 											<tbody>
 												<?php

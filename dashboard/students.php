@@ -85,8 +85,8 @@ require_once 'admin_sidebar.php';
 												<th>Name</th>
 												<th>Phone</th>
 												<th>Email</th>
-												<th>Al Year</th>
-												<th>Classes</th>
+												<th>Medium</th>
+												<th>Grade</th>
 												<th>Qualification</th>
 											</tr>
 										</thead>
