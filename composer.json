@@ -1,0 +1,25 @@
+{
+  "name": "lms",
+  "description": "",
+  "homepage": "",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "responsive",
+    "back-end",
+    "template",
+    "theme",
+    "web",
+    "admin"
+  ],
+  "authors": [
+    {
+      "name": "Colorlib"
+    }
+  ],
+  "license": "MIT",
+  "support": {
+    "issues": ""
+  }
+}
