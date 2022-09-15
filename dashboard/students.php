@@ -83,11 +83,17 @@ require_once 'admin_sidebar.php';
 												<th>Action</th>
 												<th>Status</th>
 												<th>Name</th>
-												<th>Phone</th>
-												<th>Email</th>
 												<th>Medium</th>
 												<th>Grade</th>
-												<th>Qualification</th>
+												<th>Phone</th>
+												<th>Parent Phone</th>
+												<th>School</th>
+												<th>District</td>
+												<th>Town</th>
+												<th>Birthday</th>
+												<th>Email</th>
+												<th>Gender</th>
+												<th>Date of joining the class</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -124,14 +130,12 @@ require_once 'admin_sidebar.php';
 														?>
 													</td>
 													<td style="text-transform: capitalize;"><?php echo $tec_resalt['fullname']; ?></td>
-													<td><?php echo "0" . (int)$tec_resalt['contactnumber']; ?></td>
-													<td><?php echo $tec_resalt['username']; ?></td>
 													<td>
 														<?php
 														$level_array = array();
 														$level_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmsclass ON lmstealmsr_multiple.tealmsr_contain_id=lmsclass.cid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='2'");
 														while ($level_resalt = mysqli_fetch_array($level_qury)) {
-															array_push($level_array, "• " . $level_resalt['name']);
+															array_push($level_array, "" . $level_resalt['name']);
 														}
 														echo join("<br>", $level_array);
 														?>
@@ -141,12 +145,21 @@ require_once 'admin_sidebar.php';
 														$subject_array = array();
 														$subject_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmssubject ON lmstealmsr_multiple.tealmsr_contain_id=lmssubject.sid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='3'");
 														while ($subject_resalt = mysqli_fetch_array($subject_qury)) {
-															array_push($subject_array, "• " . $subject_resalt['name']);
+															array_push($subject_array, "" . $subject_resalt['name']);
 														}
 														echo join("<br>", $subject_array);
 														?>
 													</td>
-													<td><?php echo $tec_resalt['qualification']; ?></td>
+													<td><?php echo "0" . (int)$tec_resalt['contactnumber']; ?></td>
+													<td><?php echo $tec_resalt['pcontactno']; ?></td>
+													<td><?php echo $tec_resalt['school']; ?></td>
+													<td><?php echo $tec_resalt['district']; ?></td>
+													<td><?php echo $tec_resalt['town']; ?></td>
+													<td><?php echo $tec_resalt['birthday']; ?></td>
+													<td><?php echo $tec_resalt['username']; ?></td>
+													<td><?php echo $tec_resalt['gender']; ?></td>
+													<td><?php echo $tec_resalt['joindate']; ?></td>
+
 												</tr>
 											<?php
 											}
@@ -196,7 +209,7 @@ require_once 'admin_sidebar.php';
 																							echo join("<br>", $subject_array);
 																							?></strong></p>
 													<hr>
-													<p class="text-muted"><strong>Qualification : <?php echo $tec_resalt['qualification']; ?></strong></p>
+													<p class="text-muted"><strong>school : <?php echo $tec_resalt['school']; ?></strong></p>
 													<ul class="list-group mb-3 list-group-flush">
 														<li class="list-group-item px-0 d-flex justify-content-between">
 															<span class="mb-0">User : </span><strong><?php echo $tec_resalt['username']; ?></strong>

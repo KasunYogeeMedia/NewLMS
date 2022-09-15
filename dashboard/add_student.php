@@ -17,14 +17,17 @@ $systemid_val = time();
 if (isset($_POST['add_bt'])) {
 
 	$fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-	$address = mysqli_real_escape_string($conn, $_POST['address']);
+	$district = mysqli_real_escape_string($conn, $_POST['district']);
 	$contactnumber = (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
-	$subdetails = mysqli_real_escape_string($conn, $_POST['subdetails']);
-	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
+	$pcontactno = (int)mysqli_real_escape_string($conn, $_POST['pcontactno']);
+	$school = mysqli_real_escape_string($conn, $_POST['school']);
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
 	$password = md5(mysqli_real_escape_string($conn, $_POST['password']));
 	$systemid = mysqli_real_escape_string($conn, $_POST['systemid']);
-	$Percentage = mysqli_real_escape_string($conn, $_POST['Percentage']);
+	$town = mysqli_real_escape_string($conn, $_POST['town']);
+	$birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+	$gender = mysqli_real_escape_string($conn, $_POST['gender']);
+	$joindate = mysqli_real_escape_string($conn, $_POST['joindate']);
 
 	date_default_timezone_set("Asia/Colombo");
 	$add_date = date("Y-m-d H:i:s");
@@ -61,7 +64,7 @@ if (isset($_POST['add_bt'])) {
 		$db_send_name = "";
 	}
 
-	mysqli_query($conn, "INSERT INTO lmstealmsr(systemid, fullname, address, contactnumber,subdetails, qualification, username, password, image, Percentage, add_date, status) VALUES ('$systemid','$fullname','$address','$contactnumber','$subdetails','$qualification','$username','$password','$db_send_name','$Percentage','$add_date','0')");
+	mysqli_query($conn, "INSERT INTO lmstealmsr(systemid, fullname, district, contactnumber,pcontactno, school, username, password, image, town, birthday, gender, joindate, add_date, status) VALUES ('$systemid','$fullname','$district','$contactnumber','$pcontactno','$school','$username','$password','$db_send_name','$town','$birthday','$gender','$joindate','$add_date','0')");
 
 	if (!empty($_POST['lavel'])) {
 		foreach ($_POST['lavel'] as $lavel) {
@@ -138,7 +141,7 @@ require_once 'admin_sidebar.php';
 						?>
 						<form method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Profile Photo</label>
 										<p style="color:red;">Only JPG</p>
@@ -160,45 +163,15 @@ require_once 'admin_sidebar.php';
 										</script>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Full Name</label>
 										<input type="text" class="form-control" name="fullname" placeholder="Enter Full Name" required>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Contact Number</label>
-										<input type="tel" class="form-control" name="contactnumber" placeholder="Enter Contact Number" required pattern="\d*">
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Address</label>
-										<input type="text" class="form-control" name="address" placeholder="Enter Address" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Subject Details</label>
-										<input type="text" class="form-control" name="subdetails" placeholder="Enter Subject Details" required>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-5 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Qualification</label>
-										<input type="text" class="form-control" name="qualification" placeholder="Enter Qualification" required>
-									</div>
-								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Percentage (%)</label>
-										<input type="text" class="form-control" name="Percentage" placeholder="Enter Percentage" required pattern="\d*">
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Grade</label>
+										<label class="form-label">Medium</label>
 										<table>
 											<tbody>
 												<?php
@@ -216,9 +189,9 @@ require_once 'admin_sidebar.php';
 										</table>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Subject</label>
+										<label class="form-label">Grade</label>
 										<table>
 											<tbody>
 												<?php
@@ -248,13 +221,64 @@ require_once 'admin_sidebar.php';
 										</table>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">User Name (Email Address)</label>
+										<label class="form-label">Phone Number</label>
+										<input type="tel" class="form-control" name="contactnumber" placeholder="Enter Contact Number" required pattern="\d*">
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Parent Phone Number</label>
+										<input type="text" class="form-control" name="pcontactno" placeholder="Enter Subject Details" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">School</label>
+										<input type="text" class="form-control" name="school" placeholder="Enter School" required>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">District</label>
+										<input type="text" class="form-control" name="district" placeholder="Enter District" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Town</label>
+										<input type="text" class="form-control" name="town" placeholder="Enter Town" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Birthday</label>
+										<input type="text" class="form-control" name="birthday" placeholder="Enter Birthday" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Email Address(User Name)</label>
 										<input type="email" class="form-control" name="username" placeholder="Enter User Name" required>
 									</div>
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Gender</label>
+										<select name="gender" class="form-control">
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Joined Date</label>
+										<input type="text" class="form-control" name="joindate" placeholder="Enter Joined Date" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Password</label>
 										<input type="password" class="form-control" name="password" placeholder="Enter Password" required>

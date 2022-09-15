@@ -43,45 +43,32 @@
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Sample</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Sample</p>
-              </a>
-            </li>
-          </ul>
+          
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
+          <a href="students.php" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Widgets
+            Students
               <span class="right badge badge-danger">New</span>
             </p>
           </a>
         </li>
         <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
-          <a href="pages/calendar.html" class="nav-link">
+          <a href="medium.php" class="nav-link">
             <i class="nav-icon far fa-calendar-alt"></i>
             <p>
-              Calendar
+              Medium
               <span class="badge badge-info right">2</span>
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="pages/gallery.html" class="nav-link">
+          <a href="grade.php" class="nav-link">
             <i class="nav-icon far fa-image"></i>
             <p>
-              Gallery
+              Grades
             </p>
           </a>
         </li>

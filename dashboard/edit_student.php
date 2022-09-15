@@ -26,12 +26,15 @@ if (isset($_GET['edit'])) {
 if (isset($_POST['update_bt'])) {
 
 	$fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-	$address = mysqli_real_escape_string($conn, $_POST['address']);
+	$district = mysqli_real_escape_string($conn, $_POST['district']);
 	$contactnumber = (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
-	$subdetails = mysqli_real_escape_string($conn, $_POST['subdetails']);
-	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
+	$pcontactno = mysqli_real_escape_string($conn, $_POST['pcontactno']);
+	$school = mysqli_real_escape_string($conn, $_POST['school']);
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
-	$Percentage = mysqli_real_escape_string($conn, $_POST['Percentage']);
+	$town = mysqli_real_escape_string($conn, $_POST['town']);
+	$birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+	$gender = mysqli_real_escape_string($conn, $_POST['gender']);
+	$joindate = mysqli_real_escape_string($conn, $_POST['joindate']);
 
 	if ($_POST['password'] == "") {
 		$password = $edit_resalt['password'];
@@ -91,7 +94,7 @@ if (isset($_POST['update_bt'])) {
 		}
 	}
 
-	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',address='$address',contactnumber='$contactnumber',subdetails='$subdetails',qualification='$qualification',username='$username',password='$password',image='$db_send_name',Percentage='$Percentage' WHERE tid='$edit'")) {
+	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',district='$district',contactnumber='$contactnumber',pcontactno='$pcontactno',school='$school',username='$username',password='$password',image='$db_send_name',town='$town',birthday='$birthday',gender='$gender',joindate='$joindate' WHERE tid='$edit'")) {
 		echo "<script>window.location='edit_student.php?edit=$edit&succes&jpg=$error_png';</script>";
 	} else {
 		echo "<script>window.location='edit_student.php?edit=$edit&fail';</script>";
@@ -146,7 +149,7 @@ require_once 'admin_sidebar.php';
 
 						<form method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Profile Photo</label>
 										<p style="color:red;">Only JPG</p>
@@ -166,43 +169,13 @@ require_once 'admin_sidebar.php';
 										</script>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Full Name</label>
 										<input type="text" class="form-control" name="fullname" value="<?php echo $edit_resalt['fullname']; ?>" required>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Contact Number</label>
-										<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Address</label>
-										<input type="text" name="address" class="form-control" value="<?php echo $edit_resalt['address']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Subject Details</label>
-										<input type="text" name="subdetails" class="form-control" value="<?php echo $edit_resalt['subdetails']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Qualification</label>
-										<input type="text" name="qualification" class="form-control" value="<?php echo $edit_resalt['qualification']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Percentage (%)</label>
-										<input type="text" name="Percentage" class="form-control" pattern="\d*" value="<?php echo $edit_resalt['Percentage']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Medium</label>
 										<table>
@@ -230,7 +203,7 @@ require_once 'admin_sidebar.php';
 										</table>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Grade</label>
 										<table>
@@ -270,13 +243,64 @@ require_once 'admin_sidebar.php';
 										</table>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">User Name (Email Address)</label>
+										<label class="form-label">Phone Number</label>
+										<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Parent Phone Number</label>
+										<input type="text" name="pcontactno" class="form-control" value="<?php echo $edit_resalt['pcontactno']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">School</label>
+										<input type="text" name="school" class="form-control" value="<?php echo $edit_resalt['school']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">District</label>
+										<input type="text" name="district" class="form-control" value="<?php echo $edit_resalt['district']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Town</label>
+										<input type="text" name="town" class="form-control" value="<?php echo $edit_resalt['town']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Birthday</label>
+										<input type="text" name="birthday" class="form-control" value="<?php echo $edit_resalt['birthday']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Email Address(User Name)</label>
 										<input type="email" name="username" class="form-control" value="<?php echo $edit_resalt['username']; ?>" required>
 									</div>
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Gender</label>
+										<select name="gender" class="form-control" value="<?php echo $edit_resalt['gender']; ?>">
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Joined Date</label>
+										<input type="text" name="joindate" class="form-control" value="<?php echo $edit_resalt['joindate']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Password</label>
 										<input type="password" name="password" class="form-control" value="<?php echo $edit_resalt['password']; ?>" required>
