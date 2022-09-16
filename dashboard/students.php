@@ -4,255 +4,429 @@ session_start();
 
 require_once 'includes.php';
 
-require_once 'conn.php';
+include 'conn.php';
 
 require_once 'dbconfig4.php';
 
-if (isset($_GET['delete'])) {
-	$delete = mysqli_real_escape_string($conn, $_GET['delete']);
-	mysqli_query($conn, "DELETE FROM lmstealmsr WHERE tid='$delete'");
-	echo "<script>window.location='students.php';</script>";
-}
-
-if (isset($_GET['status']) && isset($_GET['type'])) {
-	$status = mysqli_real_escape_string($conn, $_GET['status']);
-	$type = mysqli_real_escape_string($conn, $_GET['type']);
-
-	if ($type == 1) {
-		$update = 0;
-	}
-	if ($type == 0) {
-		$update = 1;
-	}
-
-	mysqli_query($conn, "UPDATE lmstealmsr SET status='$update' WHERE tid='$status'");
-
-	echo "<script>window.location='students.php';</script>";
-}
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Students | Online Learning Platforms | Dashboard</title>
+    
+
+</head>
+
+<body>
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <?php require_once 'navheader.php';?>
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <img src="images/profile/pic1.jpg" width="20" alt=""/>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="admin.php" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ml-2"><?php echo $user_name;?></span>
+                                    </a>
+                                    <a href="logout.php" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
 <?php
-require_once '../includes/header.php';
-require_once 'admin_navbar.php';
-require_once 'admin_sidebar.php';
+
+require_once 'sidebarmenu.php';
+
 ?>
-
-<div class="content-wrapper">
-	<!-- row -->
-	<div class="container-fluid">
-
-		<div class="row page-titles mx-0">
-			<div class="col-sm-6 p-md-0">
-				<div class="welcome-text mt-2">
-					<h4>All Students</h4>
-				</div>
-			</div>
-			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="home.php">Home</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">Students</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">All Students</a></li>
-				</ol>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="nav nav-pills mb-3">
-					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-2 show active">List View</a></li>
-					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-secondary">Grid View</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-12">
-				<div class="row tab-content">
-					<div id="list-view" class="tab-pane fade active show col-lg-12">
-						<div class="card">
-							<div class="card-header">
-								<h4 class="card-title">All Students </h4>
-								<div class="text-right">
-									<a href="add_student.php" class="btn btn-square btn-dark">+ Add Student</a>
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table id="example3" class="table table-bordered">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Profile</th>
-												<th>Action</th>
-												<th>Status</th>
-												<th>Name</th>
-												<th>Medium</th>
-												<th>Grade</th>
-												<th>Phone</th>
-												<th>Parent Phone</th>
-												<th>School</th>
-												<th>District</td>
-												<th>Town</th>
-												<th>Birthday</th>
-												<th>Email</th>
-												<th>Gender</th>
-												<th>Date of joining the class</th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
-											$count = 0;
-											$tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr ORDER BY fullname");
-											while ($tec_resalt = mysqli_fetch_array($tec_qury)) {
-												$count++;
-											?>
-												<tr>
-													<td><?php echo number_format($count, 0); ?></td>
-													<td><?php if ($tec_resalt['image'] == "") {
-															$pro_img = "../profile/images/hd_dp.jpg";
-														} else {
-															$pro_img = "images/student/" . $tec_resalt['image'];
-														} ?><img src="<?php echo $pro_img; ?>" class="pro_pick"></td>
-													<td style="white-space: nowrap">
-														<a href="edit_student.php?edit=<?php echo $tec_resalt['tid']; ?>" title="Edit" class="btn btn-sm btn-primary" style="margin-right: 5px;"><i class="fa fa-pen"></i></a>
-														<a href="students.php?status=<?php echo $tec_resalt['tid']; ?>&type=<?php echo $tec_resalt['status']; ?>" title="Status Change" style="margin-right: 5px;" onClick="JavaScript:return confirm('Are you sure change this status?');" class="btn btn-sm btn-secondary"><i class="fa fa-lg fa-cogs" style="color: darkblue;"></i></a>
-														<a href="students.php?delete=<?php echo $tec_resalt['tid']; ?>" title="Delete" onClick="JavaScript:return confirm('Are you sure delete this student?');" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-													</td>
-													<td align="center">
-														<?php
-														if ($tec_resalt['status'] == 1) {
-														?>
-															<span class="btn btn-success btn-sm">Active</span>
-														<?php
-														}
-														if ($tec_resalt['status'] == 0) {
-														?>
-															<span class="btn btn-primary btn-sm">Deactive</span>
-														<?php
-														}
-														?>
-													</td>
-													<td style="text-transform: capitalize;"><?php echo $tec_resalt['fullname']; ?></td>
-													<td>
-														<?php
-														$level_array = array();
-														$level_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmsclass ON lmstealmsr_multiple.tealmsr_contain_id=lmsclass.cid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='2'");
-														while ($level_resalt = mysqli_fetch_array($level_qury)) {
-															array_push($level_array, "" . $level_resalt['name']);
-														}
-														echo join("<br>", $level_array);
-														?>
-													</td>
-													<td>
-														<?php
-														$subject_array = array();
-														$subject_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmssubject ON lmstealmsr_multiple.tealmsr_contain_id=lmssubject.sid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='3'");
-														while ($subject_resalt = mysqli_fetch_array($subject_qury)) {
-															array_push($subject_array, "" . $subject_resalt['name']);
-														}
-														echo join("<br>", $subject_array);
-														?>
-													</td>
-													<td><?php echo "0" . (int)$tec_resalt['contactnumber']; ?></td>
-													<td><?php echo $tec_resalt['pcontactno']; ?></td>
-													<td><?php echo $tec_resalt['school']; ?></td>
-													<td><?php echo $tec_resalt['district']; ?></td>
-													<td><?php echo $tec_resalt['town']; ?></td>
-													<td><?php echo $tec_resalt['birthday']; ?></td>
-													<td><?php echo $tec_resalt['username']; ?></td>
-													<td><?php echo $tec_resalt['gender']; ?></td>
-													<td><?php echo $tec_resalt['joindate']; ?></td>
-
-												</tr>
-											<?php
-											}
-											?>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-wrapper">
+            <!-- row -->
+            <div class="container-fluid">
+				    
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>All Students</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0);">Students</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0);">All Students</a></li>
+                        </ol>
+                    </div>
+                </div>
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<ul class="nav nav-pills mb-3">
+							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
+							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+						</ul>
 					</div>
-					<div id="grid-view" class="tab-pane fade col-lg-12">
-						<div class="row">
-							<tbody>
-							<tbody>
+					<div class="col-lg-12">
+						<div class="row tab-content">
+							<div id="list-view" class="tab-pane fade active show col-lg-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">All Students </h4>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+										<div>
+            <form class="form-horizontal" action="functions.php" method="post" name="upload_excel"   
+                      enctype="multipart/form-data">
+                  <div class="form-group">
+                            <div class="col-md-12 col-md-offset-4" style="text-align:right;">
+                                <input type="submit" name="Export" class="btn btn-success" value="export to excel"/>
+                            </div>
+                   </div>                    
+            </form>           
+ </div>
+											<table id="example3" class="table table-bordered">
+												<thead>
+													<tr>
+														<th>ID</th>						
+														<th>Action</th>
+														<th>Status</th>
+														<th>Student</th>
+														<th>Grade</th>
+														<th>Subject</th>
+														<th>Date</th>
+													</tr>
+												</thead>
+												<tbody>
 								<?php
-								$count = 0;
-								$tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr ORDER BY fullname");
-								while ($tec_resalt = mysqli_fetch_array($tec_qury)) {
-									$count++;
+
+								$stmt = $DB_con->prepare('SELECT * FROM lmsregister ORDER BY reid');
+
+								$stmt->execute();
+
+								if($stmt->rowCount() > 0)
+
+								{
+
+								while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+
+								{
+
+								extract($row);
+
+								?>
+													<tr>
+														<td><?php echo $row['reid']; ?></td>
+														<td>
+						<a class="btn btn-sm btn-danger" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="la la-trash-o"></i></a>
+						</td>
+														<td>
+						<?php 
+						
+							if($row['status'] == "0"){
+
+								echo '<button class="btn btn-primary btn-sm">Pending</button>';
+
+							}else if($row['status'] == "1"){
+
+								echo '<button class="btn btn-success btn-sm">Success</button>';
+
+							}
+						
+						?>
+						</td>
+						<td>
+														<p><?php if($row['image']==""){$pro_img="../profile/images/hd_dp.jpg";}else{$pro_img="../profile/uploadImg/".$row['image'];} ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
+														<strong><?php echo $row['fullname']; ?></strong></p>
+														<p><strong>Student Number : <?php echo $row['stnumber']; ?></strong></p>
+														<p><strong>Birth Day : <?php echo $row['dob']; ?></strong></p>
+														<p><strong>Email : <?php echo $row['email']; ?></strong></p>
+														<p><strong>Gender : <?php echo $row['gender']; ?></strong></p>
+														<p><strong>School: <?php echo $row['school']; ?></strong></p>
+														<p><strong>District : <?php echo $row['district']; ?></strong></p>
+														<p><strong>Town/City : <?php echo $row['town']; ?></strong></p>
+														<p><strong>Parent Contct No : <?php echo "0".(int)$row['pcontactnumber']; ?></strong></p>
+														<p><strong>Contct No/Username : <?php echo "0".(int)$row['contactnumber']; ?></strong></p>
+														<p>Address : <?php echo $row['address']; ?></p>
+														</td>
+														<td><a href="javascript:void(0);"><strong><?php
+
+						$id = $row['level']; 
+
+						$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid='.$id);
+
+						$query->execute();
+
+						$result = $query->fetch();
+
+						echo $result['name'];
+
+						 ?></strong></a></td>
+														<td><strong><?php
+$sub_qury=mysqli_query($conn,"SELECT * FROM lmsreq_subject INNER JOIN lmssubject ON lmsreq_subject.sub_req_sub_id=lmssubject.sid WHERE sub_req_reg_no='$row[contactnumber]'");
+while($sub_resalt=mysqli_fetch_array($sub_qury)){
+?><?php echo $sub_resalt['name'],"<br>"; ?><?php } ?></strong></td>
+														<td><?php echo $row['add_date']; ?></td>											
+													</tr>
+								<?php } 
+
+								}
+								?>
+												</tbody>
+											</table>
+										</div>
+									</div>
+                                </div>
+                            </div>
+							<div id="grid-view" class="tab-pane fade col-lg-12">
+								<div class="row">
+												<tbody>
+								<?php
+
+								$stmt = $DB_con->prepare('SELECT * FROM lmsregister ORDER BY reid');
+
+								$stmt->execute();
+
+								if($stmt->rowCount() > 0)
+
+								{
+
+								while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+
+								{
+
+								extract($row);
+
 								?>
 									<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 										<div class="card">
 											<div class="card-body">
 												<div class="text-center">
 													<div class="profile-photo">
-														<?php if ($tec_resalt['image'] == "") {
-															$pro_img = "../profile/images/hd_dp.jpg";
-														} else {
-															$pro_img = "images/student/" . $tec_resalt['image'];
-														} ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
+													<?php if($row['image']==""){$pro_img="../profile/images/hd_dp.jpg";}else{$pro_img="../profile/uploadImg/".$row['image'];} ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
 													</div>
-													<h3 class="mt-4 mb-1"><strong><?php echo $tec_resalt['fullname']; ?></strong></h3>
-													<p class="text-muted"><strong>AL Year : <?php
-																							$level_array = array();
-																							$level_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmsclass ON lmstealmsr_multiple.tealmsr_contain_id=lmsclass.cid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='2'");
-																							while ($level_resalt = mysqli_fetch_array($level_qury)) {
-																								array_push($level_array, "• " . $level_resalt['name']);
-																							}
-																							echo join("<br>", $level_array);
-																							?></strong></p>
-													<p class="text-muted"><strong>Class : <?php
-																							$subject_array = array();
-																							$subject_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple INNER JOIN lmssubject ON lmstealmsr_multiple.tealmsr_contain_id=lmssubject.sid WHERE tealmsr_system_id='$tec_resalt[systemid]' and tealmsr_type='3'");
-																							while ($subject_resalt = mysqli_fetch_array($subject_qury)) {
-																								array_push($subject_array, "• " . $subject_resalt['name']);
-																							}
-																							echo join("<br>", $subject_array);
-																							?></strong></p>
-													<hr>
-													<p class="text-muted"><strong>school : <?php echo $tec_resalt['school']; ?></strong></p>
+													<h3 class="mt-4 mb-1"><strong><?php echo $row['fullname']; ?></strong></h3>
+													<p class="text-muted"><strong>Classes :- <?php
+$sub_qury=mysqli_query($conn,"SELECT * FROM lmsreq_subject INNER JOIN lmssubject ON lmsreq_subject.sub_req_sub_id=lmssubject.sid WHERE sub_req_reg_no='$row[contactnumber]'");
+while($sub_resalt=mysqli_fetch_array($sub_qury)){
+?><?php echo $sub_resalt['name'],"<br>"; ?><?php } ?></strong></p>
 													<ul class="list-group mb-3 list-group-flush">
+													    <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Student Number. :</span><strong><?php echo $row['stnumber']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Birth day. :</span><strong><?php echo $row['dob']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Email. :</span><strong><?php echo $row['email']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Gender. :</span><strong><?php echo $row['gender']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">School. :</span><strong><?php echo $row['school']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">District. :</span><strong><?php echo $row['district']; ?></strong></li>
+															 <li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Town/City. :</span><strong><?php echo $row['town']; ?></strong></li>
+																<li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Parent Contact No. :</span><strong><?php echo "0".(int)$row['pcontactnumber']; ?></strong></li>
 														<li class="list-group-item px-0 d-flex justify-content-between">
-															<span class="mb-0">User : </span><strong><?php echo $tec_resalt['username']; ?></strong>
-														</li>
+															<span class="mb-0">Contact No. :</span><strong><?php echo "0".(int)$row['contactnumber']; ?></strong></li>
 														<li class="list-group-item px-0 d-flex justify-content-between">
-															<span class="mb-0">Contact No : </span><strong><?php echo "0" . (int)$tec_resalt['contactnumber']; ?></strong>
-														</li>
-														<li class="list-group-item px-0 d-flex justify-content-between">
-															<span class="mb-0">Status : </span><strong>
-																<?php
-																if ($tec_resalt['status'] == 1) {
-																?>
-																	<span class="btn btn-success btn-sm">Active</span>
-																<?php
-																}
-																if ($tec_resalt['status'] == 0) {
-																?>
-																	<span class="btn btn-primary btn-sm">Deactive</span>
-																<?php
-																}
-																?></strong>
-														</li>
+															<span class="mb-0">Grade :</span><strong><?php
 
+						$id = $row['level']; 
+
+						$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid='.$id);
+
+						$query->execute();
+
+						$result = $query->fetch();
+
+						echo $result['name'];
+
+						 ?></strong></li>
+														<li class="list-group-item px-0 d-flex justify-content-between">
+															<span class="mb-0">Added Date. :</span><strong><?php echo $row['add_date']; ?></strong></li>
 													</ul>
-													<a href="edit_student.php?edit=<?php echo $tec_resalt['tid']; ?>" title="Edit" class="btn btn-primary btn-rounded mt-3 px-4"><i class="fa fa-pen"></i></a>
-													<a href="students.php?status=<?php echo $tec_resalt['tid']; ?>&type=<?php echo $tec_resalt['status']; ?>" title="Status Change" class="btn btn-success btn-rounded mt-3 px-4" onClick="JavaScript:return confirm('Are you sure change this status?');" class="btn btn-sm btn-secondary"><i class="fa fa-lg fa-cogs" style="color: darkblue;"></i></a>
-													<a href="students.php?delete=<?php echo $tec_resalt['tid']; ?>" title="Delete" class="btn btn-danger btn-rounded mt-3 px-4" onClick="JavaScript:return confirm('Are you sure delete this student?');"><i class="fa fa-trash"></i></a>
-
+													<a class="btn btn-sm btn-danger btn-rounded mt-3 px-4" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="la la-trash-o"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
-								<?php
+<?php } 
+
 								}
 								?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+				
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
 
-	</div>
-</div>
-<?php
-require_once '../includes/footer.php';
-?>
+		<?php
+		require_once 'footer.php';
+		?>
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    
+    
+	
+	
+
+<script>
+
+$(document).ready(function(){
+
+    loadGallery(true, 'a.thumbnail');
+
+    //This function disables buttons when needed
+    function disableButtons(counter_max, counter_current){
+        $('#lmsow-previous-image, #lmsow-next-image').lmsow();
+        if(counter_max == counter_current){
+            $('#lmsow-next-image').hide();
+        } else if (counter_current == 1){
+            $('#lmsow-previous-image').hide();
+        }
+    }
+
+    /**
+     *
+     * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+     * @param setClickAttr  Sets the attribute for the click handler.
+     */
+
+    function loadGallery(setIDs, setClickAttr){
+        var current_image,
+            selector,
+            counter = 0;
+
+        $('#lmsow-next-image, #lmsow-previous-image').click(function(){
+            if($(this).attr('id') == 'lmsow-previous-image'){
+                current_image--;
+            } else {
+                current_image++;
+            }
+
+            selector = $('[data-image-id="' + current_image + '"]');
+            updateGallery(selector);
+        });
+
+        function updateGallery(selector) {
+            var $sel = selector;
+            current_image = $sel.data('image-id');
+            $('#image-gallery-caption').text($sel.data('caption'));
+            $('#image-gallery-title').text($sel.data('title'));
+            $('#image-gallery-image').attr('src', $sel.data('image'));
+            disableButtons(counter, $sel.data('image-id'));
+        }
+
+        if(setIDs == true){
+            $('[data-image-id]').each(function(){
+                counter++;
+                $(this).attr('data-image-id',counter);
+            });
+        }
+        $(setClickAttr).on('click',function(){
+            updateGallery($(this));
+        });
+    }
+});
+</script>
+
+<script>
+
+		function Publilmsed_tealmsrs(id){
+			
+			$.ajax({
+				url:'publilmsed_tealmsrs.php',
+				method:'POST',
+				data:{id:id},
+				success:function(data){
+					location.reload();
+
+				}
+			});
+
+		}
+
+		function Reject_ads(id){
+				alert(id);
+		$.ajax({
+			url:'reject_tealmsrs.php',
+			method:'POST',
+			data:{id:id},
+			success:function(data){
+				location.reload();
+
+			}
+		});
+
+	}
+
+</script>
+	
+</body>
+</html>

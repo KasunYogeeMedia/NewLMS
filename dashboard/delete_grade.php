@@ -2,13 +2,14 @@
 
 	require_once 'dbconfig4.php';
 	
-	if(isset($_GET['sbid']))
+	if(isset($_GET['clid']))
 	{
 
-		$stmt_delete = $DB_con->prepare('DELETE FROM lmssubject WHERE sid =:sbid');
-		$stmt_delete->bindParam(':sbid',$_GET['sbid']);
+		$stmt_delete = $DB_con->prepare('DELETE FROM lmsclass WHERE cid =:clid');
+		$stmt_delete->bindParam(':clid',$_GET['clid']);
 		$stmt_delete->execute();
-
+		
+		//header("Location: grade.php");
 		echo"<script type='text/javascript'>window.location.href = 'grade.php';</script>";
 		
 	}
