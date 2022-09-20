@@ -17,7 +17,7 @@ if (isset($_GET['edit'])) {
 	$edit_resalt = mysqli_fetch_array($edit_qury);
 
 	if ($edit_resalt['image'] == "") {
-		$image_path = "../profile/images/hd_dp.jpg";
+		$image_path = "images/teacher/sample user.png";
 	} else {
 		$image_path = "images/teacher/" . $edit_resalt['image'];
 	}
@@ -26,12 +26,15 @@ if (isset($_GET['edit'])) {
 if (isset($_POST['update_bt'])) {
 
 	$fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-	$address = mysqli_real_escape_string($conn, $_POST['address']);
+	$district = mysqli_real_escape_string($conn, $_POST['district']);
 	$contactnumber = (int)mysqli_real_escape_string($conn, $_POST['contactnumber']);
-	$subdetails = mysqli_real_escape_string($conn, $_POST['subdetails']);
-	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
+	$pcontactno = mysqli_real_escape_string($conn, $_POST['pcontactno']);
+	$school = mysqli_real_escape_string($conn, $_POST['school']);
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
-	$Percentage = mysqli_real_escape_string($conn, $_POST['Percentage']);
+	$town = mysqli_real_escape_string($conn, $_POST['town']);
+	$birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+	$gender = mysqli_real_escape_string($conn, $_POST['gender']);
+	$joindate = mysqli_real_escape_string($conn, $_POST['joindate']);
 
 	if ($_POST['password'] == "") {
 		$password = $edit_resalt['password'];
@@ -91,7 +94,7 @@ if (isset($_POST['update_bt'])) {
 		}
 	}
 
-	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',address='$address',contactnumber='$contactnumber',subdetails='$subdetails',qualification='$qualification',username='$username',password='$password',image='$db_send_name',Percentage='$Percentage' WHERE tid='$edit'")) {
+	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',district='$district',contactnumber='$contactnumber',pcontactno='$pcontactno',school='$school',username='$username',password='$password',image='$db_send_name',town='$town',birthday='$birthday',gender='$gender',joindate='$joindate' WHERE tid='$edit'")) {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&succes&jpg=$error_png';</script>";
 	} else {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&fail';</script>";
@@ -99,303 +102,228 @@ if (isset($_POST['update_bt'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'header.php';
+?>
+<?php
+require_once 'navheader.php';
+?>
+<?php
+require_once 'sidebarmenu.php';
+?>
 
-<head>
+<div class="content-wrapper">
+	<!-- row -->
+	<div class="container-fluid">
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Edit Teacher | Online Learning Platforms | Dashboard</title>
-	
-</head>
+		<div class="row page-titles mx-0">
+			<div class="col-sm-6 p-md-0">
+				<div class="welcome-text">
+					<h4>Edit Student</h4>
+				</div>
+			</div>
+			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
+					<li class="breadcrumb-item active"><a href="teachers.php">Student</a></li>
+					<li class="breadcrumb-item active"><a href="edit_teacher.php">Edit Student</a></li>
+				</ol>
+			</div>
+		</div>
 
-<body>
-	<!--**********************************
-        Main wrapper start
-    ***********************************-->
-	<div id="main-wrapper">
+		<div class="row">
+			<div class="col-xl-12 col-xxl-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title">Edit Student</h5>
+					</div>
+					<div class="card-body">
+						<?php if (isset($_GET['succes'])) { ?>
+							<div class="alert alert-success alert-dismissible alert-alt solid fade show">
+								<button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span></button>
+								<strong>Success!</strong> Student details update successfully.
+							</div>
+						<?php } ?>
+						<?php if (isset($_GET['fail'])) { ?>
+							<div class="alert alert-danger alert-dismissible alert-alt solid fade show">
+								<button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span></button>
+								<strong>Error!</strong> Student details update fail. your enter detais allreday use.
+							</div>
+						<?php } ?>
 
-		<?php require_once 'navheader.php'; ?>
+						<form method="POST" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Profile Photo</label>
+										<p style="color:red;">Only JPG</p>
+										<label for="fileName"><img src="<?php echo $image_path; ?>" id="yourImgTag" class="pro_pick img-fluid"></label>
+										<input type="file" name="image" id="fileName" hidden="lms" onChange="dis_name();">
 
-		<!--**********************************
-            Header start
-        ***********************************-->
-		<div class="header">
-			<div class="header-content">
-				<nav class="navbar navbar-expand">
-					<div class="collapse navbar-collapse justify-content-between">
-						<div class="header-left">
-
-						</div>
-
-						<ul class="navbar-nav header-right">
-							<li class="nav-item dropdown header-profile">
-								<a class="nav-link" href="#" role="button" data-toggle="dropdown">
-									<img src="images/profile/pic1.jpg" width="20" alt="" />
-								</a>
-								<div class="dropdown-menu dropdown-menu-right">
-									<a href="admin.php" class="dropdown-item ai-icon">
-										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-											<circle cx="12" cy="7" r="4"></circle>
-										</svg>
-										<span class="ml-2"><?php echo $user_name; ?></span>
-									</a>
-									<a href="logout.php" class="dropdown-item ai-icon">
-										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
-											<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-											<polyline points="16 17 21 12 16 7"></polyline>
-											<line x1="21" y1="12" x2="9" y2="12"></line>
-										</svg>
-										<span class="ml-2">Logout </span>
-									</a>
+										<script>
+											function dis_name() {
+												var input = document.getElementById("fileName");
+												var fReader = new FileReader();
+												fReader.readAsDataURL(input.files[0]);
+												fReader.onloadend = function(event) {
+													var img = document.getElementById("yourImgTag");
+													img.src = event.target.result;
+												}
+											}
+										</script>
+									</div>
 								</div>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-		<!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
-
-		<!--**********************************
-            Sidebar start
-        ***********************************-->
-		<div class="deznav">
-			<div class="deznav-scroll">
-				<?php
-
-				require_once 'sidebarmenu.php';
-
-				?>
-			</div>
-		</div>
-		<!--**********************************
-            Sidebar end
-        ***********************************-->
-
-		<!--**********************************
-            Content body start
-        ***********************************-->
-		<div class="content-wrapper">
-			<!-- row -->
-			<div class="container-fluid">
-
-				<div class="row page-titles mx-0">
-					<div class="col-sm-6 p-md-0">
-						<div class="welcome-text">
-							<h4>Edit Teacher</h4>
-						</div>
-					</div>
-					<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-							<li class="breadcrumb-item active"><a href="teachers.php">Teacher</a></li>
-							<li class="breadcrumb-item active"><a href="edit_teacher.php">Edit Teacher</a></li>
-						</ol>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-xl-12 col-xxl-12 col-sm-12">
-						<div class="card">
-							<div class="card-header">
-								<h5 class="card-title">Edit Teacher</h5>
-							</div>
-							<div class="card-body">
-								<?php if (isset($_GET['succes'])) { ?>
-									<div class="alert alert-success alert-dismissible alert-alt solid fade show">
-										<button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span></button>
-										<strong>Success!</strong> Teacher details update successfully.
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Full Name</label>
+										<input type="text" class="form-control" name="fullname" value="<?php echo $edit_resalt['fullname']; ?>" required>
 									</div>
-								<?php } ?>
-								<?php if (isset($_GET['fail'])) { ?>
-									<div class="alert alert-danger alert-dismissible alert-alt solid fade show">
-										<button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span></button>
-										<strong>Error!</strong> Teacher details update fail. your enter detais allreday use.
-									</div>
-								<?php } ?>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Medium</label>
+										<table>
+											<tbody>
+												<?php
+												$level_qury = mysqli_query($conn, "SELECT * FROM lmsclass ORDER BY name");
+												while ($level_resalt = mysqli_fetch_array($level_qury)) {
 
-								<form method="POST" enctype="multipart/form-data">
-									<div class="row">
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Profile Photo</label>
-												<p style="color:red;">Only JPG</p>
-												<label for="fileName"><img src="<?php echo $image_path; ?>" id="yourImgTag" class="pro_pick"></label>
-												<input type="file" name="image" id="fileName" hidden="lms" onChange="dis_name();">
-
-												<script>
-													function dis_name() {
-														var input = document.getElementById("fileName");
-														var fReader = new FileReader();
-														fReader.readAsDataURL(input.files[0]);
-														fReader.onloadend = function(event) {
-															var img = document.getElementById("yourImgTag");
-															img.src = event.target.result;
-														}
+													$lmsck_level_val = 0;
+													$lmsck_level = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple WHERE tealmsr_system_id='$edit_resalt[systemid]' and tealmsr_type='2' and tealmsr_contain_id='$level_resalt[cid]'");
+													if (mysqli_num_rows($lmsck_level) > 0) {
+														$lmsck_level_val = 1;
 													}
-												</script>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Full Name</label>
-												<input type="text" class="form-control" name="fullname" value="<?php echo $edit_resalt['fullname']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Contact Number</label>
-												<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Address</label>
-												<input type="text" name="address" class="form-control" value="<?php echo $edit_resalt['address']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Subject Details</label>
-												<input type="text" name="subdetails" class="form-control" value="<?php echo $edit_resalt['subdetails']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Qualification</label>
-												<input type="text" name="qualification" class="form-control" value="<?php echo $edit_resalt['qualification']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-2 col-md-2 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Percentage (%)</label>
-												<input type="text" name="Percentage" class="form-control" pattern="\d*" value="<?php echo $edit_resalt['Percentage']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Grade</label>
-												<table>
-													<tbody>
-														<?php
-														$level_qury = mysqli_query($conn, "SELECT * FROM lmsclass ORDER BY name");
-														while ($level_resalt = mysqli_fetch_array($level_qury)) {
-
-															$lmsck_level_val = 0;
-															$lmsck_level = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple WHERE tealmsr_system_id='$edit_resalt[systemid]' and tealmsr_type='2' and tealmsr_contain_id='$level_resalt[cid]'");
-															if (mysqli_num_rows($lmsck_level) > 0) {
-																$lmsck_level_val = 1;
-															}
-														?>
-															<tr valign="middle">
-																<td style="width: 20px;"><input type="checkbox" name="lavel[]" <?php if ($lmsck_level_val == 1) {
-																																	echo "checked";
-																																} ?> id="<?php echo "level" . $level_resalt['cid']; ?>" value="<?php echo $level_resalt['cid']; ?>"></td>
-																<td><label for="<?php echo "level" . $level_resalt['cid']; ?>"><?php echo $level_resalt['name']; ?></label></td>
-															</tr>
-														<?php
-														}
-														?>
-													</tbody>
-												</table>
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Subject</label>
-												<table>
-													<tbody>
-														<?php
-														$subject_qury = mysqli_query($conn, "SELECT * FROM lmssubject ORDER BY name");
-														while ($subject_resalt = mysqli_fetch_array($subject_qury)) {
-
-															$lmsck_subject_val = 0;
-															$lmsck_subject = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple WHERE tealmsr_system_id='$edit_resalt[systemid]' and tealmsr_type='3' and tealmsr_contain_id='$subject_resalt[sid]'");
-															if (mysqli_num_rows($lmsck_subject) > 0) {
-																$lmsck_subject_val = 1;
-															}
-														?>
-															<tr valign="middle">
-																<td style="width: 20px;"><input type="checkbox" name="subject[]" <?php if ($lmsck_subject_val == 1) {
-																																		echo "checked";
-																																	} ?> id="<?php echo "subject" . $subject_resalt['sid']; ?>" value="<?php echo $subject_resalt['sid']; ?>"></td>
-																<td><label for="<?php echo "subject" . $subject_resalt['sid']; ?>"><?php echo $subject_resalt['name']; ?> - [<?php
-
-																																											$id = $subject_resalt['class_id'];
-
-																																											$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
-
-																																											$query->execute();
-
-																																											$result = $query->fetch();
-
-																																											echo $result['name'];
-
-																																											?>]</label></td>
-															</tr>
-														<?php
-														}
-														?>
-													</tbody>
-												</table>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">User Name (Email Address)</label>
-												<input type="email" name="username" class="form-control" value="<?php echo $edit_resalt['username']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-2 col-md-2 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Password</label>
-												<input type="password" name="password" class="form-control" value="<?php echo $edit_resalt['password']; ?>" required>
-											</div>
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12">
-											<input type="submit" name="update_bt" class="btn btn-primary" value="Update">
-											<a class="btn btn-light" href="teachers.php"><i class="fa fa-times"></i> Close</a>
-										</div>
+												?>
+													<tr valign="middle">
+														<td style="width: 20px;"><input type="checkbox" name="lavel[]" <?php if ($lmsck_level_val == 1) {
+																															echo "checked";
+																														} ?> id="<?php echo "level" . $level_resalt['cid']; ?>" value="<?php echo $level_resalt['cid']; ?>"></td>
+														<td><label for="<?php echo "level" . $level_resalt['cid']; ?>"><?php echo $level_resalt['name']; ?></label></td>
+													</tr>
+												<?php
+												}
+												?>
+											</tbody>
+										</table>
 									</div>
-								</form>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Grade</label>
+										<table>
+											<tbody>
+												<?php
+												$subject_qury = mysqli_query($conn, "SELECT * FROM lmssubject ORDER BY name");
+												while ($subject_resalt = mysqli_fetch_array($subject_qury)) {
+
+													$lmsck_subject_val = 0;
+													$lmsck_subject = mysqli_query($conn, "SELECT * FROM lmstealmsr_multiple WHERE tealmsr_system_id='$edit_resalt[systemid]' and tealmsr_type='3' and tealmsr_contain_id='$subject_resalt[sid]'");
+													if (mysqli_num_rows($lmsck_subject) > 0) {
+														$lmsck_subject_val = 1;
+													}
+												?>
+													<tr valign="middle">
+														<td style="width: 20px;"><input type="checkbox" name="subject[]" <?php if ($lmsck_subject_val == 1) {
+																																echo "checked";
+																															} ?> id="<?php echo "subject" . $subject_resalt['sid']; ?>" value="<?php echo $subject_resalt['sid']; ?>"></td>
+														<td><label for="<?php echo "subject" . $subject_resalt['sid']; ?>"><?php echo $subject_resalt['name']; ?> - [<?php
+
+																																										$id = $subject_resalt['class_id'];
+
+																																										$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
+
+																																										$query->execute();
+
+																																										$result = $query->fetch();
+
+																																										echo $result['name'];
+
+																																										?>]</label></td>
+													</tr>
+												<?php
+												}
+												?>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Phone Number</label>
+										<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Parent Phone Number</label>
+										<input type="text" name="pcontactno" class="form-control" value="<?php echo $edit_resalt['pcontactno']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">School</label>
+										<input type="text" name="school" class="form-control" value="<?php echo $edit_resalt['school']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">District</label>
+										<input type="text" name="district" class="form-control" value="<?php echo $edit_resalt['district']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Town</label>
+										<input type="text" name="town" class="form-control" value="<?php echo $edit_resalt['town']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Birthday</label>
+										<input type="text" name="birthday" class="form-control" value="<?php echo $edit_resalt['birthday']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Email Address(User Name)</label>
+										<input type="email" name="username" class="form-control" value="<?php echo $edit_resalt['username']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Gender</label>
+										<select name="gender" class="form-control" value="<?php echo $edit_resalt['gender']; ?>">
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Joined Date</label>
+										<input type="text" name="joindate" class="form-control" value="<?php echo $edit_resalt['joindate']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="form-group">
+										<label class="form-label">Password</label>
+										<input type="password" name="password" class="form-control" value="<?php echo $edit_resalt['password']; ?>" required>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<input type="submit" name="update_bt" class="btn btn-primary" value="Update">
+									<a class="btn btn-light" href="teachers.php"><i class="fa fa-times"></i> Close</a>
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
-
 			</div>
 		</div>
-		<!--**********************************
-            Content body end
-        ***********************************-->
-
-
-		<?php
-		require_once 'footer.php';
-		?>
-
-		<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-		<!--**********************************
-           Support ticket button end
-        ***********************************-->
-
 
 	</div>
-	<!--**********************************
-        Main wrapper end
-    ***********************************-->
+</div>
 
-	
-
-</body>
-
-</html>
+<?php
+require_once 'footer.php';
+?>

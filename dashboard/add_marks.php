@@ -76,213 +76,116 @@ if (isset($_POST['submit_btn'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'header.php';
+?>
+<?php
+require_once 'navheader.php';
+?>
+<?php
+require_once 'sidebarmenu.php';
+?>
+<div class="content-wrapper">
+    <!-- row -->
+    <div class="container-fluid">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>View Answers and Add Marks | Online Learning Platforms | Dashboard</title>
-    <?php
-    require_once 'headercss.php';
-    ?>
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>View Answers and Add Marks</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Class Tute</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">View Answers and Add Marks</a></li>
+                </ol>
+            </div>
+        </div>
 
-</head>
+        <div class="row">
+            <div class="col-lg-8">
 
-<body>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">View Answers Sheet</h4>
+                    </div>
+                    <div class="card-body">
+                        <strong>Student Details</strong><br>
 
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
-    <div id="main-wrapper">
+                        Name: <strong><?php echo $view_resalt['fullname']; ?></strong><br>
+                        Contact: <strong><?php echo "0" . (int)$view_resalt['contactnumber']; ?></strong><br><br>
 
-        <?php require_once 'navheader.php'; ?>
+                        <?php
+                        $image_count = 0;
+                        foreach (json_decode($view_resalt['filename']) as $filename) {
+                            $image_count++;
+                        ?>
+                            <p><?php echo "Image " . $image_count; ?></p>
+                            <img src="../profile/uploadImg/paper/<?php echo $filename; ?>" class="w-100 mb-4" style="border: 1px solid #CCCCCC;">
+                        <?php
+                        }
+                        ?>
 
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
 
-                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Marks Paper</h4>
+                        <hr>
+                    </div>
+                    <div class="card-body">
 
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="images/profile/pic1.jpg" width="20" alt="" />
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="admin.php" class="dropdown-item ai-icon">
-                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="12" cy="7" r="4"></circle>
-                                        </svg>
+                        <form method="POST">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong>Exam Details</strong><br>
+                                    Name <strong><?php echo $view_resalt['examname']; ?></strong><br>
+                                    Total Quiz <strong><?php echo $view_resalt['quizcount']; ?></strong><br>
+                                    Marks/Grade <span class="badge badge-secondary text-white"><?php echo $view_resalt['marks']; ?>%</span>
 
-                                    </a>
-                                    <a href="logout.php" class="dropdown-item ai-icon">
-                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
-                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                            <polyline points="16 17 21 12 16 7"></polyline>
-                                            <line x1="21" y1="12" x2="9" y2="12"></line>
-                                        </svg>
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                    <p class="mt-2 text-success"><em>Put a check mark for the wrong question</em></p>
+
+                                    <table style="width: 100%; margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>Question</td>
+                                                <td align="center">Wrong Answer</td>
+                                            </tr>
+                                            <?php
+                                            for ($e = 1; $e <= $view_resalt['quizcount']; $e++) {
+                                            ?>
+                                                <tr class="table table-sm">
+                                                    <td align="left" valign="middle">Question <?php echo $e; ?></td>
+                                                    <td align="center" valign="middle">
+                                                        <input <?php if (check_resalt($view_resalt['id'], $view_resalt['reid'], $e) == 1) {
+                                                                    echo "checked";
+                                                                } ?> type="checkbox" name="quiz<?php echo $e; ?>">
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+
+                                    Remark
+                                    <textarea name="remark" rows="4" class="form-control" id="remark"><?php echo $view_resalt['remark']; ?></textarea>
+
+                                    <button name="submit_btn" type="submit" class="btn btn-success text-white mt-2">Submit</button>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
-
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="deznav">
-            <div class="deznav-scroll">
-                <?php
-
-                require_once 'sidebarmenu.php';
-
-                ?>
-            </div>
-        </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
-
-        <!--**********************************
-            Content body start
-        ***********************************-->
-        <div class="content-wrapper">
-            <!-- row -->
-            <div class="container-fluid">
-
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>View Answers and Add Marks</h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Class Tute</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0);">View Answers and Add Marks</a></li>
-                        </ol>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-8">
-
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">View Answers Sheet</h4>
-                            </div>
-                            <div class="card-body">
-                                <strong>Student Details</strong><br>
-
-                                Name: <strong><?php echo $view_resalt['fullname']; ?></strong><br>
-                                Contact: <strong><?php echo "0" . (int)$view_resalt['contactnumber']; ?></strong><br><br>
-
-                                <?php
-                                $image_count = 0;
-                                foreach (json_decode($view_resalt['filename']) as $filename) {
-                                    $image_count++;
-                                ?>
-                                    <p><?php echo "Image " . $image_count; ?></p>
-                                    <img src="../profile/uploadImg/paper/<?php echo $filename; ?>" class="w-100 mb-4" style="border: 1px solid #CCCCCC;">
-                                <?php
-                                }
-                                ?>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Marks Paper</h4>
-                                <hr>
-                            </div>
-                            <div class="card-body">
-
-                                <form method="POST">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <strong>Exam Details</strong><br>
-                                            Name <strong><?php echo $view_resalt['examname']; ?></strong><br>
-                                            Total Quiz <strong><?php echo $view_resalt['quizcount']; ?></strong><br>
-                                            Marks/Grade <span class="badge badge-secondary text-white"><?php echo $view_resalt['marks']; ?>%</span>
-
-                                            <p class="mt-2 text-success"><em>Put a check mark for the wrong question</em></p>
-
-                                            <table style="width: 100%; margin-top: 10px;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Question</td>
-                                                        <td align="center">Wrong Answer</td>
-                                                    </tr>
-                                                    <?php
-                                                    for ($e = 1; $e <= $view_resalt['quizcount']; $e++) {
-                                                    ?>
-                                                        <tr class="table table-sm">
-                                                            <td align="left" valign="middle">Question <?php echo $e; ?></td>
-                                                            <td align="center" valign="middle">
-                                                                <input <?php if (check_resalt($view_resalt['id'], $view_resalt['reid'], $e) == 1) {
-                                                                            echo "checked";
-                                                                        } ?> type="checkbox" name="quiz<?php echo $e; ?>">
-                                                            </td>
-                                                        </tr>
-                                                    <?php } ?>
-                                                </tbody>
-                                            </table>
-
-                                            Remark
-                                            <textarea name="remark" rows="4" class="form-control" id="remark"><?php echo $view_resalt['remark']; ?></textarea>
-
-                                            <button name="submit_btn" type="submit" class="btn btn-success text-white mt-2">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-
-        <?php
-        require_once 'footer.php';
-        ?>
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-
 
     </div>
-    <!--**********************************
-        Main wrapper end
-    ***********************************-->
+</div>
 
-</body>
-
-</html>
+<?php
+require_once 'footer.php';
+?>
