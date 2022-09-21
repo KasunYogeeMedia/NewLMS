@@ -1,63 +1,37 @@
-<!-- Header Start -->
-	<header class="header clearfix">
-		<button type="button" id="toggleMenu" class="toggle_menu"> <i class='uil uil-bars'></i> </button>
-		<button id="collapse_menu" class="collapse_menu"> <i class="uil uil-bars collapse_menu--icon "></i> <span class="collapse_menu--label"></span> </button>
-		<div class="main_logo" id="logo">
-			<a href="<?php echo $url;?>/profile/student_profile.php"><img src="images/logo.png" alt=""></a>
-			<a href="<?php echo $url;?>/profile/student_profile.php"><img class="logo-inverse" src="images/ct_logo.png" alt=""></a>
-		</div>
-		<div class="header_right">
-			<ul>
-			<?php
+<!DOCTYPE html>
+<html lang="en">
 
-								$reid = $_SESSION['reid'];
-								
-								$stmt = $DB_con->prepare('SELECT * FROM lmsregister where reid="'.$reid.'"');
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Dashboard</title>
 
-								$stmt->execute();
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+</head>
 
-								if($stmt->rowCount() > 0)
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
 
-								{
-
-								while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-
-								{
-
-								extract($row);
-
-								$reg_id = $row["contactnumber"];
-
-								?>
-				<li class="ui dropdown">
-					<a href="#" class="opts_account" title="Account"> 
-					<?php if($row['image']==""){$pro_img="images/hd_dp.jpg";}else{$pro_img="uploadImg/".$row['image'];} ?><img src="<?php echo $pro_img; ?>" style="object-fit: cover;">
-					</a>
-					<div class="menu dropdown_account">
-						<div class="channel_my">
-							<div class="profile_link"> <?php if($row['image']==""){$pro_img="images/hd_dp.jpg";}else{$pro_img="uploadImg/".$row['image'];} ?><img src="<?php echo $pro_img; ?>" style="object-fit: cover;">
-								<div class="pd_content">
-									<div class="rhte85">
-										<h6><?php echo $row['fullname']; ?></h6>
-										<div class="mef78" title="Verify"> <i class='uil uil-check-circle'></i> </div>
-									</div>
-									<span><?php echo "0".(int)$row['contactnumber']; ?></span>
-								</div>
-							</div> <a href="../index.php" class="dp_link_12">Go Home Page</a> </div>
-						<div class="night_mode_switch__btn">
-							<a href="#" id="night-mode" class="btn-night-mode"> <i class="uil uil-moon"></i> Night mode <span class="btn-night-mode-switch">
-							<span class="uk-switch-button"></span></span>
-							</a>
-						</div> <a href="bank_payment.php" class="item channel_item">Bank Payment</a> <a href="card_payment.php" class="item channel_item">Card Payment</a> <a href="manual_payment.php" class="item channel_item">Manual Payment</a> <a href="reviews.php" class="item channel_item">Reviews</a> <a href="../logout.php" class="item channel_item">Logout</a> </div>
-				</li>
-				<?php 
-
-								} 
-
-								}
-
-								?>
-			</ul>
-		</div>
-	</header>
-	<!-- Header End -->
+        <!-- Preloader
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div> -->

@@ -214,10 +214,10 @@ require_once 'sidebarmenu.php';
 											<option value="<?php if (isset($_GET['edit'])) {
 																echo $edit_resalt['classtype'];
 															} ?>" hidden="lms"><?php if (isset($_GET['edit'])) {
-																							echo $edit_resalt['classtype'];
-																						} else {
-																							echo "Select";
-																						} ?></option>
+																					echo $edit_resalt['classtype'];
+																				} else {
+																					echo "Select";
+																				} ?></option>
 											<option>Online Class</option>
 											<option>Paper Class</option>
 											<option>Free Class</option>
@@ -231,10 +231,10 @@ require_once 'sidebarmenu.php';
 											<option value="<?php if (isset($_GET['edit'])) {
 																echo $edit_resalt['tealmsr'];
 															} ?>" hidden="lms"><?php if (isset($_GET['edit'])) {
-																							echo $tealmsr_resalt['fullname'];
-																						} else {
-																							echo "Select";
-																						} ?></option>
+																					echo $tealmsr_resalt['fullname'];
+																				} else {
+																					echo "Select";
+																				} ?></option>
 											<?php
 											$tealmsr = mysqli_query($conn, "SELECT * FROM lmstealmsr where tid='" . $_SESSION['tid'] . "' ORDER BY fullname");
 											while ($tealmsr_resalt = mysqli_fetch_array($tealmsr)) {
@@ -261,10 +261,10 @@ require_once 'sidebarmenu.php';
 											<option value="<?php if (isset($_GET['edit'])) {
 																echo $edit_resalt['level'];
 															} ?>" hidden="lms"><?php if (isset($_GET['edit'])) {
-																							echo $edit_resalt['name'];
-																						} else {
-																							echo "Select";
-																						} ?></option>
+																					echo $edit_resalt['name'];
+																				} else {
+																					echo "Select";
+																				} ?></option>
 											<?php
 											$level = mysqli_query($conn, "SELECT * FROM lmsclass ORDER BY cid");
 											while ($level_resalt = mysqli_fetch_array($level)) {
@@ -297,10 +297,10 @@ require_once 'sidebarmenu.php';
 																				echo $edit_resalt['subject'];
 																			} else {
 																			} ?>"><?php if (isset($_GET['edit'])) {
-																								echo $subject_resalt['name'];
-																							} else {
-																								echo "Subject Not Found";
-																							} ?></option>
+																						echo $subject_resalt['name'];
+																					} else {
+																						echo "Subject Not Found";
+																					} ?></option>
 											</select>
 										</span>
 									</div>
@@ -360,8 +360,8 @@ require_once 'sidebarmenu.php';
 											<option value="<?php if (isset($_GET['edit'])) {
 																echo $edit_resalt['classstatus'];
 															} ?>"><?php if (isset($_GET['edit'])) {
-																				echo $edit_resalt['classstatus'];
-																			} ?></option>
+																		echo $edit_resalt['classstatus'];
+																	} ?></option>
 											<option value="0">Upublished</option>
 											<option value="1">Pubslished</option>
 											<option value="2">Done</option>
@@ -395,10 +395,10 @@ require_once 'sidebarmenu.php';
 																} else {
 																	echo "add_class_bt";
 																} ?>" class="btn btn-primary"><?php if (isset($_GET['edit'])) {
-																											echo "Update";
-																										} else {
-																											echo "Save Changes";
-																										} ?></button>
+																									echo "Update";
+																								} else {
+																									echo "Save Changes";
+																								} ?></button>
 									<a class="btn btn-light" href="class_schedule.php"><i class="fa fa-times"></i> Cancel</a>
 								</div>
 							</div>
@@ -410,58 +410,7 @@ require_once 'sidebarmenu.php';
 
 	</div>
 </div>
-<!--**********************************
-            Content body end
-        ***********************************-->
 
-<!--**********************************
-            Footer start
-        ***********************************-->
-<div class="footer">
-	<div class="copyright">
-		<p>Copyright © Designed &amp; Developed by <a href="https://yogeemedia.com" target="_blank">Yogeemedia</a> 2021</p>
-	</div>
-</div>
-<!--**********************************
-            Footer end
-        ***********************************-->
-
-<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-<!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
-</div>
-<!--**********************************
-        Main wrapper end
-    ***********************************-->
-
-<!--**********************************
-        Scripts
-    ***********************************-->
-<!-- Required vendors -->
-<script src="../dashboard/vendor/global/global.min.js"></script>
-<script src="../dashboard/js/deznav-init.js"></script>
-<script src="../dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-<script src="../dashboard/js/custom.min.js"></script>
-
-<!-- Svganimation scripts -->
-<script src="../dashboard/vendor/svganimation/vivus.min.js"></script>
-<script src="../dashboard/vendor/svganimation/svg.animation.js"></script>
-
-<!-- pickdate -->
-<script src="../dashboard/vendor/pickadate/picker.js"></script>
-<script src="../dashboard/vendor/pickadate/picker.time.js"></script>
-<script src="../dashboard/vendor/pickadate/picker.date.js"></script>
-
-<!-- Pickdate -->
-<script src="../dashboard/js/plugins-init/pickadate-init.js"></script>
-
-
-</body>
-
-</html>
+<?php
+require_once 'footer.php';
+?>

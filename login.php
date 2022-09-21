@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
 				$result = mysqli_fetch_array($sql);
 				if ($result['ip_address'] == $_SESSION['token']) {
 
-					echo "<script>window.location='user/student_profile.php';</script>";
+					echo "<script>window.location='profile/student_profile.php';</script>";
 				} else {
 					echo "<script>window.location='../logout.php';</script>";
 				}

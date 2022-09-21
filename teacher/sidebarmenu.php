@@ -45,43 +45,57 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="home.php" aria-expanded="false">
-						<i class="la la-home"></i>
+					<a href="home.php" class="nav-link">
+						<i class="nav-icon fa fa-home"></i>
 						<span class="nav-text">Dashboard</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="class_schedule.php" aria-expanded="false">
-						<i class="la la-slideshare"></i>
+					<a href="class_schedule.php" class="nav-link">
+						<i class="nav-icon fa fa-slideshare"></i>
 						<span class="nav-text">Class Schedule</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="class_tute.php" aria-expanded="false">
-						<i class="la la-book"></i>
+					<a href="class_tute.php" class="nav-link">
+						<i class="nav-icon fa fa-book"></i>
 						<span class="nav-text">Class Tute</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="video_lessons.php" aria-expanded="false">
-						<i class="la la-play-circle-o"></i>
+					<a href="video_lessons.php" class="nav-link">
+						<i class="nav-icon fa fa-play-circle-o"></i>
 						<span class="nav-text">Video Lessons</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="attendence.php" aria-expanded="false">
-						<i class="la la-file-text"></i>
+					<a href="attendence.php" class="nav-link">
+						<i class="nav-icon fa fa-file-text"></i>
 						<span class="nav-text">Students Attendence</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="has-arrow" href="javascript:void()" aria-expanded="false">
-						<i class="la la-leanpub"></i>
-						<span class="nav-text">Mcq Exams</span>
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-chart-pie"></i>
+						<p>
+							MCQ Exams
+							<i class="right fas fa-angle-left"></i>
+						</p>
 					</a>
-					<ul aria-expanded="false">
-						<li class="nav-item"><a href="exam.php">Exam Details</a></li>
-						<li class="nav-item"><a href="exam_results.php">Exam Results</a></li>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="exam.php" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Exam Details</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="exam_results.php" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Exam Results</p>
+							</a>
+						</li>
+						
 					</ul>
 				</li>
 			</ul>
@@ -90,43 +104,3 @@
 	</div>
 	<!-- /.sidebar -->
 </aside>
-
-
-
-
-
-<!-- <li class="nav-item">
-	<a href="#" class="nav-link">
-		<i class="nav-icon fas fa-chart-pie"></i>
-		<p>
-			Charts
-			<i class="right fas fa-angle-left"></i>
-		</p>
-	</a>
-	<ul class="nav nav-treeview">
-		<li class="nav-item">
-			<a href="pages/charts/chartjs.html" class="nav-link">
-				<i class="far fa-circle nav-icon"></i>
-				<p>ChartJS</p>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a href="pages/charts/flot.html" class="nav-link">
-				<i class="far fa-circle nav-icon"></i>
-				<p>Flot</p>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a href="pages/charts/inline.html" class="nav-link">
-				<i class="far fa-circle nav-icon"></i>
-				<p>Inline</p>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a href="pages/charts/uplot.html" class="nav-link">
-				<i class="far fa-circle nav-icon"></i>
-				<p>uPlot</p>
-			</a>
-		</li>
-	</ul>
-</li> -->

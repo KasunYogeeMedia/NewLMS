@@ -1,64 +1,51 @@
 <?php
 session_start();
 include '../dashboard/conn.php';
-require_once("../dashboard/config.php"); 
+require_once("../dashboard/config.php");
 require_once '../dashboard/dbconfig4.php';
-$user_qury=mysqli_query($conn,"SELECT * FROM lmsregister INNER JOIN lmsclass ON lmsregister.level=lmsclass.cid WHERE reid='$_SESSION[reid]'");
-$user_resalt=mysqli_fetch_array($user_qury);
+$user_qury = mysqli_query($conn, "SELECT * FROM lmsregister INNER JOIN lmsclass ON lmsregister.level=lmsclass.cid WHERE reid='$_SESSION[reid]'");
+$user_resalt = mysqli_fetch_array($user_qury);
 
-$image_qury=mysqli_query($conn,"SELECT * FROM lmsregister WHERE reid='$_SESSION[reid]'");
-$image_resalt=mysqli_fetch_array($image_qury);
+$image_qury = mysqli_query($conn, "SELECT * FROM lmsregister WHERE reid='$_SESSION[reid]'");
+$image_resalt = mysqli_fetch_array($image_qury);
 
-$stid=$image_resalt['reid'];
+$stid = $image_resalt['reid'];
 
-if($image_resalt['image']==""){
-	$dis_image_path="images/hd_dp.jpg";
+if ($image_resalt['image'] == "") {
+	$dis_image_path = "images/hd_dp.jpg";
+} else {
+	$dis_image_path = "uploadImg/" . $image_resalt['image'];
 }
-else{
-	$dis_image_path="uploadImg/".$image_resalt['image'];
+
+if (isset($_GET['rvid']) && !empty($_GET['rvid'])) {
+
+	$id = $_GET['rvid'];
+
+	$stmt_edit = $DB_con->prepare('SELECT * FROM lmscomments WHERE id=:rvid');
+
+	$stmt_edit->execute(array(':rvid' => $id));
+
+	$edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+
+	extract($edit_row);
+} else {
+
+	header("Location: reviews.php");
 }
 
-if(isset($_GET['rvid']) && !empty($_GET['rvid']))
+if (isset($_POST['update'])) {
 
-	{
+	$tealmsr = $_POST['tealmsr'];
 
-		$id = $_GET['rvid'];
+	$title = $_POST['title'];
 
-		$stmt_edit = $DB_con->prepare('SELECT * FROM lmscomments WHERE id=:rvid');
+	$rate = $_POST['rate'];
 
-		$stmt_edit->execute(array(':rvid'=>$id));
+	$review = $_POST['review'];
 
-		$edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+	if (!isset($errMSG)) {
 
-		extract($edit_row);
-
-	}
-
-	else
-
-	{
-
-		header("Location: reviews.php");
-
-	}	
-
-	if(isset($_POST['update']))
-
-	{
-
-		$tealmsr = $_POST['tealmsr'];
-
-		$title = $_POST['title'];
-		
-		$rate = $_POST['rate'];
-		
-		$review = $_POST['review'];
-
-		if(!isset($errMSG))
-
-		{
-
-			$stmt = $DB_con->prepare('UPDATE lmscomments
+		$stmt = $DB_con->prepare('UPDATE lmscomments
 
 									     SET tealmsr=:tealmsr,	
 		
@@ -70,201 +57,172 @@ if(isset($_GET['rvid']) && !empty($_GET['rvid']))
 
 								       WHERE id=:rvid');
 
-			$stmt->bindParam(':tealmsr',$tealmsr);
-			
-			$stmt->bindParam(':title',$title);
-			
-			$stmt->bindParam(':rate',$rate);
+		$stmt->bindParam(':tealmsr', $tealmsr);
 
-			$stmt->bindParam(':review',$review);
+		$stmt->bindParam(':title', $title);
 
-			$stmt->bindParam(':rvid',$id);
+		$stmt->bindParam(':rate', $rate);
 
-			if($stmt->execute()){
+		$stmt->bindParam(':review', $review);
 
-				$successMSG = "Review Successfully Updated ...";
-				
-				echo "<script type='text/javascript'>window.location.href = 'reviews.php';</script>";
+		$stmt->bindParam(':rvid', $id);
 
-			}
+		if ($stmt->execute()) {
 
-			else{
+			$successMSG = "Review Successfully Updated ...";
 
-				$errMSG = "Sorry Data Could Not Updated !";
+			echo "<script type='text/javascript'>window.location.href = 'reviews.php';</script>";
+		} else {
 
-			}
-
-		
-
+			$errMSG = "Sorry Data Could Not Updated !";
 		}
-
-		
-
-						
-
 	}
+}
 
 ?>
+<?php
+require_once 'header.php';
+?>
+<?php
+require_once 'navheader.php';
+?>
+<?php
+require_once 'sidebarmenu.php';
+?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-	<meta name="description" content="Gambolthemes">
-	<meta name="author" content="Gambolthemes">
-	<title>Edit Reviews | Online Learning Platforms | Student Panel</title>
-	<?php
-	require_once 'headercss.php';
-	?>
-</head>
-
-<body>
-	<?php
-	require_once 'header.php';
-	?>
-	
-	<?php
-	require_once 'sidebarmenu.php';
-	?>
-	<!-- Body Start -->
-	<div class="wrapper">
-		<div class="sa4d25">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="st_title">Review</h2> 
-						<form action="" class="edit-profile m-b30" method="POST">
+<!-- Body Start -->
+<div class="content-wrapper">
+	<div class="sa4d25">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="st_title">Review</h2>
+					<form action="" class="edit-profile m-b30" method="POST">
 						<div class="basic_profile">
 							<div class="col-lg-12">
-							<div class="basic_ptitle">
-								<h4>Edit Your Review</h4>
-								<hr>
+								<div class="basic_ptitle">
+									<h4>Edit Your Review</h4>
+									<hr>
+								</div>
 							</div>
-						</div>
-									<div class="col-lg-12 div-sec">
-									<?php
+							<div class="col-lg-12 div-sec">
+								<?php
 
-			if(isset($errMSG)){
+								if (isset($errMSG)) {
 
-			?>
+								?>
 
-            <div class="alert alert-danger">
+									<div class="alert alert-danger">
 
-            	<span class="glyphicon glyphicon-info-sign"></span> <strong><?php echo $errMSG; ?></strong>
+										<span class="glyphicon glyphicon-info-sign"></span> <strong><?php echo $errMSG; ?></strong>
 
-            <a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a></div>
+										<a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a>
+									</div>
 
-            <?php
+								<?php
 
-			}
+								} else if (isset($successMSG)) {
 
-			else if(isset($successMSG)){
+								?>
 
-			?>
+									<div class="alert alert-success">
 
-			<div class="alert alert-success">
+										<strong><span class="glyphicon glyphicon-info-sign"></span> <?php echo $successMSG; ?></strong>
 
-              <strong><span class="glyphicon glyphicon-info-sign"></span> <?php echo $successMSG; ?></strong>
+										<a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a>
+									</div>
 
-			<a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a></div>
+								<?php
 
-			<?php
+								}
 
-			}
+								?>
 
-			?>
-				
-										<div class="row">
-											<div class="col-md-3">
-												<label class="col-form-label">Teacher</label>
-												<div class="ui search focus mt-30">
-													<div class="ui left icon input swdh11 swdh19">
-														<select name="tealmsr" class="form-control simple course" style="color:000000;" required="">
-															<option value="<?php
+								<div class="row">
+									<div class="col-md-3">
+										<label class="col-form-label">Teacher</label>
+										<div class="ui search focus mt-30">
+											<div class="ui left icon input swdh11 swdh19">
+												<select name="tealmsr" class="form-control simple course" style="color:000000;" required="">
+													<option value="<?php
 
-						$id = $tealmsr;  
+																	$id = $tealmsr;
 
-						$query = $DB_con->prepare('SELECT tid FROM lmstealmsr WHERE tid='.$id);
+																	$query = $DB_con->prepare('SELECT tid FROM lmstealmsr WHERE tid=' . $id);
 
-						$query->execute();
+																	$query->execute();
 
-						$result = $query->fetch();
+																	$result = $query->fetch();
 
-						echo $result['tid'];
+																	echo $result['tid'];
 
-						 ?>"><?php
+																	?>"><?php
 
-						$id = $tealmsr;  
+																		$id = $tealmsr;
 
-						$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid='.$id);
+																		$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
 
-						$query->execute();
+																		$query->execute();
 
-						$result = $query->fetch();
+																		$result = $query->fetch();
 
-						echo $result['fullname'];
+																		echo $result['fullname'];
 
-						 ?></option>
-											<?php
-											
-											require_once '../dashboard/dbconfig4.php';
-											
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr ORDER BY tid');
+																		?></option>
+													<?php
 
-											$stmt->execute();
+													require_once '../dashboard/dbconfig4.php';
 
-											if($stmt->rowCount() > 0)
+													$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr ORDER BY tid');
 
-											{
+													$stmt->execute();
 
-											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+													if ($stmt->rowCount() > 0) {
 
-											{
+														while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-											extract($row);
+															extract($row);
 
-											?>
-											<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php 
-											}
-											}
-											?>
-														</select>														
-													</div>
-												</div>
+													?>
+															<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
+													<?php
+														}
+													}
+													?>
+												</select>
 											</div>
-											<div class="col-md-6">
-												<label class="col-form-label">Title</label>
-												<div class="ui search focus mt-30">
-													<div class="ui left icon input swdh11 swdh19">
-														<input class="prompt srch_explore" type="text" placeholder="Enter Title" name="title" value="<?php echo $title; ?>" required>															
-													</div>
-												</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<label class="col-form-label">Title</label>
+										<div class="ui search focus mt-30">
+											<div class="ui left icon input swdh11 swdh19">
+												<input class="prompt srch_explore" type="text" placeholder="Enter Title" name="title" value="<?php echo $title; ?>" required>
 											</div>
-											<div class="col-md-3">
-												<label class="col-form-label">Rating</label>
-												<div class="ui search focus mt-30">
-													<div class="ui left icon input swdh11 swdh19">
-														<select name="rate" class="form-control simple course" style="color:#000000;" required="">
-															<option value="<?php echo $rate; ?>"><?php echo $rate; ?> Star</option>
-															<option value="1">1 Star</option>
-															<option value="2">2 Star</option>
-															<option value="3">3 Star</option>
-															<option value="4">4 Star</option>
-															<option value="5">5 Star</option>
-															</select>													
-													</div>
-												</div>
-											</div>	
+										</div>
+									</div>
+									<div class="col-md-3">
+										<label class="col-form-label">Rating</label>
+										<div class="ui search focus mt-30">
+											<div class="ui left icon input swdh11 swdh19">
+												<select name="rate" class="form-control simple course" style="color:#000000;" required="">
+													<option value="<?php echo $rate; ?>"><?php echo $rate; ?> Star</option>
+													<option value="1">1 Star</option>
+													<option value="2">2 Star</option>
+													<option value="3">3 Star</option>
+													<option value="4">4 Star</option>
+													<option value="5">5 Star</option>
+												</select>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-lg-12">
 								<div class="row">
 									<div class="col-md-12">
-								
+
 										<label class="col-form-label">Review</label>
 										<div class="ui search focus mt-30">
 											<div class="ui left icon input swdh11 swdh19">
@@ -272,61 +230,54 @@ if(isset($_GET['rvid']) && !empty($_GET['rvid']))
 											</div>
 										</div>
 									</div>
-							   </div>
-						   </div>
-						   <div class="col-lg-12 subite-prof">
-						   <div class="row">
-						   <div class="col-md-6">
-								<input type="submit" name="update" class="btn btn-primary btn-block" value="Edit Review">	
-						  </div>
-						  <div class="col-md-6">
-								<a href="review.php" class="btn btn-danger btn-block">Close</a>
-						  </div>
-					      </div>
+								</div>
+							</div>
+							<div class="col-lg-12 subite-prof">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="submit" name="update" class="btn btn-primary btn-block" value="Edit Review">
+									</div>
+									<div class="col-md-6">
+										<a href="review.php" class="btn btn-danger btn-block">Close</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-		</form>			
 		</div>
-		</div>
-		</div>
-		</div>
+	</div>
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
 
-				</div>				
 			</div>
-	    </div>
-	    </div>
+		</div>
 	</div>
-	<?php
-	require_once 'footer.php';
-	?>
-	</div>
-	<!-- Body End -->
-	<?php
-	require_once 'footerjs.php';
-	?>
-	
+</div>
+
+
 <script>
-// Pricing add
+	// Pricing add
 	function newMenuItem() {
 		var newElem = $('tr.list-item').first().clone();
 		newElem.find('input').val('');
 		newElem.appendTo('table#item-add');
 	}
 	if ($("table#item-add").is('*')) {
-		$('.add-item').on('click', function (e) {
+		$('.add-item').on('click', function(e) {
 			e.preventDefault();
 			newMenuItem();
 		});
-		$(document).on("click", "#item-add .delete", function (e) {
+		$(document).on("click", "#item-add .delete", function(e) {
 			e.preventDefault();
 			$(this).parent().parent().parent().parent().remove();
 		});
 	}
 </script>
-</body>
 
-</html>
+<?php
+require_once 'footer.php';
+?>
