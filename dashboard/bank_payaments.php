@@ -67,8 +67,8 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-                    <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -120,7 +120,7 @@ require_once 'sidebarmenu.php';
 
                                                         <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=1&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Approval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-success"><i class="fa fa-check"></i> Approval</a>
 
-                                                        <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=2&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Unapproval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-danger"><i class="la la-trash-o"></i> Reject</a>
+                                                        <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=2&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Unapproval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-danger"><i class="fa fa-trash"></i> Reject</a>
 
                                                     </td>
                                                     <td>
@@ -222,7 +222,7 @@ require_once 'sidebarmenu.php';
 
                                                     <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=1&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Approval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-success"><i class="fa fa-check"></i> Approval</a>
 
-                                                    <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=2&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Unapproval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-danger"><i class="la la-trash-o"></i> Reject</a>
+                                                    <a href="bank_payaments.php?id=<?php echo $payment_resalt['pid']; ?>&status=2&mobile=<?php echo "0" . (int)$user_resalt['contactnumber']; ?>" title="Unapproval Payment" onClick="JavaScript:return confirm('Are your sure change this payment status?');" class="badge badge-danger"><i class="fa fa-trash"></i> Reject</a>
 
 
                                                 </div>

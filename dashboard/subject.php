@@ -39,7 +39,7 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary float-right mr-1 show active">List View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -48,7 +48,7 @@ require_once 'sidebarmenu.php';
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">All Subject </h4>
-                                <a href="add_subject.php" class="btn btn-square btn-secondary">+ Add Subject</a>
+                                <a href="add_subject.php" class="btn btn-square btn-secondary float-right">+ Add Subject</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -112,8 +112,8 @@ require_once 'sidebarmenu.php';
                                                             ?>
                                                         </td>
                                                         <td>
-                                                            <a href="edit_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                            <a href="delete_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                            <a href="edit_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+                                                            <a href="delete_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                             <?php

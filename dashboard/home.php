@@ -36,7 +36,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-users"></i>
+										<i class="fa fa-users"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Students</p>
@@ -54,7 +54,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-black-tie"></i>
+										<i class="fa fa-black-tie"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Teachers</p>
@@ -72,7 +72,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-calendar-o"></i>
+										<i class="fa fa-calendar-o"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Grade</p>
@@ -90,7 +90,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-buysellads"></i>
+										<i class="fa fa-buysellads"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Subjects</p>
@@ -108,7 +108,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-play-circle-o"></i>
+										<i class="fa fa-play-circle-o"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Video Lessons</p>
@@ -126,7 +126,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-slideshare"></i>
+										<i class="fa fa-slideshare"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Class Schedule</p>
@@ -144,7 +144,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-money"></i>
+										<i class="fa fa-money"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Payment</p>
@@ -162,7 +162,7 @@ require_once 'coutquery.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-user-secret"></i>
+										<i class="fa fa-user-secret"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Admin Users</p>
@@ -235,7 +235,7 @@ WHERE status=1");
 									<div class="card-body">
 										<div class="media">
 											<span class="mr-3">
-												<i class="la la-users"></i>
+												<i class="fa fa-users"></i>
 											</span>
 											<div class="media-body text-white">
 												<p class="mb-1"><?php echo $sub_resalt['name']; ?></p>

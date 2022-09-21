@@ -181,24 +181,6 @@
           }
           ?>
         </li>
-        <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Widgets
-              <span class="right badge badge-danger">New</span>
-            </p>
-          </a>
-        </li>
-        <li class="nav-header">EXAMPLES</li>
-        <li class="nav-item">
-          <a href="pages/gallery.html" class="nav-link">
-            <i class="nav-icon far fa-image"></i>
-            <p>
-              Gallery
-            </p>
-          </a>
-        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -41,8 +41,8 @@ require_once 'sidebarmenu.php';
 		<div class="row">
 			<div class="col-lg-12">
 				<ul class="nav nav-pills mb-3">
-					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
+					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
 				</ul>
 			</div>
 			<div class="col-lg-12">
@@ -92,7 +92,7 @@ require_once 'sidebarmenu.php';
 													<tr>
 														<td><?php echo $row['reid']; ?></td>
 														<td>
-															<a class="btn btn-sm btn-danger" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="la la-trash-o"></i></a>
+															<a class="btn btn-sm btn-danger" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="fa fa-trash"></i></a>
 														</td>
 														<td>
 															<?php
@@ -233,7 +233,7 @@ require_once 'sidebarmenu.php';
 																<span class="mb-0">Added Date. :</span><strong><?php echo $row['add_date']; ?></strong>
 															</li>
 														</ul>
-														<a class="btn btn-sm btn-danger btn-rounded mt-3 px-4" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="la la-trash-o"></i></a>
+														<a class="btn btn-sm btn-danger btn-rounded mt-3 px-4" href="delete_students.php?stid=<?php echo $row["reid"]; ?>" onClick="return confirm('Are youe sure remove this student');"><i class="fa fa-trash"></i></a>
 													</div>
 												</div>
 											</div>

@@ -40,8 +40,8 @@ require_once 'sidebarmenu.php';
 				<div class="row">
 					<div class="col-lg-12">
 						<ul class="nav nav-pills mb-3">
-							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
+							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-12">
@@ -50,7 +50,7 @@ require_once 'sidebarmenu.php';
 								<div class="card">
 									<div class="card-header">
 										<h4 class="card-title">All Class Tute</h4>
-										<a href="add_class_tute.php" class="btn btn-square btn-secondary">+ Add Class Tute</a>
+										<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">+ Add Class Tute</a>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">

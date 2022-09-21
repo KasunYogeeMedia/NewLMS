@@ -38,7 +38,7 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary float-right mr-1 show active">List View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -47,7 +47,7 @@ require_once 'sidebarmenu.php';
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">All Admin </h4>
-                                <a href="add_admin.php" class="btn btn-square btn-secondary">+ Add Admin</a>
+                                <a href="add_admin.php" class="btn btn-square btn-secondary float-right">+ Add Admin</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -116,8 +116,8 @@ require_once 'sidebarmenu.php';
                                                             ?>
                                                         </td>
                                                         <td>
-                                                            <a href="edit_admin.php?adid=<?php echo $row["user_id"]; ?>" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                            <a href="delete_admin.php?adid=<?php echo $row["user_id"]; ?>" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                            <a href="edit_admin.php?adid=<?php echo $row["user_id"]; ?>" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+                                                            <a href="delete_admin.php?adid=<?php echo $row["user_id"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                             <?php

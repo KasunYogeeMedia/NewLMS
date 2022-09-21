@@ -49,8 +49,8 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-                    <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -59,7 +59,7 @@ require_once 'sidebarmenu.php';
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">All Exams</h4>
-                                <a href="new_exam.php" class="btn btn-square btn-secondary">+ Add Exams</a>
+                                <a href="new_exam.php" class="btn btn-square btn-secondary float-right">+ Add Exams</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -87,7 +87,7 @@ require_once 'sidebarmenu.php';
                                                         <a href="q_list.php?exam_id=<?php echo $exam_resalt['lms_exam_id']; ?>" class="btn btn-sm btn-success" title="Add question"><i class="fa fa-question"></i></a>
                                                         <a href="new_exam.php?lms_exam_id=<?php echo $exam_resalt['lms_exam_id']; ?>" class="btn btn-sm btn-primary" title="Test Exam"><i class="fa fa-edit"></i></a>
                                                         <a href="exam.php?remove=<?php echo $exam_resalt['lms_exam_id']; ?>" class="btn btn-sm btn-danger" title="Test Exam" onClick="JavaScript:return confirm('Are your sure remove this exam?');">
-                                                            <i class="fa fa-trash-o"></i></a>
+                                                            <i class="fa fa-trash"></i></a>
 
                                                     </td>
                                                     <td><?php echo $exam_resalt['lms_exam_name']; ?></td>

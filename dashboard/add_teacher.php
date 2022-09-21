@@ -258,7 +258,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Birthday</label>
-										<input type="text" class="form-control" name="birthday" placeholder="Enter Birthday" required>
+										<input type="date" class="form-control" name="birthday" placeholder="Enter Birthday" required>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-6">
@@ -279,7 +279,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Joined Date</label>
-										<input type="text" class="form-control" name="joindate" placeholder="Enter Joined Date" required>
+										<input type="date" class="form-control" name="joindate" placeholder="Enter Joined Date" required>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">

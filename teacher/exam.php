@@ -67,7 +67,7 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -76,7 +76,7 @@ require_once 'sidebarmenu.php';
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">All Exams</h4>
-                                <a href="new_exam.php" class="btn btn-square btn-secondary">+ Add Exams</a>
+                                <a href="new_exam.php" class="btn btn-square btn-secondary float-right">+ Add Exams</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

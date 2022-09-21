@@ -41,7 +41,7 @@ require_once 'sidebarmenu.php';
 		<div class="row">
 			<div class="col-lg-12">
 				<ul class="nav nav-pills mb-3">
-					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
+					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
 
 				</ul>
 			</div>
@@ -51,7 +51,7 @@ require_once 'sidebarmenu.php';
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title">All Video Lessons</h4>
-								<a href="add_video_lessons.php" class="btn btn-square btn-secondary">+ Add Video Lessons</a>
+								<a href="add_video_lessons.php" class="btn btn-square btn-secondary float-right">+ Add Video Lessons</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">

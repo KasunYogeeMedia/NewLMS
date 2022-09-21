@@ -73,7 +73,7 @@ require_once 'sidebarmenu.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-slideshare"></i>
+										<i class="fa fa-slideshare"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Classes</p>
@@ -91,7 +91,7 @@ require_once 'sidebarmenu.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-book"></i>
+										<i class="fa fa-book"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Tutes</p>
@@ -109,7 +109,7 @@ require_once 'sidebarmenu.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-play-circle-o"></i>
+										<i class="fa fa-play-circle-o"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Videos</p>
@@ -127,7 +127,7 @@ require_once 'sidebarmenu.php';
 							<div class="card-body">
 								<div class="media">
 									<span class="mr-3">
-										<i class="la la-black-tie"></i>
+										<i class="fa fa-black-tie"></i>
 									</span>
 									<div class="media-body text-white">
 										<p class="mb-1">Total Student</p>

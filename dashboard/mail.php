@@ -39,7 +39,7 @@ require_once 'sidebarmenu.php';
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary mr-1 show active">List View</a></li>
+                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary float-right mr-1 show active">List View</a></li>
                 </ul>
             </div>
             <div class="col-lg-12">
@@ -85,7 +85,7 @@ require_once 'sidebarmenu.php';
                                                         <td><a href="javascript:void(0);"><strong><?php echo $row['message']; ?></strong></a></td>
                                                         <td><?php echo $row['add_date']; ?></td>
                                                         <td>
-                                                            <a href="delete_mail.php?mid=<?php echo $row["mid"]; ?>" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                            <a href="delete_mail.php?mid=<?php echo $row["mid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                             <?php

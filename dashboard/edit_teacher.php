@@ -280,7 +280,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Birthday</label>
-										<input type="text" name="birthday" class="form-control" value="<?php echo $edit_resalt['birthday']; ?>" required>
+										<input type="date" name="birthday" class="form-control" value="<?php echo $edit_resalt['birthday']; ?>" required>
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-6">
@@ -301,7 +301,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Joined Date</label>
-										<input type="text" name="joindate" class="form-control" value="<?php echo $edit_resalt['joindate']; ?>" required>
+										<input type="date" name="joindate" class="form-control" value="<?php echo $edit_resalt['joindate']; ?>" required>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
