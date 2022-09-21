@@ -16,7 +16,7 @@
     </div>
     <div class="user">
         <h4>Student</h4>
-        <a href="Student">Student Login</a>
+        <a href="teacher">Student Login</a>
     </div>
     <div class="user">
         <h4>Admin</h4>
