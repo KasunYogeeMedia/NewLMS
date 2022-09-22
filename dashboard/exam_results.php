@@ -142,5 +142,8 @@ ORDER BY er.lms_report_id DESC");
 </div>
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

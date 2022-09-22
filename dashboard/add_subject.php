@@ -22,8 +22,6 @@ if (isset($_POST['save'])) {
 
 	$name = $_POST['name'];
 
-	$price = $_POST['price'];
-
 	$fvp = $_POST['fees_valid_period'];
 
 	$status = $_POST['status'];
@@ -32,8 +30,7 @@ if (isset($_POST['save'])) {
 		$errMSG = "Please Enter Class.";
 	} else if (empty($name)) {
 		$errMSG = "Please Enter Name.";
-	} else if (empty($price)) {
-		$errMSG = "Please Enter Price.";
+
 	} else if (empty($status)) {
 		$errMSG = "Please Select Publilms Or Unpublilmsed.";
 	}
@@ -42,15 +39,11 @@ if (isset($_POST['save'])) {
 
 	if (!isset($errMSG)) {
 
-		$stmt = $DB_con->prepare('INSERT INTO lmssubject(class_id,name,price,fees_valid_period,status) VALUES(:class,:name,:price,:fees_valid_period,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmssubject(class_id,name,status) VALUES(:class,:name,:status)');
 
 		$stmt->bindParam(':class', $class);
 
 		$stmt->bindParam(':name', $name);
-
-		$stmt->bindParam(':price', $price);
-
-		$stmt->bindParam(':fees_valid_period', $fvp);
 
 		$stmt->bindParam(':status', $status);
 
@@ -164,13 +157,13 @@ require_once 'sidebarmenu.php';
 										<input type="text" class="form-control" name="name" placeholder="Enter Subject Name" required>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<!-- <div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Price</label>
 										<input type="text" class="form-control" name="price" placeholder="Enter Price" required>
 									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								</div> -->
+								<!-- <div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Fees Valid Period</label>
 										<select name="fees_valid_period" class="form-control">
@@ -181,7 +174,7 @@ require_once 'sidebarmenu.php';
 											<option value="90">90 Days</option>
 										</select>
 									</div>
-								</div>
+								</div> -->
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Status</label>
@@ -204,6 +197,9 @@ require_once 'sidebarmenu.php';
 
 	</div>
 </div>
+<?php
+require_once 'copyright.php';
+?>
 <?php
 require_once 'footer.php';
 ?>

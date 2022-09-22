@@ -380,5 +380,8 @@ if (isset($_POST['update'])) {
 </div>
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

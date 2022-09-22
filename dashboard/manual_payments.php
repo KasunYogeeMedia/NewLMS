@@ -544,5 +544,8 @@ ORDER BY yp.pid DESC");
 
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

@@ -58,8 +58,7 @@ require_once 'sidebarmenu.php';
                                                 <th>ID</th>
                                                 <th>Grade</th>
                                                 <th>Subject</th>
-                                                <th>Price</th>
-                                                <th>Fees valid period</th>
+                                               
                                                 <th>Date</th>
                                                 <th>Option</th>
                                                 <th>Action</th>
@@ -95,8 +94,7 @@ require_once 'sidebarmenu.php';
 
                                                                                                     ?></strong></a></td>
                                                         <td><a href="javascript:void(0);"><strong><?php echo $row['name']; ?></strong></a></td>
-                                                        <td><a href="javascript:void(0);"><strong><?php echo $row['price']; ?></strong></a></td>
-                                                        <td><a href="javascript:void(0);"><strong><?php echo $row['fees_valid_period']; ?></strong></a></td>
+                                                        
                                                         <td><?php echo $row['add_date']; ?></td>
                                                         <td>
                                                             <?php
@@ -133,6 +131,9 @@ require_once 'sidebarmenu.php';
     </div>
 </div>
 
+<?php
+require_once 'copyright.php';
+?>
 <?php
 require_once 'footer.php';
 ?>

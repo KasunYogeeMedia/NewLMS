@@ -23,8 +23,6 @@ if (isset($_GET['sbid'])) {
 if (isset($_POST['update'])) {
 	$class_id = $_POST['class_id'];
 	$name = $_POST['name'];
-	$price = $_POST['price'];
-	$fvp = $_POST['fees_valid_period'];
 	$status = $_POST['status'];
 
 	$sbid = $_GET['sbid'];
@@ -33,14 +31,10 @@ if (isset($_POST['update'])) {
 		$stmt = $DB_con->prepare('UPDATE lmssubject
 			SET class_id=:class_id,
 				name=:name,
-				price=:price,
-                fees_valid_period=:fees_valid_period,
 				status=:status
 			WHERE sid=:sbid');
 		$stmt->bindParam(':class_id', $class_id);
 		$stmt->bindParam(':name', $name);
-		$stmt->bindParam(':price', $price);
-		$stmt->bindParam(':fees_valid_period', $fvp);
 		$stmt->bindParam(':status', $status);
 		$stmt->bindParam(':sbid', $sbid);
 		if ($stmt->execute()) {
@@ -143,40 +137,6 @@ require_once 'sidebarmenu.php';
 										<input type="text" class="form-control" name="name" value="<?php echo $view_result['name']; ?>" required>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Price</label>
-										<input type="text" class="form-control" name="price" value="<?php echo $view_result['price']; ?>" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Fees Valid Period</label>
-										<select name="fees_valid_period" class="form-control">
-
-											<option value=''></option>
-											<?php
-
-											$days_a = array(1, 30, 40, 45, 90, 180);
-											$days_a_txt = array(1 => "1 Day", 30 => "30 Days", 40 => "40 Days Month", 45 => "45 Days Month", 90 => "90 Days");
-
-
-											foreach ($days_a as $d) {
-
-												if ($view_result['fees_valid_period'] == $d) {
-
-													echo "<option selected='selected' value='" . $d . "'>" . $days_a_txt[$d] . "</option>";
-												} else {
-													echo "<option value='" . $d . "'>" . $days_a_txt[$d] . "</option>";
-												}
-											}
-
-
-											?>
-
-										</select>
-									</div>
-								</div>
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group fallback w-100">
 										<label class="form-label">Status</label>
@@ -204,6 +164,9 @@ require_once 'sidebarmenu.php';
 	</div>
 </div>
 
+<?php
+require_once 'copyright.php';
+?>
 <?php
 require_once 'footer.php';
 ?>

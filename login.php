@@ -80,53 +80,32 @@ function getToken($length)
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'header.php';
+?>
+<script>
+	(function(w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start': new Date().getTime(),
+			event: 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s),
+			dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-5RH22F3');
+</script>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-	<meta name="description" content="Online Learning Platforms ">
-	<meta name="author" content="Online Learning Platforms ">
-	<title>Login | Online Learning Platforms </title>
-
-	<!-- Favicon Icon -->
-	<link rel="icon" type="image/png" href="inc/images/favicon.png">
-	<!-- css -->
-
-	<!-- Google Tag Manager -->
-	<script>
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start': new Date().getTime(),
-				event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s),
-				dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-5RH22F3');
-	</script>
-	<!-- End Google Tag Manager -->
-</head>
-
-<body>
-	<!-- Signup Start -->
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RH22F3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="contentiner">
 	<div class="sign_in_up_bg" style="height: inherit;">
 		<div class="container">
 			<div class="row justify-content-lg-center justify-content-md-center">
-				<!--<div class="col-lg-12">-->
-
-				<!--</div>-->
-
 				<div class="col-lg-6 col-md-8">
 					<div class="sign_form">
 						<div class="main_logo25" id="logo">
@@ -180,9 +159,8 @@ function getToken($length)
 			</div>
 		</div>
 	</div>
-	<!-- Signup End -->
+</div>
 
-
-</body>
-
-</html>
+<?php
+require_once 'footer.php';
+?>

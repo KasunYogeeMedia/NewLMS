@@ -49,14 +49,9 @@ if (isset($_POST['log'])) {
 <?php
 require_once 'header.php';
 ?>
-<?php
-require_once 'navheader.php';
-?>
-<?php
-require_once 'sidebarmenu.php';
-?>
 
-<div class="content-wrapper">
+
+<div class="contentiner-fluid">
 	<div class="authincation h-100 dash-up">
 		<div class="container h-100">
 			<div class="row justify-content-center h-100 align-items-center">
@@ -95,8 +90,6 @@ require_once 'sidebarmenu.php';
 		</div>
 	</div>
 </div>
-
-
 
 
 

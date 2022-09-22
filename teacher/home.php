@@ -49,7 +49,7 @@ require_once 'sidebarmenu.php';
 					<td><img src="<?php echo $image_path; ?>" class="pro_pick"></td>
 					<td style="padding-left: 20px;">
 						<h3><?php echo $user_resalt['fullname']; ?></h3>
-						<p style="color: #999999;"><?php echo $user_resalt['qualification']; ?></p>
+						<p style="color: #999999;"><?php echo $user_resalt['school']; ?></p>
 						<p style="color: #999999;"><?php echo "0" . (int)$user_resalt['contactnumber']; ?></p>
 						<p style="color: #999999;">Status:
 							<?php if ($user_resalt['status'] == 1) { ?>
@@ -151,6 +151,9 @@ GROUP BY feeID");
 	</div>
 </div>
 
+<?php
+require_once 'copyright.php';
+?>
 <?php
 require_once 'footer.php';
 ?>

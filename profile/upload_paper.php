@@ -259,5 +259,8 @@ require_once 'sidebarmenu.php';
 </script>
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

@@ -43,9 +43,9 @@
         <i class="far fa-user"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-        <a href="admin.php" class="dropdown-item">
+        <a href="home.php" class="dropdown-item">
           <i class="nav-icon far fa-user"></i>
-          <span class="ml-2 nav-text">Admin</span>
+          <span class="ml-2 nav-text">Profile</span>
         </a>
         <div class="dropdown-divider"></div>
         <a href="logout.php" class="dropdown-item">

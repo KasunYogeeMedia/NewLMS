@@ -144,5 +144,8 @@ WHERE mcq.exam_id='$_SESSION[exam_id]'");
 <!-- Body End -->
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

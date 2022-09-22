@@ -622,5 +622,8 @@ require_once 'sidebarmenu.php';
 
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

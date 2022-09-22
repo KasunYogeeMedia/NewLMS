@@ -318,5 +318,8 @@ ORDER BY e.exid DESC");
 </script>
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

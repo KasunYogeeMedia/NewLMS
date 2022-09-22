@@ -3,7 +3,7 @@
 	<!-- Brand Logo -->
 	<a href="index3.html" class="brand-link">
 		<img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-		<span class="brand-text font-weight-light">AdminLTE 3</span>
+		<span class="brand-text font-weight-light">Guruniwasa LMS</span>
 	</a>
 
 	<!-- Sidebar -->
@@ -70,22 +70,16 @@
 				<div class="line_section">
 				</div>
 
-				<li class="nav-item">
-					<a href="online_class.php" class="nav-link"> <i class='fa fa-plus-circle nav-icon'></i> <p>Paid Live Classes</p> </a>
-				</li>
+				
 				<li class="nav-item">
 					<a href="online_class_tutes.php" class="nav-link"> <i class='fa fa-comments nav-icon'></i> <p>Download Paid Class
 							Tutes</p> </a>
 				</li>
-				<li class="nav-item">
-					<a href="paper_class.php" class="nav-link"> <i class='fa fa-bell nav-icon'></i> <p>Paid Paper Classes</p> </a>
-				</li>
+				
 				<li class="nav-item">
 					<a href="paper_class_tutes.php" class="nav-link"> <i class='fa fa-bell nav-icon'></i> <p>Download Paid Paper Class Tutes</p> </a>
 				</li>
-				<li class="nav-item">
-					<a href="exam_list.php?type=1" class="nav-link"> <i class='fa fa-star nav-icon'></i> <p>Paid Exams</p> </a>
-				</li>
+				
 				<div class="line_section">
 				</div>
 
@@ -113,15 +107,6 @@
 				<div class="line_section">
 				</div>
 				
-				<li class="nav-item">
-					<a href="bank_payment.php" class="nav-link"> <i class='fa fa-dollar-sign nav-icon'></i> <p>Bank Payments History</p> </a>
-				</li>
-				<li class="nav-item">
-					<a href="card_payment.php" class="nav-link"> <i class='fa fa-dollar-sign nav-icon'></i> <p>Card Payments History</p> </a>
-				</li>
-				<li class="nav-item">
-					<a href="manual_payment.php" class="nav-link"> <i class='fa fa-dollar-sign nav-icon'></i> <p>Manual Payments History</p> </a>
-				</li>
 				<div class="line_section">
 				</div>
 				<li class="nav-item">

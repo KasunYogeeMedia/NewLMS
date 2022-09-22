@@ -107,5 +107,8 @@ require_once 'sidebarmenu.php';
 <script src="vendor/svganimation/svg.animation.js"></script>
 
 <?php
+require_once 'copyright.php';
+?>
+<?php
 require_once 'footer.php';
 ?>

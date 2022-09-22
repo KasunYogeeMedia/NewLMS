@@ -395,7 +395,7 @@ require_once 'sidebarmenu.php';
 									<a href="free_class.php" class="btn btn-success">View More</a>
 								</div>
 								<div class="card_dash_right">
-									<img src="images/dashboard/Free Live Class.png" alt="">
+									<img class="img-fluid" src="images/dashboard/Free Live Class.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -406,7 +406,7 @@ require_once 'sidebarmenu.php';
 										Tutes</h2><br>
 									<h5></h5> <a href="free_class_tutes.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Free Class Tute.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Free Class Tute.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -418,7 +418,7 @@ require_once 'sidebarmenu.php';
 									<a href="exam_list.php?type=0" class="btn btn-success">View More</a>
 								</div>
 								<div class="card_dash_right">
-									<img src="images/dashboard/Free Exams.png" alt="">
+									<img class="img-fluid" src="images/dashboard/Free Exams.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -434,7 +434,7 @@ require_once 'sidebarmenu.php';
 									<h2>Paid Live Classes</h2><br>
 									<h5></h5> <a href="online_class.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Paid Live Class.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Paid Live Class.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -444,7 +444,7 @@ require_once 'sidebarmenu.php';
 										Tutes</h2><br>
 									<h5></h5> <a href="online_class_tutes.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Download Paid Class Tute.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Download Paid Class Tute.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -453,7 +453,7 @@ require_once 'sidebarmenu.php';
 									<h2>Paid Paper Classes</h2><br>
 									<h5></h5> <a href="paper_class.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Paid Revision Class.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Paid Revision Class.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -463,7 +463,7 @@ require_once 'sidebarmenu.php';
 										Tutes</h2><br>
 									<h5></h5> <a href="paper_class_tutes.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Download Paid revision class tute.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Download Paid revision class tute.png" alt=""> </div>
 							</div>
 						</div>
 					</div>
@@ -477,7 +477,7 @@ require_once 'sidebarmenu.php';
 											<a href="exam_list.php?type=1" class="btn btn-success">View More</a>
 								</div>
 								<div class="card_dash_right">
-									<img src="images/dashboard/Paid Exams.png" alt="">
+									<img class="img-fluid" src="images/dashboard/Paid Exams.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -492,7 +492,7 @@ require_once 'sidebarmenu.php';
 									<h2>This Month's Recordings</h2><br>
 									<h5></h5> <a href="paid_lesson.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/This month Recordings.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/This month Recordings.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -501,7 +501,7 @@ require_once 'sidebarmenu.php';
 									<h2>All Previous Recordings</h2><br>
 									<h5></h5> <a href="old_video_lessons.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/All Previouus recording.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/All Previouus recording.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -510,7 +510,7 @@ require_once 'sidebarmenu.php';
 									<h2>Free Recorded Classes</h2><br>
 									<h5></h5> <a href="free_lesson.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Free Recode Class.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Free Recode Class.png" alt=""> </div>
 							</div>
 						</div>
 					</div>
@@ -524,7 +524,7 @@ require_once 'sidebarmenu.php';
 									<h2>Your Profile</h2><br>
 									<h5></h5> <a href="edit_profile.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Your Profile.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Your Profile.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -533,7 +533,7 @@ require_once 'sidebarmenu.php';
 									<h2>Bank Payments History</h2><br>
 									<h5></h5> <a href="bank_payment.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Bank Payment History.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Bank Payment History.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -542,7 +542,7 @@ require_once 'sidebarmenu.php';
 									<h2>Card Payments History</h2><br>
 									<h5></h5> <a href="card_payment.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Card Payment History.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Card Payment History.png" alt=""> </div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-6 col-md-6">
@@ -551,7 +551,7 @@ require_once 'sidebarmenu.php';
 									<h2>Manual Payments History</h2><br>
 									<h5></h5> <a href="manual_payment.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Manual Payment History.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Manual Payment History.png" alt=""> </div>
 							</div>
 						</div>
 					</div>
@@ -565,7 +565,7 @@ require_once 'sidebarmenu.php';
 									<h2>Rate Your Learning Experience</h2><br>
 									<h5></h5> <a href="reviews.php" class="btn btn-success">View More</a>
 								</div>
-								<div class="card_dash_right"> <img src="images/dashboard/Rate Your Experince.png" alt=""> </div>
+								<div class="card_dash_right"> <img class="img-fluid" src="images/dashboard/Rate Your Experince.png" alt=""> </div>
 							</div>
 						</div>
 					</div>
@@ -603,7 +603,7 @@ require_once 'sidebarmenu.php';
 														$pro_img = "images/hd_dp.jpg";
 													} else {
 														$pro_img = "uploadImg/" . $row['image'];
-													} ?><img src="<?php echo $pro_img; ?>" id="dis_image" style="width: 200px; height: 200px; border: 1px solid #EEE; border-radius: 100%; cursor: pointer; object-fit: cover; background-position: center;">
+													} ?><img class="img-fluid" src="<?php echo $pro_img; ?>" id="dis_image" style="width: 200px; height: 200px; border: 1px solid #EEE; border-radius: 100%; cursor: pointer; object-fit: cover; background-position: center;">
 												</div>
 												<div class="tutor_content_dt">
 													<div class="tutor150"> <a href="#" class="tutor_name">Hi,<?php echo $row['fullname']; ?></a>
@@ -677,184 +677,6 @@ require_once 'sidebarmenu.php';
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-6 new-sce-1">
-								<div class="value_props">
-									<h3>පන්ති සඳහා ගෙවීම් කටයුතු සිදුකල යුතු ආකාරය
-									</h3>
-									<div class="value_content">
-										<p>ඔබ යම් කිසි පන්තියක් සඳහා සම්බන්ධ වන්නේ නම් පන්තියට අදාල ගාස්තුව ආයතනයට පැමිණ හෝ පහත ගිණුම් අංකයට ගෙවා ලබා ගන්නා ලද ගෙවීම් පත්‍රිකාව හෝ screen shot එක පහත විස්තර සම්පූර්ණ කර මෙම වෙබ් අඩවියට Upload කළ යුතු ය. (යම් හෙයකින් ගෙවීම් පත්‍රිකාව නොලැබුණහොත් හෝ අස්ථාන ගත වුවහොත් පැය 24 ක් ඇතුලත දැනුම් දී එම ගැටලුව විසදා ගන්න)</p>
-										<p>පන්ති ගාස්තු ගෙවූ විට ඔබට පන්ති සමග zoom ඔස්සේ සජීවීව සම්බන්ධ වීමට, පසුගිය පන්ති වල වීඩියෝ නැරඹීමට , tute ලබා ගැනීමට සහ ප්‍රශ්න පත්‍ර ලබා ගැනීමට හැකියාව ලැබෙනු ඇත. ( මුදල් ගෙවූ විගසම මේ සියල්ල නොලැබේ. මුදල් ගෙවා රිසිට් පත upload කර පැය 24 ක් ඇතුලත ඔබගේ ගිණුමට ඉහත පහසුකම් ලැබෙනු ඇත.)</p>
-										<p>Visa , master , Amex card වලින්ද පන්ති ගාස්තු ගෙවිය හැක. ඒ සදහා මෙහි ඇති card payment click කරන්න</p>
-										<p>සාමාන්‍ය පන්ති ගාස්තු නොගෙවන , පන්ති ගාස්තු සදහා සහන ශිෂ්‍යත්ව ලැබූ සිසුන් බැංකු ගෙවීම් පත්‍රිකාව මෙම වෙබ් අඩවියට upload කිරීමෙන් වලකින්න.</p>
-
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 new-sce-1">
-								<div class="value_props">
-									<h3>ගෙවීම් කළ හැකි ගිණුම් අංකය</h3>
-									<div class="value_content">
-										<p>බැංකුව : <strong>Bank of Ceylon (BOC)</strong>
-											<br> ගිණුම් අංකය : 73451662
-											<br> ශාඛාව : <strong>Polgahawela</strong>
-											<br> ගිණුමේ නම : J A N Perera
-										</p>
-									</div>
-
-									<br>
-
-
-								</div>
-							</div>
-
-							<div class="col-lg-6 new-sce-1">
-								<div class="value_props">
-									<h3>විෂයක් තෝරා ගන්නා ආකාරය</h3>
-									<br>
-									<p>ගුරුවරයා තෝරා ගැනීමට ඔබට නොපෙන්වයි හෝ ඔබට අදාල නොවන විෂයන් පෙන්වන්නේ නම් Your Profile ගොස් වෙන ශ්‍රේණියක් select කර නැවත ඔබට අදාල ශ්‍රේණිය select කරන්න. පසුව ලැබෙන ලැයිස්තුවෙන් ඔබට සම්බන්ධ විය යුතු විෂයන් සහ ගුරුවරුන් තෝරා ගත හැක. එසේ තෝරාගෙන update profile click කරන්න.</p>
-									<form method="post" enctype="multipart/form-data">
-										<table class="table table-bordered tabl-div">
-											<?php
-
-											$selected_subjects  = array();
-
-											$query1 = mysqli_query($conn, "SELECT * FROM lmsreq_subject WHERE sub_req_reg_no =" . $reg_id);
-
-											while ($result = mysqli_fetch_assoc($query1)) {
-
-												$sub_id = $result['sub_req_sub_id'];
-
-												array_push($selected_subjects, $sub_id);
-											}
-
-											$tea_qury = mysqli_query($conn, "SELECT tid,systemid,fullname FROM lmstealmsr ORDER BY fullname");
-
-											while ($tea_resalt = mysqli_fetch_assoc($tea_qury)) {
-
-											?>
-
-												<thead>
-													<tr style="background-color: #8b8c90;">
-														<td colspan="6" style="color: #ffffff;border:4px solid #8b8c90;"><?php echo $tea_resalt['fullname']; ?></td>
-													</tr>
-												</thead>
-												<tbody>
-													<?php
-
-													$tec_sub_qury = mysqli_query($conn, "SELECT ss.sid,ss.name,ss.price
-
-FROM lmstealmsr_multiple sm INNER JOIN lmssubject ss ON sm.tealmsr_contain_id=ss.sid
-
-WHERE sm.tealmsr_type='3' and sm.tealmsr_system_id='$tea_resalt[systemid]'
-
-ORDER BY ss.name");
-
-													while ($tec_sub_resalt = mysqli_fetch_assoc($tec_sub_qury)) {
-
-														//check paid subject
-
-														$check_paid = mysqli_query($conn, "SELECT * FROM lmspayment WHERE pay_sub_id='$tec_sub_resalt[sid]' and userID='$_SESSION[reid]' and status='1'");
-
-														$paid_resalt = mysqli_fetch_array($check_paid);
-
-														if (in_array($tec_sub_resalt['sid'], $selected_subjects)) {
-
-													?>
-															<tr>
-																<td><input style="font-weight:bold;margin: 10px;color:#000000;" class="subject_select" type="checkbox" name="select_payment[]" value="<?php echo $tea_resalt['tid'] . "," . $tec_sub_resalt['sid'] . "," . $tec_sub_resalt['price']; ?>" data-subject-fee="<?php echo $tec_sub_resalt['price']; ?>" data-subject-id="<?php echo $tec_sub_resalt['sid']; ?>"></td>
-
-																<td style="font-weight:bold;margin: 10px;color:#000000;"><?php echo $tec_sub_resalt['name']; ?></td>
-
-																<td style="font-weight:bold;margin: 10px;color:#000000;"><?php echo number_format((float)$tec_sub_resalt['price'], 2); ?></td>
-																<!--kasun 2021.12.01 change color to black from white-->
-															</tr>
-												<?php
-
-														}
-													}
-												}
-
-												?>
-												</tbody>
-										</table>
-								</div>
-							</div>
-							<div class="col-lg-6 new-sce-1 paymet-det">
-								<?php /*<div class="value_props">
-										<h3>Card Payment</h3>
-										<?php
-										$today_time = date("Y-m-d");
-										$payment_qury = mysqli_query($conn, "SELECT * FROM lmspayment WHERE paymentMethod='Card' and userID='$_SESSION[reid]' and status='1' ORDER BY pid DESC");
-										while ($payment_resalt = mysqli_fetch_array($payment_qury)) {
-										?>
-											<span class="badge badge-success" style="font-size:14px;color:#000000;">Paid Month : <i class="fa fa-check-circle"></i> <?php echo date_format(date_create($payment_resalt['pay_month']), "F"); ?></span>
-										<?php
-										}
-										?>
-										<h4>Select Month</h4>
-										<input id="select_month" class="form-control" type="month" name="paymonth" value="<?php echo date("Y-m"); ?>">
-										<br>
-										<label for="fileName1"><img src="images/card payment.png" id="yourImgTag1" style="width:20%;cursor: pointer;" /></label>
-										<ul>
-											<li>
-												<button type="submit" name="submit_bt" id="pay-by-card" class="btn btn-success btn-block" disabled="true" style="font-weight:bold;font-size:14px;">කාඩ් එකෙන් ගෙවන්න | Rs. <span class="payment_ammount">0.00</span></button>
-											</li>
-										</ul>
-									</div>
-									<hr style="border:2px solid #28a745">
-									*/ ?>
-								<div class="value_props">
-									<h3>Bank Payment</h3>
-									<hr style="border:2px solid #8b8c90">
-									<?php
-									$today_time = date("Y-m-d");
-									$payment_qury = mysqli_query($conn, "SELECT * FROM lmspayment WHERE paymentMethod='Bank' and userID='$_SESSION[reid]' and status='1' ORDER BY pid DESC");
-									while ($payment_resalt = mysqli_fetch_array($payment_qury)) {
-									?>
-										<span class="badge badge-success" style="font-size:14px;color:#000000;">Paid Month : <i class="fa fa-check-circle"></i> <?php echo date_format(date_create($payment_resalt['pay_month']), "F"); ?></span>
-									<?php
-									}
-									?>
-									<h4>Select Month</h4>
-									<input type="month" class="form-control" name="paymonth" value="<?php echo date("Y-m"); ?>">
-									<br>
-
-									<label class="control-label" for="basicinput">සාමාන්‍ය පන්ති ගාස්තු ගෙවූ දරුවන් පමණක් බැංකු රිසිට් පත මෙතනින් upload කරන්න. පන්ති ගාස්තු සදහා සහන (Discounts/Offers) ලැබූ සිසුන් එම bank receipt පත 070 400 0628 අංකයට නම , LMS එකෙහි register වූ දුරකතන අංකය , විෂය සහ ගුරුවරයා , ඒ ඒ විෂයට ගෙවූ ගාස්තුව වෙන වෙනම සදහන් කර WhatsApp කරන්න.සාමාන්‍ය පන්ති ගාස්තු ගෙවන දරුවන් සම්බන්ධ වන විෂයන් ඉදිරියේ හරි ලකුණු යොදා (click on the relevant tick box) මෙහි bank receipt පතෙහි photo එකක් හෝ screenshot එකක් upload කරන්න. (Pdf file upload කල නොහැක)</label>
-									<label for="fileName"><img src="images/payslip.png" id="yourImgTag" style="width:40%;cursor: pointer;" /></label>
-
-									<input type="file" name="fileName" id="fileName" value="" class="form-control" required onChange="JavaScript:dis_name(this.value);">
-									<br>
-									<ul>
-										<li>
-											<input type="text" name="amount" id="payment_ammount" hidden>
-											<button type="submit" name="submit_bt" id="bank-pay-button" class="btn btn-primary btn-block" disabled="true" style="font-weight:bold;font-size:14px;">බැංකු රිසිට්පතෙන් ගෙවන්න | Rs. <span class="payment_ammount">0.00</span></button>
-										</li>
-									</ul>
-									<script>
-										function dis_name(file_name) {
-
-											var input = document.getElementById("fileName");
-
-											var fReader = new FileReader();
-
-											fReader.readAsDataURL(input.files[0]);
-
-											fReader.onloadend = function(event) {
-
-												var img = document.getElementById("yourImgTag");
-
-												img.src = event.target.result;
-
-											}
-
-										}
-									</script>
-								</div>
-
-							</div>
-						</div>
-						</form>
 					</div>
 				</div>
 
