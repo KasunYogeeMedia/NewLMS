@@ -39,12 +39,144 @@ require_once 'sidebarmenu.php';
 		</div>
 
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Science of Life (ජිවිත විද්‍යාව)</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Lession Explanations</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Lession Revision</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Paper Discussions</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Lession Explanations by Students </p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
+				<div class="widget-stat card bg-secondary">
+					<a href="">
+						<div class="card-body">
+							<table class="media">
+								<tr>
+									<td>
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+									</td>
+									<td>
+										<div class="media-body text-white">
+											<p class="mb-1">Practicals By Students</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- <div class="col-lg-12">
 				<ul class="nav nav-pills mb-3">
 					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
-
+					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
 				</ul>
-			</div>
+			</div> -->
 			<div class="col-lg-12">
 				<div class="row tab-content">
 					<div id="list-view" class="tab-pane fade active show col-lg-12">

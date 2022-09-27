@@ -186,8 +186,10 @@ require_once 'sidebarmenu.php';
 										<label class="form-label">Type</label>
 										<select class="form-control" name="type" required>
 											<option value="">Select Type </option>
-											<option>Free</option>
-											<option>Paid</option>
+											<option value="general">General</option>
+											<option value="lesson_explanations">Lesson Explanations</option>
+											<option value="lesson_revision">Lesson Revision</option>
+											<option value="paper_discussions">Paper Discussions</option>
 										</select>
 									</div>
 								</div>

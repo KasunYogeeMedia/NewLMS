@@ -58,6 +58,12 @@
 				</li>
 				<li class="nav-item">
 					<a href="class_tute.php" class="nav-link">
+						<i class="nav-icon fa fa-slideshare"></i>
+						<span class="nav-text">Class Tute</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="class_tute.php" class="nav-link">
 						<i class="nav-icon fa fa-book"></i>
 						<span class="nav-text">Class Tute</span>
 					</a>
@@ -74,6 +80,13 @@
 						<span class="nav-text">Students Attendence</span>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a href="video_lessons.php" class="nav-link">
+						<i class="nav-icon fa fa-file-text"></i>
+						<span class="nav-text">Video Lessons.php</span>
+					</a>
+				</li>
+				
 				<li class="nav-item">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-chart-pie"></i>

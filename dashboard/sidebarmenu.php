@@ -181,6 +181,35 @@
           }
           ?>
         </li>
+        <li class="nav-item">
+          <?php
+          if ($lesson == 'True') {
+
+            echo '<a href="ebook.php" class="nav-link">
+							<i class="nav-icon fa fa-play-circle-o"></i>
+							<p>Ebook</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li>
+        <li class="nav-item">
+          <?php
+          if ($lesson == 'True') {
+
+            echo '<a href="attendence.php" class="nav-link">
+							<i class="nav-icon fa fa-play-circle-o"></i>
+							<p>Attendence</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li>
+        
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

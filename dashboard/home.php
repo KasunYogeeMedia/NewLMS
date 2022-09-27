@@ -31,155 +31,150 @@ require_once 'coutquery.php';
 		<div class="row">
 			<div class="col-xl-12 col-xxl-12 col-sm-12">
 				<div class="row">
-					
+
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-users"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Students</p>
-										<h3 class="text-white"><?php echo $total_register ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 80%"></div>
+							<a href="add_teacher.php">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">Student Registration</p>
+											<h3 class="text-white"><?php echo $total_teacher ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 80%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-user-secret"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Admin Users</p>
-										<h3 class="text-white"><?php echo $total_users ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+							<a href="">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-user-secret"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">Student Count</p>
+											<h3 class="text-white"><?php echo $total_teacher ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 50%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-black-tie"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Teachers</p>
-										<h3 class="text-white"><?php echo $total_teacher ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 50%"></div>
+							<a href="video_lessons.php">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-black-tie"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">Video Uploading</p>
+											<h3 class="text-white"><?php echo $total_lesson ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-calendar-o"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Grade</p>
-										<h3 class="text-white"><?php echo $total_class ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 76%"></div>
+							<a href="ebook.php">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">O/L Result Uploading</p>
+											<h3 class="text-white"><?php echo $total_class ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 76%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-buysellads"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Subjects</p>
-										<h3 class="text-white"><?php echo $total_subject ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+							<a href="ebook.php">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">PDF Uploading</p>
+											<h3 class="text-white"><?php echo $total_class ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 76%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-play-circle-o"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Video Lessons</p>
-										<h3 class="text-white"><?php echo $total_lesson ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+							<a href="">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-buysellads"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">Student Achevements</p>
+											<h3 class="text-white"><?php echo $total_subject ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-slideshare"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Class Schedule</p>
-										<h3 class="text-white"><?php echo $total_class_schedule ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+							<a href="">
+								<div class="card-body">
+									<div class="media">
+										<span class="mr-3">
+											<i class="fa fa-users"></i>
+										</span>
+										<div class="media-body text-white">
+											<p class="mb-1">PDF Approvels</p>
+											<h3 class="text-white"><?php echo $total_lesson ?></h3>
+											<div class="progress mb-2 bg-white">
+												<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
-					<div class="col-xl-4 col-xxl-4 col-sm-6">
-						<div class="widget-stat card bg-secondary">
-							<div class="card-body">
-								<div class="media">
-									<span class="mr-3">
-										<i class="fa fa-money"></i>
-									</span>
-									<div class="media-body text-white">
-										<p class="mb-1">Total Payment</p>
-										<h3 class="text-white"><?php echo $total_payment ?></h3>
-										<div class="progress mb-2 bg-white">
-											<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
 				</div>
 			</div>
-			<div class="col-xl-12 col-lg-12 col-xxl-12 col-md-12">
+			<!-- <div class="col-xl-12 col-lg-12 col-xxl-12 col-md-12">
 				<div class="col-xl-12 col-lg-12 col-xxl-12 col-md-12">
 					<div class="row">
 						<div class="col-xl-12 col-lg-12 col-xxl-12 col-md-12">
@@ -218,7 +213,7 @@ require_once 'coutquery.php';
 						<?php } ?>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
