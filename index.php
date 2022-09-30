@@ -1,27 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fontpage</title>
-</head>
 
-<body>
-    <div class="user">
-        <h4>User</h4>
-        <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
-    </div>
-    <div class="user">
-        <h4>Student</h4>
-        <a href="teacher">Student Login</a>
-    </div>
-    <div class="user">
-        <h4>Admin</h4>
-        <a href="dashboard">Admin Login</a>
-    </div>
-</body>
 
-</html>
+<div class="sec_1" style="background-image: url('dist/img/back_1.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>Free Education</h3>
+                        <h4 class="sinhala">නොමිලේ අධ්‍යාපනය</h4>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="login.php" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-6 col-sm-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>Smart Science <br> Student Login</h3>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="teacher" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+
+        <div class="user">
+            <h4>Admin</h4>
+            <a href="dashboard">Admin Login</a>
+        </div>
+    </div>
+</div>
+<?php
+require_once 'header.php';
+?>

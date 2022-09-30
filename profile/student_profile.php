@@ -21,7 +21,6 @@ if (!isset($_SESSION['reid'])) {
 }
 
 class imageUpload
-
 {
 
 	var $name = '';

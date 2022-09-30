@@ -55832,10 +55832,31 @@ a.text-muted:hover {
 
 /* Custom css */
 
-.media .mr-3 .fa{
-  min-width: 20px;
+.media .mr-3 .fa {
+    min-width: 20px;
 }
 
 .pro_pick {
-	width: 100%;
+    width: 100%;
+}
+
+.media img {
+    width: 200px !important;
+}
+
+/* Index page css */
+.sec_1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 30vh;
+    min-height: 100vh;
+}
+
+.small-box > .inner {
+	padding: 20px;
+	min-height: 140px;
+}
+.sinhala {
+    font-family: 'Gemunu Libre', sans-serif;
 }
