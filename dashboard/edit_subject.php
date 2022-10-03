@@ -39,7 +39,7 @@ if (isset($_POST['update'])) {
 		$stmt->bindParam(':sbid', $sbid);
 		if ($stmt->execute()) {
 
-			$successMSG = "Subject Successfully Updated ....";
+			$successMSG = "Grade Successfully Updated ....";
 
 			header("refresh:2;subject.php"); // redirects image view page after 5 seconds.
 
@@ -68,14 +68,14 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Edit Subject</h4>
+					<h4>Edit Grade</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-					<li class="breadcrumb-item active"><a href="subject.php">Subject</a></li>
-					<li class="breadcrumb-item active"><a href="edit_admin.php">Edit Subject</a></li>
+					<li class="breadcrumb-item active"><a href="subject.php">Grade</a></li>
+					<li class="breadcrumb-item active"><a href="edit_admin.php">Edit Grade</a></li>
 				</ol>
 			</div>
 		</div>
@@ -84,7 +84,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-xl-12 col-xxl-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h5 class="card-title">Edit Subject</h5>
+						<h5 class="card-title">Edit Grade</h5>
 					</div>
 					<div class="card-body">
 						<?php
@@ -118,7 +118,7 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Grade</label>
+										<label class="form-label">Medium</label>
 										<select name="class_id" class="form-control">
 											<?php
 											$class_qury = mysqli_query($conn, "SELECT * FROM lmsclass ORDER BY name");
@@ -133,7 +133,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Subject Name</label>
+										<label class="form-label">Grade Name</label>
 										<input type="text" class="form-control" name="name" value="<?php echo $view_result['name']; ?>" required>
 									</div>
 								</div>

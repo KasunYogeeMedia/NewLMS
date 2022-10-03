@@ -2,10 +2,16 @@
 
 session_start();
 
-require_once 'includes.php';
+require_once '../dashboard/dbconfig4.php';
 
-require_once 'dbconfig4.php';
+include '../dashboard/conn.php';
 
+if (!isset($_SESSION['reid'])) {
+
+	header('location:../login.php');
+
+	die();
+}
 ?>
 
 <?php
@@ -17,42 +23,45 @@ require_once 'navheader.php';
 <?php
 require_once 'sidebarmenu.php';
 ?>
-<div class="content-wrapper">
-    <!-- row -->
-    <div class="container-fluid">
 
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>All Grade</h4>
-                </div>
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Grade</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">All Grade</a></li>
-                </ol>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn btn-square btn-secondary float-right mr-1 show active">List View</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-12">
-                <div class="row tab-content">
-                    <div id="list-view" class="tab-pane fade active show col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">All Grade </h4>
-                                <a href="add_subject.php" class="btn btn-square btn-secondary float-right">+ Add Grade</a>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered">
+<!-- Body Start -->
+<div class="content-wrapper p-2">
+	<div class="content_head pt-2">
+		<h4 class="text-center">Smart Science</h4>
+	</div>
+	<div class="content_body text-center pt-2">
+		<div class="row">
+			<div class="col-md-4 col-sm-4">
+				<h5 class="pb-3">English Medium</h5>
+				<div class="links-1">
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 6</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 7</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 8</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 9</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 10</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 11</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="links-2 my-5">
+					<a class="btn btn-secondary btn-lg w-100 mb-2" href="">Science of Life <br> ජිවිත විද්‍යාව</a>
+					<a class="btn btn-secondary btn-lg w-100 mb-2" href="">O/L Result</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<h5 class="pb-3">සිංහල මාධ්‍යය</h5>
+				<div class="links-3">
+				<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 6</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 7</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 8</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 9</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 10</a>
+					<a class="btn btn-primary btn-lg w-100 mb-2" href="">Grade 11</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table id="example3" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -120,20 +129,4 @@ require_once 'sidebarmenu.php';
                                             ?>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </div>
-
-<?php
-require_once 'copyright.php';
-?>
-<?php
-require_once 'footer.php';
-?>

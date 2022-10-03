@@ -32,7 +32,7 @@ if (isset($_POST['save'])) {
         $stmt->bindParam(':status', $status);
         if ($stmt->execute()) {
 
-            $successMSG = "Successfully! Add Your Grade....";
+            $successMSG = "Successfully! Add Your Medium....";
 
             header("refresh:2;grade.php"); // redirects image view page after 5 seconds.
 
@@ -63,14 +63,14 @@ require_once 'sidebarmenu.php';
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add Grade</h4>
+                    <h4>Add Medium</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Grade</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Add Grade</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Medium</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Add Medium</a></li>
                 </ol>
             </div>
         </div>
@@ -79,7 +79,7 @@ require_once 'sidebarmenu.php';
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add Grade</h4>
+                        <h4 class="card-title">Add Medium</h4>
                     </div>
                     <div class="card-body">
                         <?php
@@ -113,8 +113,8 @@ require_once 'sidebarmenu.php';
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Grade</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Enter Grade" required>
+                                        <label class="form-label">Medium</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Medium" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-12">

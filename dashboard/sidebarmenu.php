@@ -72,7 +72,7 @@
 
                 echo '<a href="grade.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Grade</p>
+                <p>Medium</p>
               </a>';
               } else {
 
@@ -86,7 +86,7 @@
 
                 echo '<a href="subject.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Subject</p>
+                <p>Grade</p>
               </a>';
               } else {
 
@@ -102,6 +102,34 @@
 
             echo '<a href="students.php" class="nav-link">
 							<i class="nav-icon fa fa-users"></i>
+							<p>Users</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li>
+        <!-- <li class="nav-item">
+          <?php
+          if ($teachers == 'True') {
+
+            echo '<a href="attendence.php" class="nav-link">
+							<i class="nav-icon fa fa-file-text"></i>
+							<p>User Attendence</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li> -->
+        <li class="nav-item">
+          <?php
+          if ($teachers == 'True') {
+
+            echo '<a href="teachers.php" class="nav-link">
+							<i class="nav-icon fa fa-black-tie"></i>
 							<p>Students</p>
 						</a>';
           } else {
@@ -110,35 +138,7 @@
           }
           ?>
         </li>
-        <li class="nav-item">
-          <?php
-          if ($teachers == 'True') {
-
-            echo '<a href="attendence.php" class="nav-link">
-							<i class="nav-icon fa fa-file-text"></i>
-							<p>Students Attendence</p>
-						</a>';
-          } else {
-
-            echo '';
-          }
-          ?>
-        </li>
-        <li class="nav-item">
-          <?php
-          if ($teachers == 'True') {
-
-            echo '<a href="teachers.php" class="nav-link">
-							<i class="nav-icon fa fa-black-tie"></i>
-							<p>Teachers</p>
-						</a>';
-          } else {
-
-            echo '';
-          }
-          ?>
-        </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <?php
           if ($class_schedule == 'True') {
 
@@ -151,7 +151,7 @@
             echo '';
           }
           ?>
-        </li>
+        </li> -->
         <li class="nav-item">
           <?php
           if ($class_schedule == 'True') {
@@ -187,7 +187,7 @@
 
             echo '<a href="ebook.php" class="nav-link">
 							<i class="nav-icon fa fa-play-circle-o"></i>
-							<p>Ebook</p>
+							<p>PDF</p>
 						</a>';
           } else {
 
@@ -195,7 +195,7 @@
           }
           ?>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <?php
           if ($lesson == 'True') {
 
@@ -208,7 +208,7 @@
             echo '';
           }
           ?>
-        </li>
+        </li> -->
         
       </ul>
     </nav>

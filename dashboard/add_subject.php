@@ -49,7 +49,7 @@ if (isset($_POST['save'])) {
 
 		if ($stmt->execute()) {
 
-			$successMSG = "Successfully! Add Your Subject....";
+			$successMSG = "Successfully! Add Your Grade....";
 
 			header("refresh:2;subject.php"); // redirects image view page after 5 seconds.
 
@@ -78,14 +78,14 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Add Subject</h4>
+					<h4>Add Grade</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-					<li class="breadcrumb-item"><a href="javascript:void(0);">Subject</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">Add Subject</a></li>
+					<li class="breadcrumb-item"><a href="javascript:void(0);">Grade</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">Add Grade</a></li>
 				</ol>
 			</div>
 		</div>
@@ -94,7 +94,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Add Subject</h4>
+						<h4 class="card-title">Add Grade</h4>
 					</div>
 					<div class="card-body">
 						<?php
@@ -128,9 +128,9 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Grade</label>
+										<label class="form-label">Medium</label>
 										<select name="class" class="form-control">
-											<option selected>Select Grade</option>
+											<option selected>Select Medium</option>
 											<?php
 
 											$stmt = $DB_con->prepare('SELECT * FROM lmsclass ORDER BY cid');
@@ -153,8 +153,8 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Subject Name</label>
-										<input type="text" class="form-control" name="name" placeholder="Enter Subject Name" required>
+										<label class="form-label">Grade Name</label>
+										<input type="text" class="form-control" name="name" placeholder="Enter Grade Name" required>
 									</div>
 								</div>
 								<!-- <div class="col-lg-3 col-md-3 col-sm-12">

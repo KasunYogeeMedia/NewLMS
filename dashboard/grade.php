@@ -24,14 +24,14 @@ require_once 'sidebarmenu.php';
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>All Grade</h4>
+                    <h4>All Medium</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Grade</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">All Grade</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Medium</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">All Medium</a></li>
                 </ol>
             </div>
         </div>
@@ -47,8 +47,8 @@ require_once 'sidebarmenu.php';
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Grade </h4>
-                                <a href="add_grade.php" class="btn btn-square btn-secondary float-right">+ Add Grade</a>
+                                <h4 class="card-title">All Medium </h4>
+                                <a href="add_grade.php" class="btn btn-square btn-secondary float-right">+ Add Medium</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -56,7 +56,7 @@ require_once 'sidebarmenu.php';
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Grade</th>
+                                                <th>Medium</th>
                                                 <th>Date</th>
                                                 <th>Status</th>
                                                 <th>Option</th>
