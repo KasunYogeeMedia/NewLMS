@@ -96,7 +96,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <?php
           if ($students == 'True') {
 
@@ -109,7 +109,7 @@
             echo '';
           }
           ?>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <?php
           if ($teachers == 'True') {
@@ -172,7 +172,7 @@
           if ($lesson == 'True') {
 
             echo '<a href="video_lessons.php" class="nav-link">
-							<i class="nav-icon fa fa-play-circle-o"></i>
+							<i class="nav-icon fa fa-video"></i>
 							<p>Video Lessons</p>
 						</a>';
           } else {
@@ -186,7 +186,7 @@
           if ($lesson == 'True') {
 
             echo '<a href="ebook.php" class="nav-link">
-							<i class="nav-icon fa fa-play-circle-o"></i>
+							<i class="nav-icon fa fa-file"></i>
 							<p>PDF</p>
 						</a>';
           } else {

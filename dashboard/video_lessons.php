@@ -194,15 +194,13 @@ require_once 'sidebarmenu.php';
 												<th>Action</th>
 												<th>Type</th>
 												<th>Teacher</th>
+												<th>Medium</th>
 												<th>Grade</th>
-												<th>Subject</th>
 												<th>Title</th>
 												<th>Cover</th>
 												<th>Month</th>
 												<th>Date</th>
 												<th>Option</th>
-												<th>Available Days</th>
-												<th>Views Per Day</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -294,9 +292,6 @@ require_once 'sidebarmenu.php';
 
 															?>
 														</td>
-
-														<td><?php echo $row['available_days']; ?></td>
-														<td><?php echo $row['no_of_views_per_day']; ?></td>
 
 													</tr>
 											<?php }
