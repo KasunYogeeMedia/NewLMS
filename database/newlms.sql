@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2022 at 05:18 AM
+-- Generation Time: Oct 05, 2022 at 12:46 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -83,7 +83,8 @@ CREATE TABLE `lmsclasstute` (
 --
 
 INSERT INTO `lmsclasstute` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(1, 12, 3, 14, 'July', 'Free Class', 'Tute 01', '156254.pdf', '2022-07-18 15:04:57', 1);
+(1, 14, 4, 18, 'July', 'Free Class', 'Tute 01', '156254.pdf', '2022-07-05 08:21:18', 1),
+(12, 14, 4, 18, 'January', 'Paper Class', 'sample', '310368.jpg', '2022-10-05 08:27:52', 1);
 
 -- --------------------------------------------------------
 
@@ -501,7 +502,7 @@ CREATE TABLE `lmstealmsr` (
 --
 
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
-(14, 1663314456, 'Sample name', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-09-26 03:50:21', 0);
+(14, 1663314456, 'Sample name', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd88d8b5f68df34118949998858f4d1d0', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-05 08:16:07', 1);
 
 -- --------------------------------------------------------
 
@@ -525,8 +526,11 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (19, 1658135903, 3, 15),
 (57, 1658135781, 2, 1),
 (58, 1658135781, 3, 14),
-(77, 1663314456, 2, 4),
-(78, 1663314456, 3, 18);
+(79, 1663314456, 2, 5),
+(80, 1663314456, 2, 4),
+(81, 1663314456, 3, 20),
+(82, 1663314456, 3, 18),
+(83, 1663314456, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -689,6 +693,25 @@ INSERT INTO `lms_mcq_questions` (`id`, `exam_id`, `question`, `ans_1`, `ans_2`, 
 (5, 5, '<p>Test</p>\r\n', '1', '2', '3', '4', 3),
 (6, 6, '<p>Obage gama kumakda</p>\r\n', 'kelaniya', 'kiribathgoda', 'Gampaha', 'Minuwangoda', 3),
 (7, 7, '<p>1</p>\r\n', '1', '2', '3', '4', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lms_pdf`
+--
+
+CREATE TABLE `lms_pdf` (
+  `ctuid` int(11) NOT NULL DEFAULT 0,
+  `tid` int(11) NOT NULL,
+  `class` int(11) NOT NULL,
+  `subject` int(11) NOT NULL,
+  `month` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `ctype` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `title` text CHARACTER SET latin1 NOT NULL,
+  `tdocument` varchar(500) CHARACTER SET latin1 NOT NULL,
+  `add_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -990,7 +1013,7 @@ ALTER TABLE `lmsclass`
 -- AUTO_INCREMENT for table `lmsclasstute`
 --
 ALTER TABLE `lmsclasstute`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `lmsclass_schlmsle`
@@ -1104,7 +1127,7 @@ ALTER TABLE `lmstealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`
