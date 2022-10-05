@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2022 at 12:46 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 06, 2022 at 01:45 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -245,7 +245,7 @@ CREATE TABLE `lmslesson` (
 --
 
 INSERT INTO `lmslesson` (`lid`, `tid`, `type`, `class`, `subject`, `title`, `available_days`, `no_of_views_per_day`, `cover`, `video`, `add_date`, `status`) VALUES
-(734, 14, 'Free', '4', '18', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-09-27 04:02:23', 1);
+(734, 14, 'lesson_explanations', '4', '18', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-05 22:57:46', 1);
 
 -- --------------------------------------------------------
 
@@ -701,7 +701,7 @@ INSERT INTO `lms_mcq_questions` (`id`, `exam_id`, `question`, `ans_1`, `ans_2`, 
 --
 
 CREATE TABLE `lms_pdf` (
-  `ctuid` int(11) NOT NULL DEFAULT 0,
+  `ctuid` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `class` int(11) NOT NULL,
   `subject` int(11) NOT NULL,
@@ -712,6 +712,13 @@ CREATE TABLE `lms_pdf` (
   `add_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lms_pdf`
+--
+
+INSERT INTO `lms_pdf` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
+(2, 14, 4, 0, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-05 21:45:27', 1);
 
 -- --------------------------------------------------------
 
@@ -964,6 +971,12 @@ ALTER TABLE `lms_mcq_questions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `lms_pdf`
+--
+ALTER TABLE `lms_pdf`
+  ADD PRIMARY KEY (`ctuid`);
+
+--
 -- Indexes for table `lms_teacher_payment_history`
 --
 ALTER TABLE `lms_teacher_payment_history`
@@ -1164,6 +1177,12 @@ ALTER TABLE `lms_exam_report`
 --
 ALTER TABLE `lms_mcq_questions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `lms_pdf`
+--
+ALTER TABLE `lms_pdf`
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lms_teacher_payment_history`

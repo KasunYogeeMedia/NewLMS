@@ -21,7 +21,7 @@ if (isset($_GET['cttid']) && !empty($_GET['cttid'])) {
 	extract($edit_row);
 } else {
 
-	header("Location: class_tute.php");
+	header("Location: pdf.php");
 }
 
 if (isset($_POST['update'])) {
@@ -102,9 +102,9 @@ if (isset($_POST['update'])) {
 		var_dump($stmt);
 		if ($stmt->execute()) {
 
-			$successMSG = "Class Tute Successfully Updated ...";
+			$successMSG = "PDF Successfully Updated ...";
 
-			header("refresh:2;class_tute.php"); // redirects image view page after 5 seconds.
+			header("refresh:2;pdf.php"); // redirects image view page after 5 seconds.
 		} else {
 			$errMSG = "Sorry Data Could Not Updated !";
 		}
@@ -129,14 +129,14 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Edit Class Tute</h4>
+					<h4>Edit PDF</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-					<li class="breadcrumb-item active"><a href="class_tute.php">Class Tute</a></li>
-					<li class="breadcrumb-item active"><a href="edit_class_tute.php">Edit Class Tute</a></li>
+					<li class="breadcrumb-item active"><a href="pdf.php">PDF</a></li>
+					<li class="breadcrumb-item active"><a href="edit_pdf.php">Edit PDF</a></li>
 				</ol>
 			</div>
 		</div>
@@ -145,7 +145,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-xl-12 col-xxl-12 col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h5 class="card-title">Edit Class Tute</h5>
+						<h5 class="card-title">Edit PDF</h5>
 					</div>
 					<div class="card-body">
 						<?php
@@ -179,7 +179,7 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Teacher</label>
+										<label class="form-label">Student</label>
 										<select class="form-control" name="tid" required>
 											<option value="<?php
 
@@ -336,7 +336,7 @@ require_once 'sidebarmenu.php';
 										<label class="form-label">Upload Document</label>
 										<input type="file" class="form-control" name="user_image">
 										<hr>
-										<p style="font-weight:bold;color:red;">Note : "Only Upload - Pdf|Docx|Jpg|Png"</p>
+										<p style="font-weight:bold;color:red;">Note : "Only Upload - PDF|Docx|Jpg|Png"</p>
 									</div>
 								</div>
 
@@ -360,7 +360,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<input type="submit" name="update" class="btn btn-primary" value="Update">
-									<a class="btn btn-light" href="class_tute.php"><i class="fa fa-times"></i> Cancel</a>
+									<a class="btn btn-light" href="pdf.php"><i class="fa fa-times"></i> Cancel</a>
 								</div>
 							</div>
 						</form>

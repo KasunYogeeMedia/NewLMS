@@ -185,7 +185,7 @@
           <?php
           if ($lesson == 'True') {
 
-            echo '<a href="ebook.php" class="nav-link">
+            echo '<a href="pdf.php" class="nav-link">
 							<i class="nav-icon fa fa-file"></i>
 							<p>PDF</p>
 						</a>';

@@ -201,7 +201,7 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Teacher</label>
+										<label class="form-label">Student</label>
 										<select class="form-control" name="tid" required>
 											<option value="<?php
 
@@ -253,12 +253,12 @@ require_once 'sidebarmenu.php';
 										<label class="form-label">Type</label>
 										<select class="form-control" name="type" required>
 											<option><?php echo $type; ?></option>
-											<option>General</option>
-											<option>Lesson Explanations</option>
-											<option>Lesson Revision</option>
-											<option>Paper Discussions</option>
-											<option>Students Lesson Explanations</option>
-											<option>Students Practicals</option>
+											<option value="general">General</option>
+											<option value="lesson_explanations">Lesson Explanations</option>
+											<option value="lesson_revision">Lesson Revision</option>
+											<option value="paper_discussions">Paper Discussions</option>
+											<option value="student_lesson_explanations">Students Lesson Explanations</option>
+											<option value="student_practicals">Students Practicals</option>
 										</select>
 									</div>
 								</div>

@@ -80,9 +80,9 @@ if (isset($_POST['add_classtute'])) {
 
 		if ($stmt->execute()) {
 
-			$successMSG = "Class Tute Successfully Added.";
+			$successMSG = "PDF Successfully Added.";
 
-			header("refresh:2;class_tute.php"); // redirects image view page after 5 seconds.
+			header("refresh:2;pdf.php"); // redirects image view page after 5 seconds.
 
 		} else {
 
@@ -110,14 +110,14 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Add Class Tute</h4>
+					<h4>Add PDF</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-					<li class="breadcrumb-item"><a href="javascript:void(0);">Class Tute</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">Add Class Tute</a></li>
+					<li class="breadcrumb-item"><a href="javascript:void(0);">PDF</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">Add PDF</a></li>
 				</ol>
 			</div>
 		</div>
@@ -126,7 +126,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Add Class Tute</h4>
+						<h4 class="card-title">Add PDF</h4>
 					</div>
 					<div class="card-body">
 						<?php
@@ -160,7 +160,7 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Teacher</label>
+										<label class="form-label">Student</label>
 										<select class="form-control" name="tid" required>
 											<?php
 
@@ -264,7 +264,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-5 col-md-5 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Title</label>
-										<input type="text" class="form-control" name="title" placeholder="Enter Class Tute Title" required>
+										<input type="text" class="form-control" name="title" placeholder="Enter PDF Title" required>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
@@ -272,7 +272,7 @@ require_once 'sidebarmenu.php';
 										<label class="form-label">Upload Document</label>
 										<input type="file" class="form-control" name="user_image">
 										<hr>
-										<p style="font-weight:bold;color:red;">Note : "Only Upload - Pdf|Docx|Jpg|Png"</p>
+										<p style="font-weight:bold;color:red;">Note : "Only Upload - PDF|Docx|Jpg|Png"</p>
 									</div>
 								</div>
 
@@ -292,7 +292,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<input type="submit" name="add_classtute" class="btn btn-primary" value="Save changes">
-									<a class="btn btn-light" href="class_tute.php"><i class="fa fa-times"></i> Cancel</a>
+									<a class="btn btn-light" href="pdf.php"><i class="fa fa-times"></i> Cancel</a>
 								</div>
 							</div>
 						</form>

@@ -26,14 +26,14 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>All Class Tute</h4>
+					<h4>All PDF</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="home.php">Home</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">Class Tute</a></li>
-					<li class="breadcrumb-item active"><a href="javascript:void(0);">All Class Tute</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">PDF</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">All PDF</a></li>
 				</ol>
 			</div>
 		</div>
@@ -50,8 +50,8 @@ require_once 'sidebarmenu.php';
 					<div id="list-view" class="tab-pane fade active show col-lg-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">All Class Tute</h4>
-								<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">+ Add Class Tute</a>
+								<h4 class="card-title">All PDF</h4>
+								<a href="add_pdf.php" class="btn btn-square btn-secondary float-right">+ Add PDF</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -61,7 +61,7 @@ require_once 'sidebarmenu.php';
 												<th>ID</th>
 												<th>Option</th>
 												<th>Action</th>
-												<th>Teacher</th>
+												<th>Student</th>
 												<th>Grade</th>
 												<th>Subject</th>
 												<th>Month</th>
@@ -102,10 +102,10 @@ require_once 'sidebarmenu.php';
 															?>
 														</td>
 														<td>
-															<a class="btn btn-primary" href="edit_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+															<a class="btn btn-primary" href="edit_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-edit"></i>
 															</a>
-															<a class="btn btn-danger" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+															<a class="btn btn-danger" href="delete_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-times-circle"></i>
 															</a>
 														</td>
@@ -207,7 +207,7 @@ require_once 'sidebarmenu.php';
 																	?></strong>
 															</li>
 															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Teacher : </span><strong>
+																<span class="mb-0">Student : </span><strong>
 																	<?php
 
 																	$id = $row['tid'];
@@ -244,10 +244,10 @@ require_once 'sidebarmenu.php';
 																<span class="mb-0">Added Date :</span><strong><?php echo $row['add_date']; ?></strong>
 															</li>
 														</ul>
-														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-edit"></i>
 														</a>
-														<a class="btn btn-danger btn-rounded mt-3 px-4" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+														<a class="btn btn-danger btn-rounded mt-3 px-4" href="delete_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-times-circle"></i>
 														</a>
 													</div>
