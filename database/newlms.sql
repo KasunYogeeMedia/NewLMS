@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2022 at 01:57 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 06, 2022 at 11:12 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -92,7 +92,7 @@ INSERT INTO `lmsclasstute` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`
 --
 
 CREATE TABLE `lmsclasstute_std` (
-  `ctuid` int(11) NOT NULL DEFAULT 0,
+  `ctuid` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `class` int(11) NOT NULL,
   `subject` int(11) NOT NULL,
@@ -109,7 +109,8 @@ CREATE TABLE `lmsclasstute_std` (
 --
 
 INSERT INTO `lmsclasstute_std` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(14, 14, 0, 0, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 11:55:27', 1);
+(14, 14, 4, 18, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 16:40:28', 1),
+(15, 16, 5, 20, 'January', 'School Papers', 'sample sa', '769530.jpg', '2022-10-06 21:01:07', 1);
 
 -- --------------------------------------------------------
 
@@ -535,7 +536,8 @@ CREATE TABLE `lmstealmsr` (
 --
 
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
-(14, 1663314456, 'Sample name', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-06 11:00:08', 1);
+(14, 1663314456, 'Student 1', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-06 17:29:28', 1),
+(16, 1665077021, 'Student 2', 'Sample', '1122334455', '1122334455', 'School 2', 'sample@gmail.com', 'd54d1702ad0f8326224b817c796763c9', '', 'Gampaha', '2022-10-02', 'Female', '2022-10-05', '2022-10-06 17:26:37', 1);
 
 -- --------------------------------------------------------
 
@@ -559,11 +561,16 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (19, 1658135903, 3, 15),
 (57, 1658135781, 2, 1),
 (58, 1658135781, 3, 14),
-(84, 1663314456, 2, 5),
-(85, 1663314456, 2, 4),
-(86, 1663314456, 3, 20),
-(87, 1663314456, 3, 18),
-(88, 1663314456, 3, 19);
+(94, 1665077021, 2, 5),
+(95, 1665077021, 2, 4),
+(96, 1665077021, 3, 20),
+(97, 1665077021, 3, 18),
+(98, 1665077021, 3, 19),
+(99, 1663314456, 2, 5),
+(100, 1663314456, 2, 4),
+(101, 1663314456, 3, 20),
+(102, 1663314456, 3, 18),
+(103, 1663314456, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -852,6 +859,12 @@ ALTER TABLE `lmsclasstute`
   ADD PRIMARY KEY (`ctuid`);
 
 --
+-- Indexes for table `lmsclasstute_std`
+--
+ALTER TABLE `lmsclasstute_std`
+  ADD PRIMARY KEY (`ctuid`);
+
+--
 -- Indexes for table `lmsclass_schlmsle`
 --
 ALTER TABLE `lmsclass_schlmsle`
@@ -1062,6 +1075,12 @@ ALTER TABLE `lmsclasstute`
   MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `lmsclasstute_std`
+--
+ALTER TABLE `lmsclasstute_std`
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `lmsclass_schlmsle`
 --
 ALTER TABLE `lmsclass_schlmsle`
@@ -1167,13 +1186,13 @@ ALTER TABLE `lmssubject_tealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr`
 --
 ALTER TABLE `lmstealmsr`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`

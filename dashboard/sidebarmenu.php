@@ -129,7 +129,7 @@
           if ($teachers == 'True') {
 
             echo '<a href="teachers.php" class="nav-link">
-							<i class="nav-icon fa fa-black-tie"></i>
+							<i class="nav-icon fa fa-graduation-cap"></i>
 							<p>Students</p>
 						</a>';
           } else {
@@ -171,7 +171,7 @@
           if ($lesson == 'True') {
 
             echo '<a href="class_tute.php" class="nav-link">
-							<i class="nav-icon fa fa-slideshare"></i>
+							<i class="nav-icon fa fa-list-alt"></i>
 							<p>O/L Result</p>
 						</a>';
           } else {
@@ -185,8 +185,22 @@
           if ($lesson == 'True') {
 
             echo '<a href="ebook.php" class="nav-link">
-							<i class="nav-icon fa fa-file"></i>
+							<i class="nav-icon fa fa-trophy"></i>
 							<p>Student Achevements</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li>
+        <li class="nav-item">
+          <?php
+          if ($lesson == 'True') {
+
+            echo '<a href="approve_pdf.php" class="nav-link">
+							<i class="nav-icon fa fa-check"></i>
+							<p>PDF Approvel</p>
 						</a>';
           } else {
 

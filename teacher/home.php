@@ -78,7 +78,7 @@ require_once 'sidebarmenu.php';
 				<div class="row">
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-dark">
-							<a href="add_class_tute.php">
+							<a href="notes.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">
@@ -87,8 +87,8 @@ require_once 'sidebarmenu.php';
 										<div class="media-body text-white">
 											<p class="mb-1">Upload your notes</p>
 											<h3 class="text-white"><?php
-																	$my_class = mysqli_query($conn, "SELECT * FROM lmsclass_schlmsle WHERE tealmsr='$_SESSION[tid]'");
-																	echo number_format(mysqli_num_rows($my_class), 0);
+																	$my_notes = mysqli_query($conn, "SELECT * FROM lmsclasstute_std WHERE tid='$_SESSION[tid]' and ctype = 'Notes'");
+																	echo number_format(mysqli_num_rows($my_notes), 0);
 																	?> </h3>
 										</div>
 									</div>
@@ -96,29 +96,10 @@ require_once 'sidebarmenu.php';
 							</a>
 						</div>
 					</div>
-					<!-- <div class="col-xl-4 col-xxl-4 col-sm-6">
-						<div class="widget-stat card bg-success">
-							<a href="">
-								<div class="card-body">
-									<div class="media">
-										<span class="mr-3">
-											<i class="fa fa-slideshare"></i>
-										</span>
-										<div class="media-body text-white">
-											<p class="mb-1">Total Classes</p>
-											<h3 class="text-white"><?php
-																	$my_class = mysqli_query($conn, "SELECT * FROM lmsclass_schlmsle WHERE tealmsr='$_SESSION[tid]'");
-																	echo number_format(mysqli_num_rows($my_class), 0);
-																	?> </h3>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div> -->
+					
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-primary">
-							<a href="add_class_tute.php">
+							<a href="school_papers.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">
@@ -127,8 +108,8 @@ require_once 'sidebarmenu.php';
 										<div class="media-body text-white">
 											<p class="mb-1">Upload your School Papers</p>
 											<h3 class="text-white"><?php
-																	$my_tute = mysqli_query($conn, "SELECT * FROM lmsclasstute WHERE tid='$_SESSION[tid]'");
-																	echo number_format(mysqli_num_rows($my_tute), 0);
+																	$my_spapers = mysqli_query($conn, "SELECT * FROM lmsclasstute_std WHERE tid='$_SESSION[tid]' and ctype = 'School Papers'");
+																	echo number_format(mysqli_num_rows($my_spapers), 0);
 																	?></h3>
 										</div>
 									</div>
@@ -138,7 +119,7 @@ require_once 'sidebarmenu.php';
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-primary">
-							<a href="add_class_tute.php">
+							<a href="class_papers.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">
@@ -147,8 +128,8 @@ require_once 'sidebarmenu.php';
 										<div class="media-body text-white">
 											<p class="mb-1">Upload your Class Papers</p>
 											<h3 class="text-white"><?php
-																	$my_tute = mysqli_query($conn, "SELECT * FROM lmsclasstute WHERE tid='$_SESSION[tid]'");
-																	echo number_format(mysqli_num_rows($my_tute), 0);
+																	$my_cpapers = mysqli_query($conn, "SELECT * FROM lmsclasstute_std WHERE tid='$_SESSION[tid]' and ctype = 'Class Papers'");
+																	echo number_format(mysqli_num_rows($my_cpapers), 0);
 																	?></h3>
 										</div>
 									</div>

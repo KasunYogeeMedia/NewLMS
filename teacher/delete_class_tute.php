@@ -14,7 +14,7 @@
 		$stmt_delete->bindParam(':cttid',$_GET['cttid']);
 		$stmt_delete->execute();
 
-		echo"<script type='text/javascript'>window.location.href = 'class_tute.php';</script>";
+		echo"<script type='text/javascript'>window.location.href = 'home.php';</script>";
 		
 	}
 

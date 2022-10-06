@@ -44,12 +44,12 @@
 						</p>
 					</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="class_tute.php" class="nav-link">
 						<i class="nav-icon fa fa-book"></i>
 						<span class="nav-text">Class Tute</span>
 					</a>
-				</li>
+				</li> -->
 				
 			</ul>
 		</nav>

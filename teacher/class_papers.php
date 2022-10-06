@@ -98,7 +98,7 @@ require_once 'sidebarmenu.php';
 										<tbody>
 											<?php
 
-											$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std where tid="' . $_SESSION['tid'] . '" ORDER BY ctuid');
+											$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std where tid="' . $_SESSION['tid'] . '" and ctype = "Class Papers" ORDER BY ctuid');
 
 											$stmt->execute();
 

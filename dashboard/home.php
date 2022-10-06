@@ -154,7 +154,7 @@ require_once 'coutquery.php';
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<a href="">
+							<a href="approve_pdf.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">

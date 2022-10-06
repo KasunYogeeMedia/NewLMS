@@ -125,12 +125,10 @@ require_once 'sidebarmenu.php';
 															?>
 														</td>
 														<td>
-															<a class="btn btn-primary" href="edit_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+															<a class="btn btn-primary" href="edit_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-edit"></i>
 															</a>
-															<a class="btn btn-danger" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
-																<i class="fa fa-times-circle"></i>
-															</a>
+															
 														</td>
 														<td><?php echo $row['title']; ?></td>
 														<!-- <td>
@@ -263,12 +261,10 @@ require_once 'sidebarmenu.php';
 																<span class="mb-0">Added Date :</span><strong><?php echo $row['add_date']; ?></strong>
 															</li>
 														</ul>
-														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-edit"></i>
 														</a>
-														<a class="btn btn-danger btn-rounded mt-3 px-4" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
-															<i class="fa fa-times-circle"></i>
-														</a>
+														
 													</div>
 												</div>
 											</div>
