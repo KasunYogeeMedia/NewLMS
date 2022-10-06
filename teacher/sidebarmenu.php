@@ -45,72 +45,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="home.php" class="nav-link">
-						<i class="nav-icon fa fa-home"></i>
-						<span class="nav-text">Dashboard</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="class_schedule.php" class="nav-link">
-						<i class="nav-icon fa fa-slideshare"></i>
-						<span class="nav-text">Class Schedule</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="class_tute.php" class="nav-link">
-						<i class="nav-icon fa fa-slideshare"></i>
-						<span class="nav-text">Class Tute</span>
-					</a>
-				</li>
-				<li class="nav-item">
 					<a href="class_tute.php" class="nav-link">
 						<i class="nav-icon fa fa-book"></i>
 						<span class="nav-text">Class Tute</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="video_lessons.php" class="nav-link">
-						<i class="nav-icon fa fa-play-circle-o"></i>
-						<span class="nav-text">Video Lessons</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="attendence.php" class="nav-link">
-						<i class="nav-icon fa fa-file-text"></i>
-						<span class="nav-text">Students Attendence</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="video_lessons.php" class="nav-link">
-						<i class="nav-icon fa fa-file-text"></i>
-						<span class="nav-text">Video Lessons.php</span>
-					</a>
-				</li>
 				
-				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="nav-icon fas fa-chart-pie"></i>
-						<p>
-							MCQ Exams
-							<i class="right fas fa-angle-left"></i>
-						</p>
-					</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a href="exam.php" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Exam Details</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="exam_results.php" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Exam Results</p>
-							</a>
-						</li>
-						
-					</ul>
-				</li>
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

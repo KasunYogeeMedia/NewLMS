@@ -15,26 +15,18 @@ $msg5 = '';
 if (isset($_POST['add_classtute'])) {
 
 	$tid = $_POST['tid'];
-	$class = $_POST['class'];
-	$subject = $_POST['subject'];
+	$title = $_POST['title'];
 	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
-	$title = $_POST['title'];
 	$status = $_POST['status'];
 
 	date_default_timezone_set("Asia/Colombo");
-
-	$payment_month = mysqli_real_escape_string($conn, $_POST['payment_month'] . date("-d H:i:s"));
 
 	$imgFile = $_FILES['user_image']['name'];
 	$tmp_dir = $_FILES['user_image']['tmp_name'];
 	$imgSize = $_FILES['user_image']['size'];
 
-	if (empty($class)) {
-		$errMSG = "Please Select Class.";
-	} else if (empty($subject)) {
-		$errMSG = "Please Select Subject.";
-	} else if (empty($month)) {
+	 if (empty($month)) {
 		$errMSG = "Please Select Month.";
 	} else if (empty($ctype)) {
 		$errMSG = "Please Select Type.";
@@ -67,15 +59,12 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute(tid,class,subject,month,ctype,title,tdocument,add_date,status) VALUES(:tid,:class,:subject,:month,:ctype,:title,:upic,:payment_month,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute(tid,month,ctype,title,tdocument,status) VALUES(:tid,:month,:ctype,:title,:upic,:status)');
 		$stmt->bindParam(':tid', $tid);
-		$stmt->bindParam(':class', $class);
-		$stmt->bindParam(':subject', $subject);
 		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
-		$stmt->bindParam(':payment_month', $payment_month);
 		$stmt->bindParam(':status', $status);
 
 		if ($stmt->execute()) {
@@ -110,7 +99,7 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Add Class Tute</h4>
+					<h4>Add O/L Result</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -126,7 +115,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Add Class Tute</h4>
+						<h4 class="card-title">Add O/L Result</h4>
 					</div>
 					<div class="card-body">
 						<?php
@@ -158,9 +147,9 @@ require_once 'sidebarmenu.php';
 						?>
 						<form method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Teacher</label>
+										<label class="form-label">Student Name</label>
 										<select class="form-control" name="tid" required>
 											<?php
 
@@ -183,91 +172,30 @@ require_once 'sidebarmenu.php';
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Grade</label>
-										<select class="form-control" name="class" onChange="JavaScript:send_level(this.value);" required>
-											<option value="" hidden="yes">Select Grade</option>
-											<?php
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmsclass ORDER BY cid');
-											$stmt->execute();
-											if ($stmt->rowCount() > 0) {
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-													extract($row);
-											?>
-													<option value="<?php echo $row['cid']; ?>"><?php echo $row['name']; ?></option>
-											<?php
-												}
-											}
-											?>
-										</select>
-									</div>
-								</div>
-								<script>
-									function send_level(level_id) {
-										var xhttp = new XMLHttpRequest();
-										xhttp.onreadystatechange = function() {
-											if (this.readyState == 4 && this.status == 200) {
-												document.getElementById("subject_dis").innerHTML = this.responseText;
-											}
-										};
-										xhttp.open("GET", "ajax_subject_filter.php?level_id=" + level_id, true);
-										xhttp.send();
-									}
-								</script>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Class Subject</label>
-										<span id="subject_dis">
-											<select name="subject" class="form-control" required>
-												<option hidden="yes"><?php if (isset($_GET['edit'])) {
-																			echo $edit_resalt['subject'];
-																		} else {
-																			echo "Subject Not Found";
-																		} ?></option>
-											</select>
-										</span>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Month</label>
-										<select class="form-control" name="month" required>
-											<option style="display:none;">Select Month</option>
-											<option>January</option>
-											<option>February</option>
-											<option>March</option>
-											<option>April</option>
-											<option>May</option>
-											<option>June</option>
-											<option>July</option>
-											<option>August</option>
-											<option>September</option>
-											<option>October</option>
-											<option>November</option>
-											<option>December</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Class Type</label>
-										<select class="form-control" name="ctype" required>
-											<option style="display:none;">Select Class Type</option>
-											<option>Online Class</option>
-											<option>Paper Class</option>
-											<option>Free Class</option>
-										</select>
-									</div>
-								</div>
 								<div class="col-lg-5 col-md-5 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Title</label>
-										<input type="text" class="form-control" name="title" placeholder="Enter Class Tute Title" required>
+										<label class="form-label">Batch</label>
+										<input type="text" class="form-control" name="title" placeholder="Enter Batch" required>
 									</div>
 								</div>
+								<div class="col-lg-3 col-md-3 col-sm-12 mb-2">
+									<label class="form-label">Index Number</label>
+									<input name="ctype" type="text" id="ctype" class="form-control" placeholder="Enter Index Number">
+								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
+									<div class="form-group">
+										<label class="form-label">Science Result</label>
+										<select class="form-control" name="month" required>
+											<option style="display:none;">Select Result</option>
+											<option>A</option>
+											<option>B</option>
+											<option>C</option>
+											<option>S</option>
+											<option>F</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-7 col-md-7 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Upload Document</label>
 										<input type="file" class="form-control" name="user_image">
@@ -275,12 +203,6 @@ require_once 'sidebarmenu.php';
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - Pdf|Docx|Jpg|Png"</p>
 									</div>
 								</div>
-
-								<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-									<label class="form-label">Upload Month</label>
-									<input name="payment_month" type="month" id="payment_month" class="form-control" value="<?php echo date("Y-m") ?>">
-								</div>
-
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Status</label>

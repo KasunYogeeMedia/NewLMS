@@ -32,7 +32,7 @@ if (isset($_GET['cttid']) && !empty($_GET['cttid'])) {
 
 	$id = $_GET['cttid'];
 
-	$stmt_edit = $DB_con->prepare('SELECT * FROM lmsclasstute WHERE ctuid =:cttid');
+	$stmt_edit = $DB_con->prepare('SELECT * FROM lmsclasstute_std WHERE ctuid =:cttid');
 
 	$stmt_edit->execute(array(':cttid' => $id));
 
@@ -96,7 +96,7 @@ if (isset($_POST['update'])) {
 
 	if (!isset($errMSG)) {
 
-		$stmt = $DB_con->prepare('UPDATE lmsclasstute
+		$stmt = $DB_con->prepare('UPDATE lmsclasstute_std
 									     SET tid=:tid,									 											 
 											 class=:class,										 											 
 											 subject=:subject,											 											 

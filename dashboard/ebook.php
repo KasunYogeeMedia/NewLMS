@@ -26,7 +26,7 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>All Ebook</h4>
+					<h4>Student Achevements</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -50,7 +50,7 @@ require_once 'sidebarmenu.php';
 					<div id="list-view" class="tab-pane fade active show col-lg-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">All Ebook</h4>
+								<h4 class="card-title">Student Achevements</h4>
 								<a href="add_ebook.php" class="btn btn-square btn-secondary float-right">+ Add Ebook</a>
 							</div>
 							<div class="card-body">
@@ -61,14 +61,15 @@ require_once 'sidebarmenu.php';
 												<th>ID</th>
 												<th>Option</th>
 												<th>Action</th>
-												<th>Teacher</th>
-												<th>Grade</th>
-												<th>Subject</th>
-												<th>Month</th>
-												<th>Class Type</th>
 												<th>Title</th>
+												<th>Medium</th>
+												<th>Grade</th>
+												<th>Student Name</th>
+												<!-- <th>Month</th> -->
+												<!-- <th>Class Type</th> -->
+
 												<th>Document</th>
-												<th>Upload Month</th>
+												<!-- <th>Upload Month</th> -->
 												<th>Date</th>
 											</tr>
 										</thead>
@@ -105,25 +106,12 @@ require_once 'sidebarmenu.php';
 															<a class="btn btn-primary" href="edit_ebook.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-edit"></i>
 															</a>
-															<a class="btn btn-danger" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+															<a class="btn btn-danger" href="delete_ebook.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-times-circle"></i>
 															</a>
 														</td>
-														<td>
-															<?php
-
-															$id = $row['tid'];
-
-															$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
-
-															$query->execute();
-
-															$result = $query->fetch();
-
-															echo $result['fullname'];
-
-															?>
-														</td>
+														
+														<td><?php echo $row['title']; ?></td>
 														<td>
 															<?php
 															$id = $row['class'];
@@ -141,11 +129,26 @@ require_once 'sidebarmenu.php';
 															echo $result['name'];
 															?>
 														</td>
-														<td><?php echo $row['month']; ?></td>
-														<td><?php echo $row['ctype']; ?></td>
-														<td><?php echo $row['title']; ?></td>
+														<td>
+															<?php
+
+															$id = $row['tid'];
+
+															$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
+
+															$query->execute();
+
+															$result = $query->fetch();
+
+															echo $result['fullname'];
+
+															?>
+														</td>
+														<!-- <td><?php echo $row['month']; ?></td> -->
+														<!-- <td><?php echo $row['ctype']; ?></td> -->
+
 														<td><a href="images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
-														<td><span class="badge badge-primary" style="font-size:14px;"> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></td>
+														<!-- <td><span class="badge badge-primary" style="font-size:14px;"> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></td> -->
 														<td><?php echo $row['add_date']; ?></td>
 													</tr>
 											<?php }
@@ -187,7 +190,7 @@ require_once 'sidebarmenu.php';
 																<span class="mb-0">Type :</span><strong><?php echo $row['ctype']; ?></strong>
 															</li>
 															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Grade :</span><strong>
+																<span class="mb-0">Medium :</span><strong>
 																	<?php
 																	$id = $row['class'];
 																	$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
@@ -197,7 +200,7 @@ require_once 'sidebarmenu.php';
 																	?></strong>
 															</li>
 															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Subject :</span><strong>
+																<span class="mb-0">Grade :</span><strong>
 																	<?php
 																	$id = $row['subject'];
 																	$query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $id);
@@ -207,7 +210,7 @@ require_once 'sidebarmenu.php';
 																	?></strong>
 															</li>
 															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Teacher : </span><strong>
+																<span class="mb-0">Student Name : </span><strong>
 																	<?php
 
 																	$id = $row['tid'];
@@ -236,18 +239,15 @@ require_once 'sidebarmenu.php';
 
 																	?></strong>
 															</li>
-															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Upload Month :</span><strong><span class="badge badge-success" style="font-size:14px;"> <i class="fa fa-check-circle"></i> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></strong>
-															</li>
 
 															<li class="list-group-item px-0 d-flex justify-content-between">
 																<span class="mb-0">Added Date :</span><strong><?php echo $row['add_date']; ?></strong>
 															</li>
 														</ul>
-														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_ebook.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-edit"></i>
 														</a>
-														<a class="btn btn-danger btn-rounded mt-3 px-4" href="delete_class_tute.php?cttid=<?php echo $row["ctuid"]; ?>">
+														<a class="btn btn-danger btn-rounded mt-3 px-4" href="delete_ebook.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-times-circle"></i>
 														</a>
 													</div>

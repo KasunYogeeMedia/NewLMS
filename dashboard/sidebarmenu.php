@@ -138,35 +138,6 @@
           }
           ?>
         </li>
-        <!-- <li class="nav-item">
-          <?php
-          if ($class_schedule == 'True') {
-
-            echo '<a href="class_schedule.php" class="nav-link">
-							<i class="nav-icon fa fa-slideshare"></i>
-							<p>Class Schedule</p>
-					      </a>';
-          } else {
-
-            echo '';
-          }
-          ?>
-        </li> -->
-        <li class="nav-item">
-          <?php
-          if ($class_schedule == 'True') {
-
-            echo '<a href="class_tute.php" class="nav-link">
-							<i class="nav-icon fa fa-book"></i>
-							<p>Class Tute</p>
-						  </a>';
-          } else {
-
-            echo '';
-          }
-          ?>
-        </li>
-
         <li class="nav-item">
           <?php
           if ($lesson == 'True') {
@@ -195,21 +166,35 @@
           }
           ?>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <?php
           if ($lesson == 'True') {
 
-            echo '<a href="attendence.php" class="nav-link">
-							<i class="nav-icon fa fa-play-circle-o"></i>
-							<p>Attendence</p>
+            echo '<a href="class_tute.php" class="nav-link">
+							<i class="nav-icon fa fa-slideshare"></i>
+							<p>O/L Result</p>
 						</a>';
           } else {
 
             echo '';
           }
           ?>
-        </li> -->
-        
+        </li>
+        <li class="nav-item">
+          <?php
+          if ($lesson == 'True') {
+
+            echo '<a href="ebook.php" class="nav-link">
+							<i class="nav-icon fa fa-file"></i>
+							<p>Student Achevements</p>
+						</a>';
+          } else {
+
+            echo '';
+          }
+          ?>
+        </li>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

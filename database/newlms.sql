@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2022 at 01:45 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Oct 06, 2022 at 01:57 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,7 +56,7 @@ CREATE TABLE `lmsclass` (
 --
 
 INSERT INTO `lmsclass` (`cid`, `name`, `add_date`, `status`) VALUES
-(4, 'Sample Grade', '2022-09-22 04:19:37', 'Publish'),
+(4, 'Sample Medium', '2022-10-06 10:29:09', 'Publish'),
 (5, 'All', '2022-09-27 05:38:59', 'Publish');
 
 -- --------------------------------------------------------
@@ -83,8 +83,33 @@ CREATE TABLE `lmsclasstute` (
 --
 
 INSERT INTO `lmsclasstute` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(1, 14, 4, 18, 'July', 'Free Class', 'Tute 01', '156254.pdf', '2022-07-05 08:21:18', 1),
-(12, 14, 4, 18, 'January', 'Paper Class', 'sample', '310368.jpg', '2022-10-05 08:27:52', 1);
+(14, 14, 0, 0, 'A', '1234', 'Sample', '809780.jpg', '2022-10-06 07:40:22', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lmsclasstute_std`
+--
+
+CREATE TABLE `lmsclasstute_std` (
+  `ctuid` int(11) NOT NULL DEFAULT 0,
+  `tid` int(11) NOT NULL,
+  `class` int(11) NOT NULL,
+  `subject` int(11) NOT NULL,
+  `month` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `ctype` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `title` text CHARACTER SET latin1 NOT NULL,
+  `tdocument` varchar(500) CHARACTER SET latin1 NOT NULL,
+  `add_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lmsclasstute_std`
+--
+
+INSERT INTO `lmsclasstute_std` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
+(14, 14, 0, 0, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 11:55:27', 1);
 
 -- --------------------------------------------------------
 
@@ -185,6 +210,14 @@ CREATE TABLE `lmsebook` (
   `add_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lmsebook`
+--
+
+INSERT INTO `lmsebook` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
+(1, 14, 4, 18, 'January', 'Ebook', 'sample ', '895852.jpg', '2022-10-06 10:25:38', 1),
+(3, 14, 4, 18, '', 'Select Class Type', 'Sample', '320450.jpg', '2022-10-06 10:13:46', 1);
 
 -- --------------------------------------------------------
 
@@ -456,8 +489,8 @@ CREATE TABLE `lmssubject` (
 --
 
 INSERT INTO `lmssubject` (`sid`, `class_id`, `name`, `add_date`, `status`) VALUES
-(18, 4, 'Sample Subject', '2022-09-22 04:26:37', 'Publish'),
-(19, 4, 'Sample subject 2', '2022-09-22 04:58:24', 'Publish'),
+(18, 4, 'Sample Grade', '2022-10-06 10:29:25', 'Publish'),
+(19, 4, 'Sample Grade 2', '2022-10-06 10:29:36', 'Publish'),
 (20, 5, 'All', '2022-09-27 05:39:16', 'Publish');
 
 -- --------------------------------------------------------
@@ -502,7 +535,7 @@ CREATE TABLE `lmstealmsr` (
 --
 
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
-(14, 1663314456, 'Sample name', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd88d8b5f68df34118949998858f4d1d0', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-05 08:16:07', 1);
+(14, 1663314456, 'Sample name', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-06 11:00:08', 1);
 
 -- --------------------------------------------------------
 
@@ -526,11 +559,11 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (19, 1658135903, 3, 15),
 (57, 1658135781, 2, 1),
 (58, 1658135781, 3, 14),
-(79, 1663314456, 2, 5),
-(80, 1663314456, 2, 4),
-(81, 1663314456, 3, 20),
-(82, 1663314456, 3, 18),
-(83, 1663314456, 3, 19);
+(84, 1663314456, 2, 5),
+(85, 1663314456, 2, 4),
+(86, 1663314456, 3, 20),
+(87, 1663314456, 3, 18),
+(88, 1663314456, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -718,7 +751,7 @@ CREATE TABLE `lms_pdf` (
 --
 
 INSERT INTO `lms_pdf` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(2, 14, 4, 0, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-05 21:45:27', 1);
+(2, 14, 4, 18, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-06 03:27:37', 1);
 
 -- --------------------------------------------------------
 
@@ -1026,7 +1059,7 @@ ALTER TABLE `lmsclass`
 -- AUTO_INCREMENT for table `lmsclasstute`
 --
 ALTER TABLE `lmsclasstute`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `lmsclass_schlmsle`
@@ -1050,7 +1083,7 @@ ALTER TABLE `lmsdb`
 -- AUTO_INCREMENT for table `lmsebook`
 --
 ALTER TABLE `lmsebook`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lmsgallery`
@@ -1140,7 +1173,7 @@ ALTER TABLE `lmstealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`

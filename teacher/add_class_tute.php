@@ -90,7 +90,7 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute(tid,class,subject,month,ctype,title,tdocument,add_date,status) VALUES(:tid,:class,:subject,:month,:ctype,:title,:upic,:payment_month,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute_std(tid,class,subject,month,ctype,title,tdocument,add_date,status) VALUES(:tid,:class,:subject,:month,:ctype,:title,:upic,:payment_month,:status)');
 		$stmt->bindParam(':tid', $tid);
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);

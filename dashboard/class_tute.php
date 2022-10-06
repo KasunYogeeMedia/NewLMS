@@ -26,7 +26,7 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>All Class Tute</h4>
+					<h4>O/L Result</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -50,7 +50,7 @@ require_once 'sidebarmenu.php';
 					<div id="list-view" class="tab-pane fade active show col-lg-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">All Class Tute</h4>
+								<h4 class="card-title">O/L Result</h4>
 								<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">+ Add Class Tute</a>
 							</div>
 							<div class="card-body">
@@ -61,9 +61,8 @@ require_once 'sidebarmenu.php';
 												<th>ID</th>
 												<th>Option</th>
 												<th>Action</th>
-												<th>Teacher</th>
-												<th>Grade</th>
-												<th>Subject</th>
+												<th>Student Name</th>
+												
 												<th>Month</th>
 												<th>Class Type</th>
 												<th>Title</th>
@@ -124,23 +123,7 @@ require_once 'sidebarmenu.php';
 
 															?>
 														</td>
-														<td>
-															<?php
-															$id = $row['class'];
-															$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
-															$query->execute();
-															$result = $query->fetch();
-															echo $result['name'];
-															?></td>
-														<td>
-															<?php
-															$id = $row['subject'];
-															$query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $id);
-															$query->execute();
-															$result = $query->fetch();
-															echo $result['name'];
-															?>
-														</td>
+														
 														<td><?php echo $row['month']; ?></td>
 														<td><?php echo $row['ctype']; ?></td>
 														<td><?php echo $row['title']; ?></td>
@@ -207,7 +190,7 @@ require_once 'sidebarmenu.php';
 																	?></strong>
 															</li>
 															<li class="list-group-item px-0 d-flex justify-content-between">
-																<span class="mb-0">Teacher : </span><strong>
+																<span class="mb-0">Student Name : </span><strong>
 																	<?php
 
 																	$id = $row['tid'];

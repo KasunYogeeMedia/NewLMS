@@ -17,25 +17,20 @@ if (isset($_POST['add_classtute'])) {
 	$tid = $_POST['tid'];
 	$class = $_POST['class'];
 	$subject = $_POST['subject'];
-	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
 	$title = $_POST['title'];
 	$status = $_POST['status'];
 
 	date_default_timezone_set("Asia/Colombo");
 
-	$payment_month = mysqli_real_escape_string($conn, $_POST['payment_month'] . date("-d H:i:s"));
-
 	$imgFile = $_FILES['user_image']['name'];
 	$tmp_dir = $_FILES['user_image']['tmp_name'];
 	$imgSize = $_FILES['user_image']['size'];
 
 	if (empty($class)) {
-		$errMSG = "Please Select Class.";
+		$errMSG = "Please Select Medium.";
 	} else if (empty($subject)) {
-		$errMSG = "Please Select Subject.";
-	} else if (empty($month)) {
-		$errMSG = "Please Select Month.";
+		$errMSG = "Please Select Grade.";
 	} else if (empty($ctype)) {
 		$errMSG = "Please Select Type.";
 	} else if (empty($title)) {
@@ -67,15 +62,13 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmsebook(tid,class,subject,month,ctype,title,tdocument,add_date,status) VALUES(:tid,:class,:subject,:month,:ctype,:title,:upic,:payment_month,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmsebook(tid,class,subject,ctype,title,tdocument,status) VALUES(:tid,:class,:subject,:ctype,:title,:upic,:status)');
 		$stmt->bindParam(':tid', $tid);
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);
-		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
-		$stmt->bindParam(':payment_month', $payment_month);
 		$stmt->bindParam(':status', $status);
 
 		if ($stmt->execute()) {
@@ -110,7 +103,7 @@ require_once 'sidebarmenu.php';
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
 				<div class="welcome-text">
-					<h4>Add Ebook</h4>
+					<h4>Add Student Achevements</h4>
 				</div>
 			</div>
 			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -126,7 +119,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Add Ebook</h4>
+						<h4 class="card-title">Add Student Achevements</h4>
 					</div>
 					<div class="card-body">
 						<?php
@@ -158,36 +151,18 @@ require_once 'sidebarmenu.php';
 						?>
 						<form method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-6 col-md-6 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Teacher</label>
-										<select class="form-control" name="tid" required>
-											<?php
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
-
-											$stmt->execute();
-
-											if ($stmt->rowCount() > 0) {
-
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-													extract($row);
-
-											?>
-													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php
-												}
-											}
-											?>
-										</select>
+										<label class="form-label">Topic</label>
+										<input type="text" class="form-control" name="title" placeholder="Enter Class Tute Title" required>
 									</div>
 								</div>
+
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Grade</label>
+										<label class="form-label">Medium</label>
 										<select class="form-control" name="class" onChange="JavaScript:send_level(this.value);" required>
-											<option value="" hidden="yes">Select Grade</option>
+											<option value="" hidden="yes">Select Medium</option>
 											<?php
 
 											$stmt = $DB_con->prepare('SELECT * FROM lmsclass ORDER BY cid');
@@ -218,13 +193,13 @@ require_once 'sidebarmenu.php';
 								</script>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Class Subject</label>
+										<label class="form-label">Grade</label>
 										<span id="subject_dis">
 											<select name="subject" class="form-control" required>
 												<option hidden="yes"><?php if (isset($_GET['edit'])) {
 																			echo $edit_resalt['subject'];
 																		} else {
-																			echo "Subject Not Found";
+																			echo "Grade Not Found";
 																		} ?></option>
 											</select>
 										</span>
@@ -232,41 +207,40 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Month</label>
-										<select class="form-control" name="month" required>
-											<option style="display:none;">Select Month</option>
-											<option>January</option>
-											<option>February</option>
-											<option>March</option>
-											<option>April</option>
-											<option>May</option>
-											<option>June</option>
-											<option>July</option>
-											<option>August</option>
-											<option>September</option>
-											<option>October</option>
-											<option>November</option>
-											<option>December</option>
+										<label class="form-label">Student Name</label>
+										<select class="form-control" name="tid" required>
+											<?php
+
+											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
+											$stmt->execute();
+
+											if ($stmt->rowCount() > 0) {
+
+												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+													extract($row);
+
+											?>
+													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
+											<?php
+												}
+											}
+											?>
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Class Type</label>
 										<select class="form-control" name="ctype" required>
-											<option style="display:none;">Select Class Type</option>
-											<option>Ebook</option>
+											<option style="display:none;">Select Achevements Type</option>
+											<option>Student Achevements</option>
 
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-5 col-md-5 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Title</label>
-										<input type="text" class="form-control" name="title" placeholder="Enter Class Tute Title" required>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Upload Document</label>
 										<input type="file" class="form-control" name="user_image">
@@ -275,10 +249,7 @@ require_once 'sidebarmenu.php';
 									</div>
 								</div>
 
-								<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-									<label class="form-label">Upload Month</label>
-									<input name="payment_month" type="month" id="payment_month" class="form-control" value="<?php echo date("Y-m") ?>">
-								</div>
+								
 
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
@@ -291,7 +262,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<input type="submit" name="add_classtute" class="btn btn-primary" value="Save changes">
-									<a class="btn btn-light" href="class_tute.php"><i class="fa fa-times"></i> Cancel</a>
+									<a class="btn btn-light" href="ebook.php"><i class="fa fa-times"></i> Cancel</a>
 								</div>
 							</div>
 						</form>
