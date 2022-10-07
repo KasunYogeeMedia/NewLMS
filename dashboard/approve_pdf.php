@@ -88,9 +88,9 @@ require_once 'sidebarmenu.php';
 												<!-- <th>Student</th> -->
 												<th>Medium</th>
 												<th>Grade</th>
-												
+
 												<th>Class Type</th>
-												
+
 												<th>Document</th>
 												<th>Date</th>
 											</tr>
@@ -128,7 +128,7 @@ require_once 'sidebarmenu.php';
 															<a class="btn btn-primary" href="edit_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-edit"></i>
 															</a>
-															
+
 														</td>
 														<td><?php echo $row['title']; ?></td>
 														<!-- <td>
@@ -164,7 +164,7 @@ require_once 'sidebarmenu.php';
 															?>
 														</td>
 														<td><?php echo $row['ctype']; ?></td>
-														
+
 														<td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" class="badge badge-primary" target="_blank">View Tute</a></td>
 														<td><?php echo $row['add_date']; ?></td>
 													</tr>
@@ -264,7 +264,7 @@ require_once 'sidebarmenu.php';
 														<a class="btn btn-primary btn-rounded mt-3 px-4" href="edit_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 															<i class="fa fa-edit"></i>
 														</a>
-														
+
 													</div>
 												</div>
 											</div>

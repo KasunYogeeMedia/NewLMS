@@ -55853,12 +55853,21 @@ a.text-muted:hover {
     min-height: 100vh;
 }
 
-.small-box > .inner {
-	padding: 20px;
-	min-height: 140px;
+.small-box>.inner {
+    padding: 20px;
+    min-height: 140px;
 }
+
 .sinhala {
     font-family: 'Gemunu Libre', sans-serif;
 }
 
-.content_body
+.gd .btn {
+    width: 100%;
+    margin: 10px 0;
+}
+.sm_st{}
+.pdf{}
+.sm_st{}
+.std_list{}
+.video{}
