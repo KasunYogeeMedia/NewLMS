@@ -96,6 +96,7 @@ if (isset($_POST['update_bt'])) {
 
 	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',district='$district',contactnumber='$contactnumber',pcontactno='$pcontactno',school='$school',username='$username',password='$password',image='$db_send_name',town='$town',birthday='$birthday',gender='$gender',joindate='$joindate' WHERE tid='$edit'")) {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&succes&jpg=$error_png';</script>";
+		 
 	} else {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&fail';</script>";
 	}

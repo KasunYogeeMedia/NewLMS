@@ -1,7 +1,10 @@
 <?php
 
-require_once("../dashboard/conn.php");
+require_once '../dashboard/dbconfig4.php';
 
+require_once("../dashboard/config.php");
+
+include '../dashboard/conn.php';
 ?>
 
 <?php
@@ -11,9 +14,6 @@ require_once 'header.php';
 <?php
 require_once 'navheader.php';
 ?>
-<!-- <?php
-require_once '../dashboard/coutquery.php';
-?> -->
 
 
 <div class="content-wrapper p-2">
@@ -35,8 +35,8 @@ require_once '../dashboard/coutquery.php';
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="links-2 my-5">
-                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="grade.php">Science of Life <br> ජිවිත විද්‍යාව</a>
-                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="grade.php">O/L Result</a>
+                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="common_video.php">Science of Life <br> ජිවිත විද්‍යාව</a>
+                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="ol_result.php">O/L Result</a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">

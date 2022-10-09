@@ -42,7 +42,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<ul class="nav nav-pills mb-3">
 					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
-					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
+					<!-- <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li> -->
 				</ul>
 			</div>
 			<div class="col-lg-12">
@@ -62,12 +62,10 @@ require_once 'sidebarmenu.php';
 												<th>Option</th>
 												<th>Action</th>
 												<th>Student Name</th>
-												
-												<th>Month</th>
-												<th>Class Type</th>
-												<th>Title</th>
+												<th>Batch</th>
+												<th>Index number</th>
+												<th>Result</th>
 												<th>Document</th>
-												<th>Upload Month</th>
 												<th>Date</th>
 											</tr>
 										</thead>
@@ -123,12 +121,10 @@ require_once 'sidebarmenu.php';
 
 															?>
 														</td>
-														
-														<td><?php echo $row['month']; ?></td>
-														<td><?php echo $row['ctype']; ?></td>
 														<td><?php echo $row['title']; ?></td>
+														<td><?php echo $row['ctype']; ?></td>														
+														<td><?php echo $row['month']; ?></td>
 														<td><a href="images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
-														<td><span class="badge badge-primary" style="font-size:14px;"> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></td>
 														<td><?php echo $row['add_date']; ?></td>
 													</tr>
 											<?php }

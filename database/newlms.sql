@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2022 at 12:33 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 09, 2022 at 10:10 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,9 +56,9 @@ CREATE TABLE `lmsclass` (
 --
 
 INSERT INTO `lmsclass` (`cid`, `name`, `add_date`, `status`) VALUES
-(4, 'Sample Medium', '2022-10-06 10:29:09', 'Publish'),
-(5, 'All', '2022-09-27 05:38:59', 'Publish'),
-(6, 'Sinhala', '2022-10-07 09:16:43', 'Publish');
+(4, 'Sinhala Medium', '2022-10-09 06:50:58', 'Publish'),
+(7, 'For All', '2022-10-09 06:51:47', 'Publish'),
+(6, 'English Medium', '2022-10-09 06:51:21', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,8 @@ CREATE TABLE `lmsclasstute` (
 --
 
 INSERT INTO `lmsclasstute` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(14, 14, 0, 0, 'A', '1234', 'Sample', '809780.jpg', '2022-10-06 07:40:22', 1);
+(14, 14, 0, 0, 'A', '1234', 'Sample', '809780.jpg', '2022-10-06 07:40:22', 1),
+(15, 16, 0, 0, 'B', '112233', 'Sample batch', '887735.jpg', '2022-10-09 04:47:28', 1);
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,7 @@ CREATE TABLE `lmslesson` (
 
 INSERT INTO `lmslesson` (`lid`, `tid`, `type`, `class`, `subject`, `title`, `available_days`, `no_of_views_per_day`, `cover`, `video`, `add_date`, `status`) VALUES
 (734, 14, 'lesson_explanations', '4', '18', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-05 22:57:46', 1),
-(735, 14, 'general', '5', '20', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-07 09:28:43', 1);
+(735, 14, 'general', '7', '20', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-09 07:35:27', 1);
 
 -- --------------------------------------------------------
 
@@ -492,10 +493,9 @@ CREATE TABLE `lmssubject` (
 --
 
 INSERT INTO `lmssubject` (`sid`, `class_id`, `name`, `add_date`, `status`) VALUES
-(18, 4, 'Sample Grade', '2022-10-06 10:29:25', 'Publish'),
-(19, 4, 'Sample Grade 2', '2022-10-06 10:29:36', 'Publish'),
-(20, 5, 'All', '2022-09-27 05:39:16', 'Publish'),
-(21, 6, 'Grade 7', '2022-10-07 09:17:56', 'Publish');
+(18, 6, 'English Grade 6', '2022-10-09 06:52:36', 'Publish'),
+(19, 4, 'Sinhala Grade 6', '2022-10-09 06:52:58', 'Publish'),
+(20, 7, 'All', '2022-10-09 06:53:09', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -539,9 +539,9 @@ CREATE TABLE `lmstealmsr` (
 --
 
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
-(14, 1663314456, 'Student 1', 'sample', '1234567898', '112233445', 'sample school', 'sample@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-06 17:29:28', 1),
-(16, 1665077021, 'Student 2', 'Sample', '1122334455', '1122334455', 'School 2', 'sample@gmail.com', 'd54d1702ad0f8326224b817c796763c9', '', 'Gampaha', '2022-10-02', 'Female', '2022-10-05', '2022-10-06 17:26:37', 1),
-(17, 1665133756, 'No student', 'sample', '1234567890', '1234567890', 'sample school', 'sample2@email.com', 'bae4f77cbe15ef21bf353135ee0eab72', '1665134390dashboard_back.jpg', 'Sample town', '2022-10-03', 'Male', '2022-10-07', '2022-10-07 09:32:13', 1);
+(14, 1663314456, 'English Medium Student', 'sample', '1234567898', '112233445', 'sample school', 'sample1@email.com', '9ee9d1add6b44588b12df58123d1887e', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-09 07:00:48', 1),
+(16, 1665077021, 'Sinhala Medium Student', 'Sample', '1122334455', '1122334455', 'School 2', 'sample2@email.com', '100ce3939dc720f78063dd4cc70638f8', '', 'Gampaha', '2022-10-02', 'Male', '2022-10-05', '2022-10-09 07:01:28', 1),
+(18, 1665298894, 'All Subject Student', 'Sample', '11223344', '45678912', 'School 3', 'sample3@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-09 07:03:18', 0);
 
 -- --------------------------------------------------------
 
@@ -565,18 +565,18 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (19, 1658135903, 3, 15),
 (57, 1658135781, 2, 1),
 (58, 1658135781, 3, 14),
-(94, 1665077021, 2, 5),
-(95, 1665077021, 2, 4),
-(96, 1665077021, 3, 20),
-(97, 1665077021, 3, 18),
-(98, 1665077021, 3, 19),
-(99, 1663314456, 2, 5),
-(100, 1663314456, 2, 4),
-(101, 1663314456, 3, 20),
-(102, 1663314456, 3, 18),
-(103, 1663314456, 3, 19),
 (119, 1665133756, 2, 5),
-(120, 1665133756, 3, 20);
+(120, 1665133756, 3, 20),
+(125, 1663314456, 2, 6),
+(126, 1663314456, 3, 18),
+(129, 1665077021, 2, 4),
+(130, 1665077021, 3, 19),
+(137, 1665298894, 2, 6),
+(138, 1665298894, 2, 7),
+(139, 1665298894, 2, 4),
+(140, 1665298894, 3, 20),
+(141, 1665298894, 3, 18),
+(142, 1665298894, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -1072,13 +1072,13 @@ ALTER TABLE `exam_submissions`
 -- AUTO_INCREMENT for table `lmsclass`
 --
 ALTER TABLE `lmsclass`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `lmsclasstute`
 --
 ALTER TABLE `lmsclasstute`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `lmsclasstute_std`
@@ -1192,13 +1192,13 @@ ALTER TABLE `lmssubject_tealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr`
 --
 ALTER TABLE `lmstealmsr`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`

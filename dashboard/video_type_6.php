@@ -194,7 +194,7 @@ require_once 'sidebarmenu.php';
                                                 <th>Grade</th>
                                                 <th>Title</th>
                                                 <th>Cover</th>
-                                                <!-- <th>Month</th> -->
+                                                <th>Video</th>
                                                 <th>Date</th>
                                                 <th>Option</th>
                                             </tr>
@@ -273,7 +273,7 @@ require_once 'sidebarmenu.php';
                                                                 $pro_img = "images/lesson/cover/" . $row['cover'];
                                                             } ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
                                                         </td>
-                                                        <!-- <td><span class="badge badge-primary" style="font-size:14px;"> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></td> -->
+                                                        <td><a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a></td>
                                                         <td><?php echo $row['add_date']; ?></td>
                                                         <td>
                                                             <?php

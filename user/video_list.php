@@ -1,7 +1,10 @@
 <?php
 
-require_once("../dashboard/conn.php");
+require_once '../dashboard/dbconfig4.php';
 
+require_once("../dashboard/config.php");
+
+include '../dashboard/conn.php';
 ?>
 
 <?php
