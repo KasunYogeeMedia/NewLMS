@@ -55831,6 +55831,13 @@ a.text-muted:hover {
 /*# sourceMappingURL=adminlte.min.css.map */
 
 /* Custom css */
+.modal-content iframe {
+    margin: 0 auto;
+    display: block;
+}
+iframe{
+    width: 100%;
+}
 
 .media .mr-3 .fa {
     min-width: 20px;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2022 at 10:10 AM
+-- Generation Time: Oct 10, 2022 at 03:09 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -282,7 +282,7 @@ CREATE TABLE `lmslesson` (
 
 INSERT INTO `lmslesson` (`lid`, `tid`, `type`, `class`, `subject`, `title`, `available_days`, `no_of_views_per_day`, `cover`, `video`, `add_date`, `status`) VALUES
 (734, 14, 'lesson_explanations', '4', '18', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-05 22:57:46', 1),
-(735, 14, 'general', '7', '20', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-09 07:35:27', 1);
+(735, 14, 'general', '7', '20', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-10 01:08:26', 1);
 
 -- --------------------------------------------------------
 

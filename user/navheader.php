@@ -3,16 +3,9 @@
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link hBack" role="button"><i class="fa fa-arrow-left"></i></a>
+      <a class="nav-link" href="index.php"><i class="fa fa-home"></i></a>
     </li>
   </ul>
-
-  <script>
-  $(".hBack").on("click", function(e){
-    e.preventDefault();
-    window.history.back();
-});
-  </script>
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
 

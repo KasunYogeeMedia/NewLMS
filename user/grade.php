@@ -15,18 +15,17 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
-<?php 
+<!-- <?php
 
-$grade =0;
-$medium = 4;
-   if( $_GET["grade"] != null && $_GET["medium"] != null  ){
+        $grade = 0;
+        $medium = 4;
+        if ($_GET["grade"] != null && $_GET["medium"] != null) {
 
-        $grade = (int)$_GET["grade"];
-        $medium = (int)$_GET["medium"];
-        
-   }
-    
-?>
+            $grade = (int)$_GET["grade"];
+            $medium = (int)$_GET["medium"];
+        }
+
+        ?> -->
 
 <div class="content-wrapper p-2 gd">
     <div class="content_head pt-2">
@@ -45,20 +44,7 @@ $medium = 4;
                         <a class="btn btn-secondary" href="pdf.php">
                             Lesson Explanation by Students
 
-                            <?php 
-                               $pdflist =  "SELECT `tdocument` FROM `lmsclasstute_std`where `class`=4 and `subject`=18"; 
-                               
-                               $retval = mysql_query( $pdflist, $conn );
 
-                               while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-                                echo "EMP ID :{$row['emp_id']}  <br> ".
-                                   "EMP NAME : {$row['emp_name']} <br> ".
-                                   "EMP SALARY : {$row['emp_salary']} <br> ".
-                                   "--------------------------------<br>";
-                             }
-
-
-                            ?>
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">

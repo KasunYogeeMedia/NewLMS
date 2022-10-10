@@ -17,7 +17,7 @@ require_once 'header.php';
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="login.php" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="user" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
