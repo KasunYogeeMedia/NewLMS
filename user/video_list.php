@@ -27,7 +27,7 @@ require_once 'header.php';
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "general" ORDER BY lid');
+                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "lesson_explanations" ORDER BY lid');
 
                 $stmt->execute();
 
@@ -36,13 +36,11 @@ require_once 'header.php';
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                         extract($row);
-
                 ?>
                         <tr>
-
                             <td><?php echo $row['title']; ?></td>
                             <td>
-                            <a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a>
+                                <a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a>
                             </td>
                         </tr>
                 <?php }

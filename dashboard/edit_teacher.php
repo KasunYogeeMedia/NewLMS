@@ -96,7 +96,6 @@ if (isset($_POST['update_bt'])) {
 
 	if (mysqli_query($conn, "UPDATE lmstealmsr SET fullname='$fullname',district='$district',contactnumber='$contactnumber',pcontactno='$pcontactno',school='$school',username='$username',password='$password',image='$db_send_name',town='$town',birthday='$birthday',gender='$gender',joindate='$joindate' WHERE tid='$edit'")) {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&succes&jpg=$error_png';</script>";
-		 
 	} else {
 		echo "<script>window.location='edit_teacher.php?edit=$edit&fail';</script>";
 	}
@@ -270,6 +269,31 @@ require_once 'sidebarmenu.php';
 									<div class="form-group">
 										<label class="form-label">District</label>
 										<input type="text" name="district" class="form-control" value="<?php echo $edit_resalt['district']; ?>" required>
+										<option><?php echo $edit_resalt['district']; ?></option>
+										<option>Ampara</option>
+										<option>Anuradhapura</option>
+										<option>Badulla</option>
+										<option>Colombo</option>
+										<option>Galle</option>
+										<option>Gampaha</option>
+										<option>Hambantota</option>
+										<option>Jaffna</option>
+										<option>Kalutara</option>
+										<option>Kandy</option>
+										<option>Kegalle</option>
+										<option>Kilinochchi</option>
+										<option>Kurunegala</option>
+										<option>Mannar</option>
+										<option>Matale</option>
+										<option>Matara</option>
+										<option>Moneragala</option>
+										<option>Mullaitivu</option>
+										<option>Nuwara Eliya</option>
+										<option>Polonnaruwa</option>
+										<option>Puttalam</option>
+										<option>Ratnapura</option>
+										<option>Trincomalee</option>
+										<option>Vavuniya</option>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">

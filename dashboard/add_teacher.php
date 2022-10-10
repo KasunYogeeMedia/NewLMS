@@ -246,7 +246,32 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-2 col-md-2 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">District</label>
-										<input type="text" class="form-control" name="district" placeholder="Enter District" required>
+										<select name="district" class="form-control">
+											<option>Ampara</option>
+											<option>Anuradhapura</option>
+											<option>Badulla</option>
+											<option>Colombo</option>
+											<option>Galle</option>
+											<option>Gampaha</option>
+											<option>Hambantota</option>
+											<option>Jaffna</option>
+											<option>Kalutara</option>
+											<option>Kandy</option>
+											<option>Kegalle</option>
+											<option>Kilinochchi</option>
+											<option>Kurunegala</option>
+											<option>Mannar</option>
+											<option>Matale</option>
+											<option>Matara</option>
+											<option>Moneragala</option>
+											<option>Mullaitivu</option>
+											<option>Nuwara Eliya</option>
+											<option>Polonnaruwa</option>
+											<option>Puttalam</option>
+											<option>Ratnapura</option>
+											<option>Trincomalee</option>
+											<option>Vavuniya</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
