@@ -249,7 +249,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Phone Number</label>
+										<label class="form-label">Phone Number (User Name)</label>
 										<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
 									</div>
 								</div>
@@ -268,32 +268,33 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-2 col-md-2 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">District</label>
-										<input type="text" name="district" class="form-control" value="<?php echo $edit_resalt['district']; ?>" required>
-										<option><?php echo $edit_resalt['district']; ?></option>
-										<option>Ampara</option>
-										<option>Anuradhapura</option>
-										<option>Badulla</option>
-										<option>Colombo</option>
-										<option>Galle</option>
-										<option>Gampaha</option>
-										<option>Hambantota</option>
-										<option>Jaffna</option>
-										<option>Kalutara</option>
-										<option>Kandy</option>
-										<option>Kegalle</option>
-										<option>Kilinochchi</option>
-										<option>Kurunegala</option>
-										<option>Mannar</option>
-										<option>Matale</option>
-										<option>Matara</option>
-										<option>Moneragala</option>
-										<option>Mullaitivu</option>
-										<option>Nuwara Eliya</option>
-										<option>Polonnaruwa</option>
-										<option>Puttalam</option>
-										<option>Ratnapura</option>
-										<option>Trincomalee</option>
-										<option>Vavuniya</option>
+										<select name="district" class="form-control">
+											<option><?php echo $edit_resalt['district']; ?></option>
+											<option>Ampara</option>
+											<option>Anuradhapura</option>
+											<option>Badulla</option>
+											<option>Colombo</option>
+											<option>Galle</option>
+											<option>Gampaha</option>
+											<option>Hambantota</option>
+											<option>Jaffna</option>
+											<option>Kalutara</option>
+											<option>Kandy</option>
+											<option>Kegalle</option>
+											<option>Kilinochchi</option>
+											<option>Kurunegala</option>
+											<option>Mannar</option>
+											<option>Matale</option>
+											<option>Matara</option>
+											<option>Moneragala</option>
+											<option>Mullaitivu</option>
+											<option>Nuwara Eliya</option>
+											<option>Polonnaruwa</option>
+											<option>Puttalam</option>
+											<option>Ratnapura</option>
+											<option>Trincomalee</option>
+											<option>Vavuniya</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
@@ -310,14 +311,15 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Email Address(User Name)</label>
+										<label class="form-label">Email Address</label>
 										<input type="email" name="username" class="form-control" value="<?php echo $edit_resalt['username']; ?>" required>
 									</div>
 								</div>
 								<div class="col-lg-2 col-md-2 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Gender</label>
-										<select name="gender" class="form-control" value="<?php echo $edit_resalt['gender']; ?>">
+										<select name="gender" class="form-control">
+											<option><?php echo $edit_resalt['gender']; ?></option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
 										</select>

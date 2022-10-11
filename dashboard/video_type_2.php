@@ -183,12 +183,12 @@ require_once 'sidebarmenu.php';
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered">
+                                    <table id="example1" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Action</th>
-                                                <th>Type</th>
+                                                <!-- <th>Type</th> -->
                                                 <th>Student</th>
                                                 <th>Medium</th>
                                                 <th>Grade</th>
@@ -223,7 +223,7 @@ require_once 'sidebarmenu.php';
                                                                 <i class="fa fa-times-circle"></i>
                                                             </a>
                                                         </td>
-                                                        <td><?php echo $row['type']; ?></td>
+                                                        <!-- <td><?php echo $row['type']; ?></td> -->
                                                         <td><?php
 
                                                             $id = $row['tid'];

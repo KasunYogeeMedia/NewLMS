@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 03:09 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Oct 11, 2022 at 02:16 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -539,9 +539,10 @@ CREATE TABLE `lmstealmsr` (
 --
 
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
-(14, 1663314456, 'English Medium Student', 'sample', '1234567898', '112233445', 'sample school', 'sample1@email.com', '9ee9d1add6b44588b12df58123d1887e', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-09 07:00:48', 1),
-(16, 1665077021, 'Sinhala Medium Student', 'Sample', '1122334455', '1122334455', 'School 2', 'sample2@email.com', '100ce3939dc720f78063dd4cc70638f8', '', 'Gampaha', '2022-10-02', 'Male', '2022-10-05', '2022-10-09 07:01:28', 1),
-(18, 1665298894, 'All Subject Student', 'Sample', '11223344', '45678912', 'School 3', 'sample3@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-09 07:03:18', 0);
+(14, 1663314456, 'English Medium Student', 'sample', '1234567898', '112233445', 'sample school', 'sample1@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-11 04:50:44', 1),
+(16, 1665077021, 'Sinhala Medium Student', 'Sample', '1234567898', '1122334455', 'School 2', 'sample2@email.com', '100ce3939dc720f78063dd4cc70638f8', '1665463924istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-05', '2022-10-11 04:52:04', 1),
+(18, 1665298894, 'All Subject Student', 'Gampaha', '123456789', '45678912', 'School 3', 'sample3@email.com', 'd54d1702ad0f8326224b817c796763c9', '1665460452istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-11 12:09:14', 1),
+(20, 1665490195, 'TEST', 'Gampaha', '123456789', '11224537532', 'Sample schoolvwe', 'sample4@email.com', '3354045a397621cd92406f1f98cde292', '', 'Sample', '2022-10-03', 'Male', '2022-10-02', '2022-10-11 12:10:43', 0);
 
 -- --------------------------------------------------------
 
@@ -567,16 +568,20 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (58, 1658135781, 3, 14),
 (119, 1665133756, 2, 5),
 (120, 1665133756, 3, 20),
-(125, 1663314456, 2, 6),
-(126, 1663314456, 3, 18),
-(129, 1665077021, 2, 4),
-(130, 1665077021, 3, 19),
-(137, 1665298894, 2, 6),
-(138, 1665298894, 2, 7),
-(139, 1665298894, 2, 4),
-(140, 1665298894, 3, 20),
-(141, 1665298894, 3, 18),
-(142, 1665298894, 3, 19);
+(155, 1665463372, 2, 7),
+(156, 1665463372, 3, 20),
+(163, 1663314456, 2, 6),
+(164, 1663314456, 3, 18),
+(169, 1665077021, 2, 4),
+(170, 1665077021, 3, 19),
+(183, 1665298894, 2, 6),
+(184, 1665298894, 2, 7),
+(185, 1665298894, 2, 4),
+(186, 1665298894, 3, 20),
+(187, 1665298894, 3, 18),
+(188, 1665298894, 3, 19),
+(189, 1665490195, 2, 7),
+(190, 1665490195, 3, 20);
 
 -- --------------------------------------------------------
 
@@ -1192,13 +1197,13 @@ ALTER TABLE `lmssubject_tealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr`
 --
 ALTER TABLE `lmstealmsr`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`

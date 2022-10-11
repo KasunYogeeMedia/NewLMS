@@ -20,25 +20,25 @@ require_once 'navheader.php';
 require_once 'sidebarmenu.php';
 ?>
 <div class="content-wrapper">
-    <!-- row -->
-    <div class="container-fluid">
+	<!-- row -->
+	<div class="container-fluid">
 
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>All Video Lessons</h4>
-                </div>
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Video Lessons</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">All Video Lessons</a></li>
-                </ol>
-            </div>
-        </div>
+		<div class="row page-titles mx-0">
+			<div class="col-sm-6 p-md-0">
+				<div class="welcome-text">
+					<h4>All Video Lessons</h4>
+				</div>
+			</div>
+			<div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="home.php">Home</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">Video Lessons</a></li>
+					<li class="breadcrumb-item active"><a href="javascript:void(0);">All Video Lessons</a></li>
+				</ol>
+			</div>
+		</div>
 
-        <div class="row">
+		<div class="row">
 			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
 				<div class="widget-stat card bg-secondary">
 					<a href="video_type_1.php">
@@ -172,139 +172,139 @@ require_once 'sidebarmenu.php';
 				</div>
 			</div>
 		</div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row tab-content">
-                    <div id="list-view" class="tab-pane fade active show col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">All Video Lessons</h4>
-                                <a href="add_video_lessons.php" class="btn btn-square btn-secondary float-right">+ Add Video Lessons</a>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Action</th>
-                                                <th>Type</th>
-                                                <th>Student</th>
-                                                <th>Medium</th>
-                                                <th>Grade</th>
-                                                <th>Title</th>
-                                                <th>Cover</th>
-                                                <th>Video</th>
-                                                <th>Date</th>
-                                                <th>Option</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row tab-content">
+					<div id="list-view" class="tab-pane fade active show col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title">All Video Lessons</h4>
+								<a href="add_video_lessons.php" class="btn btn-square btn-secondary float-right">+ Add Video Lessons</a>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table id="example1" class="table table-bordered">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Action</th>
+												<!-- <th>Type</th> -->
+												<!-- <th>Student</th> -->
+												<th>Medium</th>
+												<th>Grade</th>
+												<th>Title</th>
+												<th>Cover</th>
+												<th>Video</th>
+												<th>Date</th>
+												<th>Option</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php
 
-                                            $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "general" ORDER BY lid');
+											$stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "general" ORDER BY lid');
 
-                                            $stmt->execute();
+											$stmt->execute();
 
-                                            if ($stmt->rowCount() > 0) {
+											if ($stmt->rowCount() > 0) {
 
-                                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                                                    extract($row);
+													extract($row);
 
-                                            ?>
-                                                    <tr>
-                                                        <td><?php echo $row['lid']; ?></td>
-                                                        <td>
-                                                            <a class="btn btn-primary" href="edit_video_lessons.php?leid=<?php echo $row["lid"]; ?>">
-                                                                <i class="fa fa-edit"></i>
-                                                            </a>
-                                                            <a class="btn btn-danger" href="delete_video_lessons.php?leid=<?php echo $row["lid"]; ?>">
-                                                                <i class="fa fa-times-circle"></i>
-                                                            </a>
-                                                        </td>
-                                                        <td><?php echo $row['type']; ?></td>
-                                                        <td><?php
+											?>
+													<tr>
+														<td><?php echo $row['lid']; ?></td>
+														<td>
+															<a class="btn btn-primary" href="edit_video_lessons.php?leid=<?php echo $row["lid"]; ?>">
+																<i class="fa fa-edit"></i>
+															</a>
+															<a class="btn btn-danger" href="delete_video_lessons.php?leid=<?php echo $row["lid"]; ?>">
+																<i class="fa fa-times-circle"></i>
+															</a>
+														</td>
+														<!-- <td><?php echo $row['type']; ?></td> -->
+														<!-- <td><?php
 
-                                                            $id = $row['tid'];
+															$id = $row['tid'];
 
-                                                            $query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
+															$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
 
-                                                            $query->execute();
+															$query->execute();
 
-                                                            $result = $query->fetch();
+															$result = $query->fetch();
 
-                                                            echo $result['fullname'];
+															echo $result['fullname'];
 
-                                                            ?></td>
-                                                        <td><?php
+															?></td> -->
+														<td><?php
 
-                                                            $id = $row['class'];
+															$id = $row['class'];
 
-                                                            $query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
+															$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
 
-                                                            $query->execute();
+															$query->execute();
 
-                                                            $result = $query->fetch();
+															$result = $query->fetch();
 
-                                                            echo $result['name'];
+															echo $result['name'];
 
-                                                            ?></td>
-                                                        <td>
-                                                            <?php
+															?></td>
+														<td>
+															<?php
 
-                                                            $id = $row['subject'];
+															$id = $row['subject'];
 
-                                                            $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $id);
+															$query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $id);
 
-                                                            $query->execute();
+															$query->execute();
 
-                                                            $result = $query->fetch();
+															$result = $query->fetch();
 
-                                                            echo $result['name'];
+															echo $result['name'];
 
-                                                            ?>
-                                                        </td>
-                                                        <td><?php echo $row['title']; ?></td>
-                                                        <td style="max-width: 200px;">
-                                                            <?php if ($row['cover'] == "") {
-                                                                $pro_img = "../profile/images/hd_dp.jpg";
-                                                            } else {
-                                                                $pro_img = "images/lesson/cover/" . $row['cover'];
-                                                            } ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
-                                                        </td>
-                                                        <td><a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a></td>
-                                                        <td><?php echo $row['add_date']; ?></td>
-                                                        <td>
-                                                            <?php
+															?>
+														</td>
+														<td><?php echo $row['title']; ?></td>
+														<td style="max-width: 200px;">
+															<?php if ($row['cover'] == "") {
+																$pro_img = "../profile/images/hd_dp.jpg";
+															} else {
+																$pro_img = "images/lesson/cover/" . $row['cover'];
+															} ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
+														</td>
+														<td><a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a></td>
+														<td><?php echo $row['add_date']; ?></td>
+														<td>
+															<?php
 
-                                                            if ($row['status'] == "0") {
+															if ($row['status'] == "0") {
 
-                                                                echo '<button class="btn btn-primary btn-sm" on>Pending</button>';
-                                                            } else if ($row['status'] == "1") {
+																echo '<button class="btn btn-primary btn-sm" on>Pending</button>';
+															} else if ($row['status'] == "1") {
 
-                                                                echo '<button class="btn btn-success btn-sm">Success</button>';
-                                                            }
+																echo '<button class="btn btn-success btn-sm">Success</button>';
+															}
 
-                                                            ?>
-                                                        </td>
+															?>
+														</td>
 
-                                                    </tr>
-                                            <?php }
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+													</tr>
+											<?php }
+											}
+											?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 
-    </div>
+	</div>
 </div>
 
 <?php

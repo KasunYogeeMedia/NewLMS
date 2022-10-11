@@ -61,7 +61,7 @@ require_once 'sidebarmenu.php';
 			</div>
 		</div>
 	</div>
-	<table id="example3" class="table table-bordered">
+	<table id="example1" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>

@@ -62,6 +62,7 @@ if (isset($_POST['add_bt'])) {
 		}
 	} else {
 		$db_send_name = "";
+
 	}
 
 	mysqli_query($conn, "INSERT INTO lmstealmsr(systemid, fullname, district, contactnumber,pcontactno, school, username, password, image, town, birthday, gender, joindate, add_date, status) VALUES ('$systemid','$fullname','$district','$contactnumber','$pcontactno','$school','$username','$password','$db_send_name','$town','$birthday','$gender','$joindate','$add_date','0')");
@@ -227,7 +228,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Phone Number</label>
+										<label class="form-label">Phone Number (User Name)</label>
 										<input type="tel" class="form-control" name="contactnumber" placeholder="Enter Contact Number" required pattern="\d*">
 									</div>
 								</div>
@@ -288,7 +289,7 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-6">
 									<div class="form-group">
-										<label class="form-label">Email Address(User Name)</label>
+										<label class="form-label">Email Address</label>
 										<input type="email" class="form-control" name="username" placeholder="Enter User Name" required>
 									</div>
 								</div>

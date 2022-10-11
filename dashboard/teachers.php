@@ -79,7 +79,7 @@ require_once 'sidebarmenu.php';
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example3" class="table table-bordered">
+									<table id="example1" class="table table-bordered table-striped">
 										<thead>
 											<tr>
 												<th>#</th>
@@ -89,7 +89,7 @@ require_once 'sidebarmenu.php';
 												<th>Name</th>
 												<th>Medium</th>
 												<th>Grade</th>
-												<th>Phone</th>
+												<th>Phone (User Name)</th>
 												<th>Parent Phone</th>
 												<th>School</th>
 												<th>District</td>
@@ -171,6 +171,7 @@ require_once 'sidebarmenu.php';
 										</tbody>
 									</table>
 								</div>
+								
 							</div>
 						</div>
 					</div>
