@@ -39,7 +39,7 @@ require_once 'navheader.php';
     });
 </script>
 
-<div class="content-wrapper p-2">
+<div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
         <h4 class="text-center">Science of life</h4>
     </div>

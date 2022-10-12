@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2022 at 02:16 PM
+-- Generation Time: Oct 12, 2022 at 07:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -56,9 +56,9 @@ CREATE TABLE `lmsclass` (
 --
 
 INSERT INTO `lmsclass` (`cid`, `name`, `add_date`, `status`) VALUES
-(4, 'Sinhala Medium', '2022-10-09 06:50:58', 'Publish'),
-(7, 'For All', '2022-10-09 06:51:47', 'Publish'),
-(6, 'English Medium', '2022-10-09 06:51:21', 'Publish');
+(1, 'Sinhala Medium', '2022-10-12 12:15:23', 'Publish'),
+(2, 'English Medium', '2022-10-12 12:15:52', 'Publish'),
+(3, 'No Medium', '2022-10-12 15:37:39', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -111,8 +111,7 @@ CREATE TABLE `lmsclasstute_std` (
 --
 
 INSERT INTO `lmsclasstute_std` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(14, 14, 4, 18, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 16:40:28', 1),
-(15, 16, 5, 0, 'January', 'School Papers', 'sample savhgv', '769530.jpg', '2022-10-07 10:05:22', 0);
+(14, 14, 4, 18, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 16:40:28', 1);
 
 -- --------------------------------------------------------
 
@@ -493,9 +492,19 @@ CREATE TABLE `lmssubject` (
 --
 
 INSERT INTO `lmssubject` (`sid`, `class_id`, `name`, `add_date`, `status`) VALUES
-(18, 6, 'English Grade 6', '2022-10-09 06:52:36', 'Publish'),
-(19, 4, 'Sinhala Grade 6', '2022-10-09 06:52:58', 'Publish'),
-(20, 7, 'All', '2022-10-09 06:53:09', 'Publish');
+(1, 1, 'Grade 6', '2022-10-12 15:38:42', 'Publish'),
+(2, 1, 'Grade 7', '2022-10-12 15:39:02', 'Publish'),
+(3, 1, 'Grade 8', '2022-10-12 15:39:12', 'Publish'),
+(4, 1, 'Grade 9', '2022-10-12 15:39:23', 'Publish'),
+(5, 1, 'Grade 10', '2022-10-12 15:39:47', 'Publish'),
+(6, 1, 'Grade 11', '2022-10-12 15:39:57', 'Publish'),
+(7, 2, 'Grade 6', '2022-10-12 15:40:16', 'Publish'),
+(8, 2, 'Grade 7', '2022-10-12 15:40:32', 'Publish'),
+(9, 2, 'Grade 8', '2022-10-12 15:40:45', 'Publish'),
+(10, 2, 'Grade 9', '2022-10-12 15:40:59', 'Publish'),
+(11, 2, 'Grade 10', '2022-10-12 15:41:12', 'Publish'),
+(12, 2, 'Grade 11', '2022-10-12 15:41:29', 'Publish'),
+(13, 3, 'No Grade', '2022-10-12 15:41:51', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -541,7 +550,7 @@ CREATE TABLE `lmstealmsr` (
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
 (14, 1663314456, 'English Medium Student', 'sample', '1234567898', '112233445', 'sample school', 'sample1@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-11 04:50:44', 1),
 (16, 1665077021, 'Sinhala Medium Student', 'Sample', '1234567898', '1122334455', 'School 2', 'sample2@email.com', '100ce3939dc720f78063dd4cc70638f8', '1665463924istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-05', '2022-10-11 04:52:04', 1),
-(18, 1665298894, 'All Subject Student', 'Gampaha', '123456789', '45678912', 'School 3', 'sample3@email.com', 'd54d1702ad0f8326224b817c796763c9', '1665460452istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-11 12:09:14', 1),
+(18, 1665298894, 'All Subject Student', 'Gampaha', '123456789', '45678912', 'School 3', 'sample3@email.com', '827ccb0eea8a706c4c34a16891f84e7b', '1665460452istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-12 09:59:08', 1),
 (20, 1665490195, 'TEST', 'Gampaha', '123456789', '11224537532', 'Sample schoolvwe', 'sample4@email.com', '3354045a397621cd92406f1f98cde292', '', 'Sample', '2022-10-03', 'Male', '2022-10-02', '2022-10-11 12:10:43', 0);
 
 -- --------------------------------------------------------
@@ -574,14 +583,14 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (164, 1663314456, 3, 18),
 (169, 1665077021, 2, 4),
 (170, 1665077021, 3, 19),
-(183, 1665298894, 2, 6),
-(184, 1665298894, 2, 7),
-(185, 1665298894, 2, 4),
-(186, 1665298894, 3, 20),
-(187, 1665298894, 3, 18),
-(188, 1665298894, 3, 19),
 (189, 1665490195, 2, 7),
-(190, 1665490195, 3, 20);
+(190, 1665490195, 3, 20),
+(191, 1665298894, 2, 6),
+(192, 1665298894, 2, 7),
+(193, 1665298894, 2, 4),
+(194, 1665298894, 3, 20),
+(195, 1665298894, 3, 18),
+(196, 1665298894, 3, 19);
 
 -- --------------------------------------------------------
 
@@ -769,7 +778,7 @@ CREATE TABLE `lms_pdf` (
 --
 
 INSERT INTO `lms_pdf` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(2, 14, 4, 18, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-06 03:27:37', 1);
+(2, 14, 1, 1, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-12 17:16:10', 1);
 
 -- --------------------------------------------------------
 
@@ -1077,7 +1086,7 @@ ALTER TABLE `exam_submissions`
 -- AUTO_INCREMENT for table `lmsclass`
 --
 ALTER TABLE `lmsclass`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lmsclasstute`
@@ -1185,7 +1194,7 @@ ALTER TABLE `lmsstudent_subject`
 -- AUTO_INCREMENT for table `lmssubject`
 --
 ALTER TABLE `lmssubject`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `lmssubject_tealmsr`
@@ -1203,7 +1212,7 @@ ALTER TABLE `lmstealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`

@@ -38,7 +38,7 @@ require_once 'sidebarmenu.php';
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row admin_vd">
 			<div class="col-xxl-2 col-xl-2 col-md-4 col-sm-6">
 				<div class="widget-stat card bg-secondary">
 					<a href="video_type_1.php">

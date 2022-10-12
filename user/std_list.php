@@ -15,73 +15,49 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
-<div class="content-wrapper p-2 std_list">
+<div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
-        <h4 class="text-center">Grade</h4>
+        <h4 class="text-center">PDF List</h4>
     </div>
     <div class="content_body text-center pt-2">
-        <div class="row">
-            <div class="col-9 left_side">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video.php">
-                            Lesson Explanation
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
-                            Lesson Explanation by Students
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
-                            Student Notes
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video.php">
-                            Lesson Revision
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
-                            Practicals by Students
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
-                            Students School Papers
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video.php">
-                            Paper Discussions
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
-                            Books and Papers
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" class="btn btn-primary" href="">
-                            Students Class Papers
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 right_side">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="btn btn-info" href="std_list.php">
-                            Our Smart Students
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Profile Picture </th>
+                    <th scope="col">Student Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $count = 0;
+                $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr ORDER BY fullname");
+                while ($tec_resalt = mysqli_fetch_array($tec_qury)) {
+                    $count++;
+                ?>
+                    <tr>
+                        <th scope="row">
+                            <?php echo $tec_resalt['tid']; ?>
+                        </th>
+                        <td>
+                            <?php if ($tec_resalt['image'] == "") {
+                                $pro_img = "../profile/images/hd_dp.jpg";
+                            } else {
+                                $pro_img = "../dashboard/images/teacher/" . $tec_resalt['image'];
+                            } ?><img src="<?php echo $pro_img; ?>" class="img_fluid">
+                        </td>
+                        <td>
+                            <a href="smart_students.php" class="btn btn-primary"><?php echo $tec_resalt['fullname']; ?></a>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
 </div>
+
 <?php
 require_once '../dashboard/copyright.php';
 ?>

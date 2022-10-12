@@ -8,33 +8,27 @@ include '../dashboard/conn.php';
 ?>
 
 <?php
-require_once 'header.php';
+require_once '../dashboard/header.php';
 ?>
 
-<?php
-require_once 'navheader.php';
-?>
-
-
-<div class="content-wrapper p-2 ml-0">
+<div class="content-wrapper p-2 ml-0 video">
     <div class="content_head pt-2">
-        <h4 class="text-center">Smart Science</h4>
+        <h4 class="text-center">Video List</h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">
             <thead>
                 <tr>
+
+                    <th scope="col">Title</th>
                     <th scope="col">Student Name</th>
-                    <th scope="col">Batch</th>
-                    <th scope="col">Index No</th>
-                    <th scope="col">Result</th>
-                    <th scope="col">Document</th>
+                    <th scope="col">Video</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmsclasstute ORDER BY ctuid');
+                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "lesson_explanations" ORDER BY lid');
 
                 $stmt->execute();
 
@@ -43,9 +37,9 @@ require_once 'navheader.php';
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                         extract($row);
-
                 ?>
                         <tr>
+                            <td><?php echo $row['title']; ?></td>
                             <td>
                                 <?php
 
@@ -61,21 +55,21 @@ require_once 'navheader.php';
 
                                 ?>
                             </td>
-                            <td><?php echo $row['title']; ?></td>
-                            <td><?php echo $row['ctype']; ?></td>
-                            <td><?php echo $row['month']; ?></td>
-                            <td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
+                            <td>
+                                <a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a>
+                            </td>
                         </tr>
-                <?php
-                    }
-                } else {
-                    echo "0 results";
+                <?php }
                 }
                 ?>
             </tbody>
         </table>
     </div>
+
+
+
 </div>
+
 <?php
 require_once '../dashboard/copyright.php';
 ?>

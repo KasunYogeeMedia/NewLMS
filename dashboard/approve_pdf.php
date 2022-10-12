@@ -4,31 +4,9 @@ session_start();
 
 require_once 'includes.php';
 
-require_once '../dashboard/dbconfig4.php';
+require_once 'dbconfig4.php';
 
-require_once("../dashboard/conn.php");
-
-
-
-if (isset($_SESSION['tid'])) {
-
-	$user_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr WHERE tid='$_SESSION[tid]'");
-
-	$user_resalt = mysqli_fetch_array($user_qury);
-
-
-
-	if ($user_resalt['image'] == "") {
-
-		$image_path = "../profile/images/hd_dp.jpg";
-	} else {
-
-		$image_path = "../dashboard/images/teacher/" . $user_resalt['image'];
-	}
-} else {
-
-	echo "<script>window.location='home.php';</script>";
-}
+require_once("conn.php");
 
 
 ?>
@@ -98,7 +76,7 @@ require_once 'sidebarmenu.php';
 										<tbody>
 											<?php
 
-											$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std where tid="' . $_SESSION['tid'] . '" ORDER BY ctuid');
+											$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std ORDER BY ctuid');
 
 											$stmt->execute();
 
@@ -128,7 +106,9 @@ require_once 'sidebarmenu.php';
 															<a class="btn btn-primary" href="edit_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
 																<i class="fa fa-edit"></i>
 															</a>
-
+															<a class="btn btn-danger" href="delete_approve_pdf.php?cttid=<?php echo $row["ctuid"]; ?>">
+																<i class="fa fa-times-circle"></i>
+															</a>
 														</td>
 														<td><?php echo $row['title']; ?></td>
 														<!-- <td>

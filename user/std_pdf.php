@@ -15,12 +15,29 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
-<div class="content-wrapper p-2 std_pdf">
+<div class="content-wrapper p-2 ml-0 pdf">
     <div class="content_head pt-2">
-        <h4 class="text-center">Smart Science</h4>
+        <h4 class="text-center">PDF List</h4>
     </div>
     <div class="content_body text-center pt-2">
-        
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Sample Document</td>
+                    <td>
+                        <a href="" class="btn btn-primary" >Document</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <?php

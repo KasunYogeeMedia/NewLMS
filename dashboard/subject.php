@@ -111,7 +111,7 @@ require_once 'sidebarmenu.php';
                                                         </td>
                                                         <td>
                                                             <a href="edit_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
-                                                            <a href="delete_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <!-- <a href="delete_subject.php?sbid=<?php echo $row["sid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
                                                         </td>
                                                     </tr>
                                             <?php

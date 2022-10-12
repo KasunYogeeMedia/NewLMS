@@ -15,19 +15,20 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
-<!-- <?php
+<?php
 
-        $grade = 0;
-        $medium = 4;
-        if ($_GET["grade"] != null && $_GET["medium"] != null) {
+$grade = 0;
+if ($_GET["grade"] != null) {
 
-            $grade = (int)$_GET["grade"];
-            $medium = (int)$_GET["medium"];
-        }
+    // $grade = (int)$_GET["grade"];
+    $grade = (int)$_GET["grade"];
+}
 
-        ?> -->
+echo $grade;
 
-<div class="content-wrapper p-2 gd">
+?>
+
+<div class="content-wrapper p-2 ml-0 gd">
     <div class="content_head pt-2">
         <h4 class="text-center" data-grade-id="">Grade</h4>
     </div>
@@ -36,15 +37,13 @@ require_once 'navheader.php';
             <div class="col-9 left_side">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_list.php">
+                        <a class="btn btn-secondary" href="video_list.php?grade=">
                             Lesson Explanation
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
+                        <a class="btn btn-secondary" href="std_video_list.php">
                             Lesson Explanation by Students
-
-
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -58,7 +57,7 @@ require_once 'navheader.php';
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
+                        <a class="btn btn-secondary" href="std_video_list.php">
                             Practicals by Students
                         </a>
                     </div>

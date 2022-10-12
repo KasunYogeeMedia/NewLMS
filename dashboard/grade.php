@@ -95,7 +95,7 @@ require_once 'sidebarmenu.php';
                                                         </td>
                                                         <td>
                                                             <a href="edit_grade.php?clid=<?php echo $row["cid"]; ?>" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
-                                                            <a href="delete_grade.php?clid=<?php echo $row["cid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <!-- <a href="delete_grade.php?clid=<?php echo $row["cid"]; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
                                                         </td>
                                                     </tr>
                                             <?php

@@ -16,7 +16,7 @@ require_once 'navheader.php';
 ?>
 
 
-<div class="content-wrapper p-2">
+<div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
         <h4 class="text-center">Smart Science</h4>
     </div>
@@ -25,7 +25,7 @@ require_once 'navheader.php';
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">English Medium</h5>
                 <div class="links-1">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=6&medium=4">Grade 6</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=1">Grade 6</a>
                     <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php">Grade 7</a>
                     <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php">Grade 8</a>
                     <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php">Grade 9</a>
