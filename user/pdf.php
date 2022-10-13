@@ -32,7 +32,7 @@ require_once 'navheader.php';
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lms_pdf ORDER BY ctuid');
+                    $stmt = $DB_con->prepare('SELECT * FROM lms_pdf ORDER BY ctuid');
 
                 $stmt->execute();
 

@@ -23,19 +23,52 @@ require_once 'navheader.php';
         <table class="table table-dark table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Student Name</th>
                     <th scope="col">Document</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Sample Document</td>
-                    <td>
-                        <a href="" class="btn btn-primary" >Document</a>
-                    </td>
-                </tr>
+                <?php
+
+                $stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std ORDER BY ctuid');
+
+                $stmt->execute();
+
+                if ($stmt->rowCount() > 0) {
+
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                        extract($row);
+
+                ?>
+                        <tr>
+                            <td><?php echo $row['title']; ?></td>
+                            <td>
+                                <?php
+
+                                $id = $row['tid'];
+
+                                $query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
+
+                                $query->execute();
+
+                                $result = $query->fetch();
+
+                                echo $result['fullname'];
+
+                                ?>
+                            </td>
+                            <td>
+                            <a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" class="btn btn-info" target="_blank">View PDF</a>
+                            </td>
+                        </tr>
+                <?php
+                    }
+                } else {
+                    echo "0 results";
+                }
+                ?>
             </tbody>
         </table>
     </div>

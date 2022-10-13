@@ -47,7 +47,7 @@ echo $grade;
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
+                        <a class="btn btn-secondary" href="std_pdf.php">
                             Student Notes
                         </a>
                     </div>
@@ -62,7 +62,7 @@ echo $grade;
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
+                        <a class="btn btn-secondary" href="std_pdf.php">
                             Students School Papers
                         </a>
                     </div>
@@ -77,7 +77,7 @@ echo $grade;
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" class="btn btn-primary" href="">
+                        <a class="btn btn-secondary" class="btn btn-primary" href="std_pdf.php">
                             Students Class Papers
                         </a>
                     </div>

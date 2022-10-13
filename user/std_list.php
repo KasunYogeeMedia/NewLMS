@@ -17,7 +17,7 @@ require_once 'navheader.php';
 
 <div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
-        <h4 class="text-center">PDF List</h4>
+        <h4 class="text-center">student List</h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">

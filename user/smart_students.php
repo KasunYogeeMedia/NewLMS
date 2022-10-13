@@ -34,12 +34,12 @@ require_once 'navheader.php';
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <a class="btn btn-secondary" href="std_pdf.php">
+                        <a class="btn btn-secondary" href="std_video.php">
                             Student Lesson Explanations
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <a class="btn btn-secondary" href="std_video.php">
+                        <a class="btn btn-secondary" href="std_pdf.php">
                             Students Class Papers
                         </a>
                     </div>
@@ -60,8 +60,8 @@ require_once 'navheader.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php
-$aaid = 
-                        $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr Where tid = 16");
+                        $aaid =
+                            $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr Where tid = 16");
                         $tec_resalt = mysqli_fetch_array($tec_qury);
                         ?>
                         <?php if ($tec_resalt['image'] == "") {
