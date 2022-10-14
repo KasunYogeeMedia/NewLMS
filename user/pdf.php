@@ -15,6 +15,19 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
+<?php
+
+$grade = 0;
+if ($_GET["grade"] != null) {
+
+    // $grade = (int)$_GET["grade"];
+    $grade = (int)$_GET["grade"];
+}
+
+echo $grade;
+
+?>
+
 <div class="content-wrapper p-2 ml-0 pdf">
     <div class="content_head pt-2">
         <h4 class="text-center">PDF List</h4>
@@ -32,7 +45,7 @@ require_once 'navheader.php';
             <tbody>
                 <?php
 
-                    $stmt = $DB_con->prepare('SELECT * FROM lms_pdf ORDER BY ctuid');
+                $stmt = $DB_con->prepare('SELECT * FROM lms_pdf ORDER BY ctuid');
 
                 $stmt->execute();
 
@@ -64,7 +77,7 @@ require_once 'navheader.php';
                                 ?>
                             </td>
                             <td>
-                            <a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" class="btn btn-info" target="_blank">View PDF</a>
+                                <a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" class="btn btn-info" target="_blank">View PDF</a>
                             </td>
                         </tr>
                 <?php

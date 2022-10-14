@@ -11,9 +11,22 @@ include '../dashboard/conn.php';
 require_once '../dashboard/header.php';
 ?>
 
+<?php
+
+$grade = 0;
+if ($_GET["grade"] != null) {
+
+    // $grade = (int)$_GET["grade"];
+    $grade = (int)$_GET["grade"];
+}
+
+echo $grade;
+
+?>
+
 <div class="content-wrapper p-2 ml-0 video">
     <div class="content_head pt-2">
-        <h4 class="text-center">Video List</h4>
+        <h4 class="text-center">Video List Grade <?php echo"$grade"?></h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">

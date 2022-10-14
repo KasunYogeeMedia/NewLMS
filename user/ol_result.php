@@ -15,6 +15,18 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
+<?php
+
+$grade = 0;
+if ($_GET["grade"] != null) {
+
+    // $grade = (int)$_GET["grade"];
+    $grade = (int)$_GET["grade"];
+}
+
+echo $grade;
+
+?> 
 
 <div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">

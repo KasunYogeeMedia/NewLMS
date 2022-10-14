@@ -16,7 +16,6 @@ require_once 'navheader.php';
 ?>
 
 <?php
-
 $grade = 0;
 if ($_GET["grade"] != null) {
 
@@ -24,20 +23,24 @@ if ($_GET["grade"] != null) {
     $grade = (int)$_GET["grade"];
 }
 
-echo $grade;
-
 ?>
 
 <div class="content-wrapper p-2 ml-0 gd">
     <div class="content_head pt-2">
-        <h4 class="text-center" data-grade-id="">Grade</h4>
+        <?php
+        $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $grade);
+        $query->execute();
+        $result = $query->fetch();
+        echo $result['name'];
+        ?>
+        <h4 class="text-center" data-grade-id="">Grade <?php echo "$grade" ?></h4>
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">
             <div class="col-9 left_side">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_list.php?grade=">
+                        <a class="btn btn-secondary" href="video_list.php?grade=<?php echo "$grade" ?>">
                             Lesson Explanation
                         </a>
                     </div>
