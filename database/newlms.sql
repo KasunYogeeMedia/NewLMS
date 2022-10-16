@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2022 at 06:34 PM
+-- Generation Time: Oct 16, 2022 at 10:44 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -218,8 +218,8 @@ CREATE TABLE `lmsebook` (
 --
 
 INSERT INTO `lmsebook` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(1, 14, 4, 18, 'January', 'Ebook', 'sample ', '895852.jpg', '2022-10-06 10:25:38', 1),
-(3, 14, 4, 18, '', 'Select Class Type', 'Sample', '320450.jpg', '2022-10-06 10:13:46', 1);
+(1, 14, 1, 1, 'January', 'Ebook', 'sample ', '895852.jpg', '2022-10-16 18:51:20', 1),
+(3, 14, 1, 1, '', 'Select Class Type', 'Sample', '320450.jpg', '2022-10-16 18:51:42', 1);
 
 -- --------------------------------------------------------
 
@@ -280,8 +280,8 @@ CREATE TABLE `lmslesson` (
 --
 
 INSERT INTO `lmslesson` (`lid`, `tid`, `type`, `class`, `subject`, `title`, `available_days`, `no_of_views_per_day`, `cover`, `video`, `add_date`, `status`) VALUES
-(734, 14, 'lesson_explanations', '4', '18', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-05 22:57:46', 1),
-(735, 14, 'general', '7', '20', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-10 01:08:26', 1);
+(734, 16, 'lesson_explanations', '2', '8', 'Sample Video Title', '20', 5, '863893.png', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-16 18:23:54', 1),
+(735, 14, 'general', '3', '13', 'Science of life', '', 0, '106792.jpg', 'https://www.youtube.com/watch?v=_yMDC21GtwA&list=RD_yMDC21GtwA&start_radio=1', '2022-10-16 17:52:04', 1);
 
 -- --------------------------------------------------------
 
@@ -550,7 +550,7 @@ CREATE TABLE `lmstealmsr` (
 INSERT INTO `lmstealmsr` (`tid`, `systemid`, `fullname`, `district`, `contactnumber`, `pcontactno`, `school`, `username`, `password`, `image`, `town`, `birthday`, `gender`, `joindate`, `add_date`, `status`) VALUES
 (14, 1663314456, 'English Medium Student', 'sample', '1234567898', '112233445', 'sample school', 'sample1@email.com', 'd54d1702ad0f8326224b817c796763c9', '', 'sample', '2022-09-08', 'Male', '2022-02-09', '2022-10-11 04:50:44', 1),
 (16, 1665077021, 'Sinhala Medium Student', 'Sample', '1234567898', '1122334455', 'School 2', 'sample2@email.com', '100ce3939dc720f78063dd4cc70638f8', '1665463924istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-05', '2022-10-11 04:52:04', 1),
-(18, 1665298894, 'All Subject Student', 'Gampaha', '123456789', '45678912', 'School 3', 'sample3@email.com', '827ccb0eea8a706c4c34a16891f84e7b', '1665460452istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-12 09:59:08', 1),
+(18, 1665298894, 'All Subject Student', 'Gampaha', '123456789', '45678912', 'School 3', 'sample3@email.com', 'd54d1702ad0f8326224b817c796763c9', '1665460452istockphoto-1161352480-612x612.jpg', 'Gampaha', '2022-10-02', 'Male', '2022-10-04', '2022-10-16 19:08:12', 1),
 (20, 1665490195, 'TEST', 'Gampaha', '123456789', '11224537532', 'Sample schoolvwe', 'sample4@email.com', '3354045a397621cd92406f1f98cde292', '', 'Sample', '2022-10-03', 'Male', '2022-10-02', '2022-10-11 12:10:43', 0);
 
 -- --------------------------------------------------------
@@ -585,12 +585,22 @@ INSERT INTO `lmstealmsr_multiple` (`tealmsr_id`, `tealmsr_system_id`, `tealmsr_t
 (170, 1665077021, 3, 19),
 (189, 1665490195, 2, 7),
 (190, 1665490195, 3, 20),
-(191, 1665298894, 2, 6),
-(192, 1665298894, 2, 7),
-(193, 1665298894, 2, 4),
-(194, 1665298894, 3, 20),
-(195, 1665298894, 3, 18),
-(196, 1665298894, 3, 19);
+(197, 1665298894, 2, 2),
+(198, 1665298894, 2, 3),
+(199, 1665298894, 2, 1),
+(200, 1665298894, 3, 11),
+(201, 1665298894, 3, 5),
+(202, 1665298894, 3, 12),
+(203, 1665298894, 3, 6),
+(204, 1665298894, 3, 1),
+(205, 1665298894, 3, 7),
+(206, 1665298894, 3, 8),
+(207, 1665298894, 3, 2),
+(208, 1665298894, 3, 9),
+(209, 1665298894, 3, 3),
+(210, 1665298894, 3, 4),
+(211, 1665298894, 3, 10),
+(212, 1665298894, 3, 13);
 
 -- --------------------------------------------------------
 
@@ -778,7 +788,8 @@ CREATE TABLE `lms_pdf` (
 --
 
 INSERT INTO `lms_pdf` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(2, 14, 1, 1, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-12 17:16:10', 1);
+(2, 14, 1, 1, 'March', 'Free Class', 'sample2', '396558.jpg', '2022-08-16 18:49:36', 1),
+(3, 0, 1, 1, '', 'Books and Papers', 'sample', '436245.jpg', '2022-10-16 19:38:18', 1);
 
 -- --------------------------------------------------------
 
@@ -1212,7 +1223,7 @@ ALTER TABLE `lmstealmsr`
 -- AUTO_INCREMENT for table `lmstealmsr_multiple`
 --
 ALTER TABLE `lmstealmsr_multiple`
-  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
+  MODIFY `tealmsr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 
 --
 -- AUTO_INCREMENT for table `lmsurl`
@@ -1254,7 +1265,7 @@ ALTER TABLE `lms_mcq_questions`
 -- AUTO_INCREMENT for table `lms_pdf`
 --
 ALTER TABLE `lms_pdf`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lms_teacher_payment_history`

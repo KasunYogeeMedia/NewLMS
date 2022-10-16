@@ -16,11 +16,9 @@ require_once 'navheader.php';
 ?>
 
 <?php
-$grade = 0;
-if ($_GET["grade"] != null) {
-
-    // $grade = (int)$_GET["grade"];
-    $grade = (int)$_GET["grade"];
+$gid=1;
+if ($_GET["gid"] != null) {
+    $gid=(int)$_GET["gid"];
 }
 
 ?>
@@ -28,59 +26,58 @@ if ($_GET["grade"] != null) {
 <div class="content-wrapper p-2 ml-0 gd">
     <div class="content_head pt-2">
         <?php
-        $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $grade);
+        $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $gid);
         $query->execute();
         $result = $query->fetch();
-        echo $result['name'];
         ?>
-        <h4 class="text-center" data-grade-id="">Grade <?php echo "$grade" ?></h4>
+        <h4 class="text-center" data-gid-id=""><?php echo $result['name']; ?></h4>
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">
             <div class="col-9 left_side">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_list.php?grade=<?php echo "$grade" ?>">
+                        <a class="btn btn-secondary" href="video_explanation.php?gid=<?php echo "$gid" ?>">
                             Lesson Explanation
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_video_list.php">
+                        <a class="btn btn-secondary" href="std_lessons.php?gid=<?php echo "$gid" ?>">
                             Lesson Explanation by Students
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_pdf.php">
+                        <a class="btn btn-secondary" href="std_pdf_notes.php?gid=<?php echo "$gid" ?>">
                             Student Notes
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_list.php">
+                        <a class="btn btn-secondary" href="video_revision.php?gid=<?php echo "$gid" ?>">
                             Lesson Revision
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_video_list.php">
+                        <a class="btn btn-secondary" href="std_practicles.php?gid=<?php echo "$gid" ?>">
                             Practicals by Students
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_pdf.php">
+                        <a class="btn btn-secondary" href="std_pdf_school.php?gid=<?php echo "$gid" ?>">
                             Students School Papers
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_list.php">
+                        <a class="btn btn-secondary" href="video_discussions.php?gid=<?php echo "$gid" ?>">
                             Paper Discussions
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php">
+                        <a class="btn btn-secondary" href="pdf.php?gid=<?php echo "$gid" ?>">
                             Books and Papers
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" class="btn btn-primary" href="std_pdf.php">
+                        <a class="btn btn-secondary" class="btn btn-primary" href="std_pdf_class.php?gid=<?php echo "$gid" ?>">
                             Students Class Papers
                         </a>
                     </div>
@@ -89,7 +86,7 @@ if ($_GET["grade"] != null) {
             <div class="col-3 right_side">
                 <div class="row">
                     <div class="col-md-12">
-                        <a class="btn btn-info" href="std_list.php">
+                        <a class="btn btn-info" href="std_list.php?gid=<?php echo "$gid" ?>">
                             Our Smart Students
                         </a>
                     </div>

@@ -15,6 +15,16 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
+<?php
+
+$gid=0;
+if ($_GET["gid"] != null) {
+    
+    $gid=(int)$_GET["gid"];
+}
+
+?>
+
 <div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
         <h4 class="text-center">student List</h4>

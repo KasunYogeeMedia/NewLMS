@@ -25,29 +25,29 @@ require_once 'navheader.php';
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">English Medium</h5>
                 <div class="links-1">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=7">Grade 6</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=8">Grade 7</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=9">Grade 8</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=10">Grade 9</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=11">Grade 10</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=12">Grade 11</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=7">Grade 6</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=8">Grade 7</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=9">Grade 8</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=10">Grade 9</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=11">Grade 10</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=12">Grade 11</a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="links-2 my-5">
-                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="common_video.php?grade=13">Science of Life <br> ජිවිත විද්‍යාව</a>
+                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="common_video.php?gid=13">Science of Life <br> ජිවිත විද්‍යාව</a>
                     <a class="btn btn-secondary btn-lg w-100 mb-2" href="ol_result.php">O/L Result</a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">සිංහල මාධ්‍යය</h5>
                 <div class="links-3">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=1">Grade 6</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=2">Grade 7</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=3">Grade 8</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=4">Grade 9</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=5">Grade 10</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?grade=6">Grade 11</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=1">Grade 6</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=2">Grade 7</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=3">Grade 8</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=4">Grade 9</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=5">Grade 10</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=6">Grade 11</a>
                 </div>
             </div>
         </div>

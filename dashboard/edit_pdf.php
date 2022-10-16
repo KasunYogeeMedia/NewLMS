@@ -26,17 +26,14 @@ if (isset($_GET['cttid']) && !empty($_GET['cttid'])) {
 
 if (isset($_POST['update'])) {
 
-	$tid = $_POST['tid'];
 	$class = $_POST['class'];
 	$subject = $_POST['subject'];
-	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
 	$title = $_POST['title'];
 	$status = $_POST['status'];
 
 	date_default_timezone_set("Asia/Colombo");
 
-	$payment_month = mysqli_real_escape_string($conn, $_POST['payment_month'] . date("-d H:i:s"));
 
 	$imgFile = $_FILES['user_image']['name'];
 	$tmp_dir = $_FILES['user_image']['tmp_name'];
@@ -78,25 +75,19 @@ if (isset($_POST['update'])) {
 
 		$stmt = $DB_con->prepare('UPDATE lms_pdf
 
-									     SET tid=:tid,									 											 
-											 class=:class,										 											 
+									     SET class=:class,										 											 
 											 subject=:subject,											 											 
-											 month=:month,
 											 ctype=:ctype,
 											 title=:title,
 										     tdocument=:upic,
-											 add_date=:payment_month,
 											 status=:status
 								       WHERE ctuid=:cttid');
 
-		$stmt->bindParam(':tid', $tid);
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);
-		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
-		$stmt->bindParam(':payment_month', $payment_month);
 		$stmt->bindParam(':status', $status);
 		$stmt->bindParam(':cttid', $id);
 		var_dump($stmt);
@@ -179,56 +170,6 @@ require_once 'sidebarmenu.php';
 							<div class="row">
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
-										<label class="form-label">Student</label>
-										<select class="form-control" name="tid" required>
-											<option value="<?php
-
-															$id = $tid;
-
-															$query = $DB_con->prepare('SELECT tid FROM lmstealmsr WHERE tid=' . $id);
-
-															$query->execute();
-
-															$result = $query->fetch();
-
-															echo $result['tid'];
-
-															?>"><?php
-
-																$id = $tid;
-
-																$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
-
-																$query->execute();
-
-																$result = $query->fetch();
-
-																echo $result['fullname'];
-
-																?></option>
-											<?php
-											require_once 'dbconfig4.php';
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
-
-											$stmt->execute();
-
-											if ($stmt->rowCount() > 0) {
-
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-													extract($row);
-
-											?>
-													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php }
-											}
-											?>
-										</select>
-									</div>
-								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
 										<label class="form-label">Grade</label>
 										<select class="form-control" name="class" required onChange="JavaScript:send_level(this.value);">
 											<option value="<?php
@@ -292,40 +233,18 @@ require_once 'sidebarmenu.php';
 										</span>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Month</label>
-										<select class="form-control" name="month" required>
-											<option><?php echo $month; ?></option>
-											<option style="display:none;">Select Month</option>
-											<option>January</option>
-											<option>February</option>
-											<option>March</option>
-											<option>April</option>
-											<option>May</option>
-											<option>June</option>
-											<option>July</option>
-											<option>August</option>
-											<option>September</option>
-											<option>October</option>
-											<option>November</option>
-											<option>December</option>
-										</select>
-									</div>
-								</div>
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Class Type</label>
 										<select class="form-control" name="ctype" required>
 											<option><?php echo $ctype; ?></option>
 											<option style="display:none;">Select Class Type</option>
-											<option>Online Class</option>
-											<option>Paper Class</option>
-											<option>Free Class</option>
+											<option>Books and Papers</option>
+											
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-5 col-md-5 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Title</label>
 										<input type="text" class="form-control" name="title" value="<?php echo $title; ?>">
@@ -338,11 +257,6 @@ require_once 'sidebarmenu.php';
 										<hr>
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - PDF|Docx|Jpg|Png"</p>
 									</div>
-								</div>
-
-								<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-									<label class="form-label">Upload Month</label>
-									<input name="payment_month" type="month" id="payment_month" class="form-control" value="<?php echo date_format(date_create($edit_row['add_date']), "Y-m"); ?>">
 								</div>
 
 								<div class="col-lg-2 col-md-2 col-sm-12">

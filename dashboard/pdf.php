@@ -61,14 +61,11 @@ require_once 'sidebarmenu.php';
 												<th>ID</th>
 												<th>Option</th>
 												<th>Action</th>
-												<th>Student</th>
 												<th>Grade</th>
 												<th>Subject</th>
-												<th>Month</th>
 												<th>Class Type</th>
 												<th>Title</th>
 												<th>Document</th>
-												<th>Upload Month</th>
 												<th>Date</th>
 											</tr>
 										</thead>
@@ -111,21 +108,6 @@ require_once 'sidebarmenu.php';
 														</td>
 														<td>
 															<?php
-
-															$id = $row['tid'];
-
-															$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
-
-															$query->execute();
-
-															$result = $query->fetch();
-
-															echo $result['fullname'];
-
-															?>
-														</td>
-														<td>
-															<?php
 															$id = $row['class'];
 															$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
 															$query->execute();
@@ -141,11 +123,9 @@ require_once 'sidebarmenu.php';
 															echo $result['name'];
 															?>
 														</td>
-														<td><?php echo $row['month']; ?></td>
 														<td><?php echo $row['ctype']; ?></td>
 														<td><?php echo $row['title']; ?></td>
 														<td><a href="images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
-														<td><span class="badge badge-primary" style="font-size:14px;"> <?php echo date_format(date_create($row['add_date']), "F"); ?></span></td>
 														<td><?php echo $row['add_date']; ?></td>
 													</tr>
 											<?php }

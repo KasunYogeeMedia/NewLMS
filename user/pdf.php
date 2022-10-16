@@ -17,14 +17,11 @@ require_once 'navheader.php';
 
 <?php
 
-$grade = 0;
-if ($_GET["grade"] != null) {
-
-    // $grade = (int)$_GET["grade"];
-    $grade = (int)$_GET["grade"];
+$gid=0;
+if ($_GET["gid"] != null) {
+    
+    $gid=(int)$_GET["gid"];
 }
-
-echo $grade;
 
 ?>
 

@@ -14,17 +14,13 @@ $msg5 = '';
 
 if (isset($_POST['add_classtute'])) {
 
-	$tid = $_POST['tid'];
 	$class = $_POST['class'];
 	$subject = $_POST['subject'];
-	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
 	$title = $_POST['title'];
 	$status = $_POST['status'];
 
 	date_default_timezone_set("Asia/Colombo");
-
-	$payment_month = mysqli_real_escape_string($conn, $_POST['payment_month'] . date("-d H:i:s"));
 
 	$imgFile = $_FILES['user_image']['name'];
 	$tmp_dir = $_FILES['user_image']['tmp_name'];
@@ -34,8 +30,6 @@ if (isset($_POST['add_classtute'])) {
 		$errMSG = "Please Select Class.";
 	} else if (empty($subject)) {
 		$errMSG = "Please Select Subject.";
-	} else if (empty($month)) {
-		$errMSG = "Please Select Month.";
 	} else if (empty($ctype)) {
 		$errMSG = "Please Select Type.";
 	} else if (empty($title)) {
@@ -67,15 +61,12 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lms_pdf(tid,class,subject,month,ctype,title,tdocument,add_date,status) VALUES(:tid,:class,:subject,:month,:ctype,:title,:upic,:payment_month,:status)');
-		$stmt->bindParam(':tid', $tid);
+		$stmt = $DB_con->prepare('INSERT INTO lms_pdf(class,subject,ctype,title,tdocument,status) VALUES(:class,:subject,:ctype,:title,:upic,:status)');
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);
-		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
-		$stmt->bindParam(':payment_month', $payment_month);
 		$stmt->bindParam(':status', $status);
 
 		if ($stmt->execute()) {
@@ -158,31 +149,7 @@ require_once 'sidebarmenu.php';
 						?>
 						<form method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Student</label>
-										<select class="form-control" name="tid" required>
-											<?php
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
-
-											$stmt->execute();
-
-											if ($stmt->rowCount() > 0) {
-
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-													extract($row);
-
-											?>
-													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php
-												}
-											}
-											?>
-										</select>
-									</div>
-								</div>
+								
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Grade</label>
@@ -230,38 +197,17 @@ require_once 'sidebarmenu.php';
 										</span>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Month</label>
-										<select class="form-control" name="month" required>
-											<option style="display:none;">Select Month</option>
-											<option>January</option>
-											<option>February</option>
-											<option>March</option>
-											<option>April</option>
-											<option>May</option>
-											<option>June</option>
-											<option>July</option>
-											<option>August</option>
-											<option>September</option>
-											<option>October</option>
-											<option>November</option>
-											<option>December</option>
-										</select>
-									</div>
-								</div>
+								
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Class Type</label>
 										<select class="form-control" name="ctype" required>
-											<option style="display:none;">Select Class Type</option>
-											<option>Online Class</option>
-											<option>Paper Class</option>
-											<option>Free Class</option>
+											<option style="display:none;">Select Type</option>
+											<option>Books and Papers</option>
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-5 col-md-5 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Title</label>
 										<input type="text" class="form-control" name="title" placeholder="Enter PDF Title" required>
@@ -274,11 +220,6 @@ require_once 'sidebarmenu.php';
 										<hr>
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - PDF|Docx|Jpg|Png"</p>
 									</div>
-								</div>
-
-								<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-									<label class="form-label">Upload Month</label>
-									<input name="payment_month" type="month" id="payment_month" class="form-control" value="<?php echo date("Y-m") ?>">
 								</div>
 
 								<div class="col-lg-2 col-md-2 col-sm-12">

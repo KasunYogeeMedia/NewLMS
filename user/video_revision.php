@@ -15,7 +15,7 @@ require_once '../dashboard/header.php';
 
 $gid=0;
 if ($_GET["gid"] != null) {
-    
+
     $gid=(int)$_GET["gid"];
 }
 
@@ -23,10 +23,15 @@ if ($_GET["gid"] != null) {
 
 <div class="content-wrapper p-2 ml-0 video">
     <div class="content_head pt-2">
-        <h4 class="text-center">Video List</h4>
+    <?php
+        $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $gid);
+        $query->execute();
+        $result = $query->fetch();
+        ?>
+        <h4 class="text-center">Video List <?php echo $result['name']; ?></h4>
     </div>
     <div class="content_body text-center pt-2">
-        <table class="table table-dark table-bordered">
+        <table id="example1" class="table table-dark table-bordered">
             <thead>
                 <tr>
 
@@ -37,7 +42,7 @@ if ($_GET["gid"] != null) {
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "lesson_explanations" ORDER BY lid');
+                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "lesson_revision" AND subject = "'.$gid.'"  ORDER BY lid');
 
                 $stmt->execute();
 
