@@ -274,12 +274,11 @@ require_once 'sidebarmenu.php';
 									</div>
 								</div>
 
-								<div style="display: none;" class="col-lg-2 col-md-2 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Status</label>
 										<select class="form-control" name="status" required>
 											<option value="0">Unpublished</option>
-											<option value="1">Published</option>
 										</select>
 									</div>
 								</div>

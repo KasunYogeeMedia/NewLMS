@@ -16,10 +16,8 @@ require_once 'navheader.php';
 ?>
 
 <?php
-
-$gid=0;
+$gid=1;
 if ($_GET["gid"] != null) {
-    
     $gid=(int)$_GET["gid"];
 }
 
@@ -57,7 +55,7 @@ if ($_GET["gid"] != null) {
                             } ?><img src="<?php echo $pro_img; ?>" class="img_fluid">
                         </td>
                         <td>
-                            <a href="smart_students.php" class="btn btn-primary"><?php echo $tec_resalt['fullname']; ?></a>
+                            <a href="smart_students.php?gid=<?php echo "$gid" ?>&sid=<?php echo $tec_resalt['tid']; ?>" class="btn btn-primary"><?php echo $tec_resalt['fullname']; ?></a>
                         </td>
                     </tr>
                 <?php

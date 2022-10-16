@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 10:44 PM
+-- Generation Time: Oct 17, 2022 at 12:06 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -111,7 +111,8 @@ CREATE TABLE `lmsclasstute_std` (
 --
 
 INSERT INTO `lmsclasstute_std` (`ctuid`, `tid`, `class`, `subject`, `month`, `ctype`, `title`, `tdocument`, `add_date`, `status`) VALUES
-(14, 14, 4, 18, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 16:40:28', 1);
+(14, 14, 4, 18, 'A', '1234', 'Sample ascxsc', '809780.jpg', '2022-10-06 16:40:28', 1),
+(17, 18, 2, 7, '', 'Notes', 'sample', '485992.jpg', '2022-10-16 21:22:15', 1);
 
 -- --------------------------------------------------------
 
@@ -1109,7 +1110,7 @@ ALTER TABLE `lmsclasstute`
 -- AUTO_INCREMENT for table `lmsclasstute_std`
 --
 ALTER TABLE `lmsclasstute_std`
-  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ctuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `lmsclass_schlmsle`

@@ -13,20 +13,40 @@ require_once '../dashboard/header.php';
 
 <?php
 
-$gid=0;
+$gid = 0;
 if ($_GET["gid"] != null) {
-    
-    $gid=(int)$_GET["gid"];
+
+    $gid = (int)$_GET["gid"];
+    $sid = (int)$_GET["sid"];
 }
 
 ?>
 
 <div class="content-wrapper p-2 ml-0 video">
     <div class="content_head pt-2">
-        <h4 class="text-center">Video List</h4>
+        <table>
+            <tr>
+                <td>
+                    <?php
+                    $query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $sid);
+                    $query->execute();
+                    $result = $query->fetch();
+                    ?>
+                    <h4 class="text-center" data-gid-id=""><?php echo $result['fullname']; ?>&nbsp;</h4>
+                </td>
+                <td>
+                    <?php
+                    $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $gid);
+                    $query->execute();
+                    $result = $query->fetch();
+                    ?>
+                    <h4 class="text-center"> - Student Practicals <?php echo $result['name']; ?></h4>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="content_body text-center pt-2">
-        <table class="table table-dark table-bordered">
+        <table id="example1" class="table table-dark table-bordered">
             <thead>
                 <tr>
 
@@ -37,7 +57,7 @@ if ($_GET["gid"] != null) {
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "lesson_explanations" ORDER BY lid');
+                $stmt = $DB_con->prepare('SELECT * FROM lmslesson WHERE type = "student_practicals" AND subject = "' . $gid . '" AND tid = "' . $sid . '" ORDER BY lid');
 
                 $stmt->execute();
 
