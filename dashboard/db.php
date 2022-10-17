@@ -1,9 +1,9 @@
 <?php
 
 	$server = "localhost";
-	$username = "guruniwasa_lms";
+	$username = "bzyyummy_guruniwasa_lms";
 	$pass = "i?tuuNYXHtR(";
-	$db = "guruniwasa_lms";
+	$db = "bzyyummy_guruniwasa_lms";
 
 	//create connection 
 
