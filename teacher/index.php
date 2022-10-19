@@ -31,13 +31,10 @@ if (isset($_POST['login_bt'])) {
 
             echo "<script>window.location='home.php';</script>";
         } else {
-
             //password not match
-
             $error_not_match = 1;
         }
     } else {
-
         //not found		
         $error_not_found = 1;
     }
