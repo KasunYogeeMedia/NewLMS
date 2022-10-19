@@ -37,15 +37,12 @@ if (isset($_POST['login_bt'])) {
             $error_not_match = 1;
         }
     } else {
-        
-        //not found		
 
+        //not found		
         $error_not_found = 1;
     }
 }
-
 ?>
-
 <?php
 require_once 'header.php';
 ?>
