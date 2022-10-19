@@ -74,7 +74,7 @@ require_once 'sidebarmenu.php';
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title">All Uploads</h4>
-								<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">+ Add Uploads</a>
+								<a href="add_notes.php" class="btn btn-square btn-secondary float-right">+ Add Uploads</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">

@@ -42,7 +42,6 @@ if (isset($_POST['add_classtute'])) {
 	$subject = $_POST['subject'];
 	$ctype = $_POST['ctype'];
 	$title = $_POST['title'];
-	$status = $_POST['status'];
 
 	date_default_timezone_set("Asia/Colombo");
 
@@ -83,14 +82,13 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute_std(tid,class,subject,ctype,title,tdocument,status) VALUES(:tid,:class,:subject,:ctype,:title,:upic,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute_std(tid,class,subject,ctype,title,tdocument) VALUES(:tid,:class,:subject,:ctype,:title,:upic)');
 		$stmt->bindParam(':tid', $tid);
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
-		$stmt->bindParam(':status', $status);
 
 		if ($stmt->execute()) {
 
@@ -226,7 +224,7 @@ require_once 'sidebarmenu.php';
 										</span>
 									</div>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-12">
+								<div class="col-lg-3 col-md-3 col-sm-12" style="display: none;">
 									<div class="form-group">
 										<label class="form-label">Student</label>
 										<select class="form-control" name="tid" required>
@@ -251,33 +249,20 @@ require_once 'sidebarmenu.php';
 										</select>
 									</div>
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-12">
+								<div class="col-lg-2 col-md-2 col-sm-12" style="display:none;">
 									<div class="form-group">
 										<label class="form-label">Class Type</label>
 										<select class="form-control" name="ctype" required>
-											<option style="display:none;">Select Class Type</option>
-											<option>Notes</option>
-											<option>School Papers</option>
 											<option>Class Papers</option>
 										</select>
 									</div>
 								</div>
-
 								<div class="col-lg-5 col-md-5 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Upload Document</label>
 										<input type="file" class="form-control" name="user_image">
 										<hr>
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - Pdf|Docx|Jpg|Png"</p>
-									</div>
-								</div>
-
-								<div class="col-lg-2 col-md-2 col-sm-12">
-									<div class="form-group">
-										<label class="form-label">Status</label>
-										<select class="form-control" name="status">
-											<option value="0">Unpublished</option>
-										</select>
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12">

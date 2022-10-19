@@ -4,7 +4,7 @@
 Contributions are always **welcome and recommended**! Here is how for beginner's: [Get started with open source click here](https://youtu.be/GbqSvJs-6W4)
 
 1. Contribution Requirements :
-    * When you contribute, you agree to give a non-exclusive license to Guruniwasa LMS to use that contribution in any context as we (Guruniwasa LMS) see appropriate.
+    * When you contribute, you agree to give a non-exclusive license to Smart Science LMS to use that contribution in any context as we (Smart Science LMS) see appropriate.
     * If you use content provided by another party, it must be appropriately licensed using an [open source](https://opensource.org/licenses) license.
     * Contributions are only accepted through GitHub pull requests.
     * Finally, contributed code must work in all supported browsers (see above for browser support).

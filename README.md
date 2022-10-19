@@ -10,11 +10,11 @@
 **AdminLTE** is a fully responsive administration template. Based on **[Bootstrap 4.6](https://getbootstrap.com/)** framework and also the JS/jQuery plugin.
 Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
 
-**Preview on [Guruniwasa LMS](/themes/v3)**
+**Preview on [Smart Science LMS](/themes/v3)**
 
 ## Looking for Premium Templates?
 
-Guruniwasa LMS just opened a new premium templates page. Hand picked to ensure the best quality and the most affordable
+Smart Science LMS just opened a new premium templates page. Hand picked to ensure the best quality and the most affordable
 prices. Visit </premium> for more information.
 
 !["AdminLTE Presentation"](/AdminLTE3.png "AdminLTE Presentation")
@@ -26,7 +26,7 @@ SCSS has been used to increase code customizability.
 There are multiple ways to install AdminLTE.
 
 ### Download & Changelog:
-Always Recommended to download from GitHub latest release [Guruniwasa LMS](https://github.com/ColorlibHQ/AdminLTE/releases/latest) for bug free and latest features.\
+Always Recommended to download from GitHub latest release [Smart Science LMS](https://github.com/ColorlibHQ/AdminLTE/releases/latest) for bug free and latest features.\
 Visit the [releases](https://github.com/ColorlibHQ/AdminLTE/releases) page to view the changelog.\
 Legacy Releases are [AdminLTE 2](https://github.com/ColorlibHQ/AdminLTE/releases/tag/v2.4.18) / [AdminLTE 1](https://github.com/ColorlibHQ/AdminLTE/releases/tag/1.3.1).
 
@@ -93,8 +93,8 @@ Editor preferences are available in the [editor config](https://github.com/twbs/
 
 ## License
 
-AdminLTE is an open source project by [Guruniwasa LMS]() that is licensed under [MIT](https://opensource.org/licenses/MIT).
-Guruniwasa LMS reserves the right to change the license of future releases.
+AdminLTE is an open source project by [Smart Science LMS]() that is licensed under [MIT](https://opensource.org/licenses/MIT).
+Smart Science LMS reserves the right to change the license of future releases.
 
 ## Image Credits
 

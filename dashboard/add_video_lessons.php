@@ -73,7 +73,7 @@ if (isset($_POST['add_lesson'])) {
 		if ($stmt->execute()) {
 			$successMSG = "Your Video Lessons Successfully Submitted.";
 
-			header("refresh:2;video_lessons.php"); // redirects image view page after 5 seconds.
+			// header("refresh:2;video_lessons.php");
 		} else {
 			$errMSG = "error while inserting....";
 		}
