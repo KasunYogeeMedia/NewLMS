@@ -58,8 +58,6 @@ if (isset($_POST['add_classtute'])) {
 		$errMSG = "Please Select Type.";
 	} else if (empty($title)) {
 		$errMSG = "Please Select Topic.";
-	} else if (empty($status)) {
-		$errMSG = "Please Select Status.";
 	} {
 		$upload_dir = '../dashboard/images/classtute/'; // upload directory
 
@@ -277,7 +275,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Status</label>
-										<select class="form-control" name="status" required>
+										<select class="form-control" name="status">
 											<option value="0">Unpublished</option>
 										</select>
 									</div>
