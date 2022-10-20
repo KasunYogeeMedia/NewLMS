@@ -69767,6 +69767,10 @@ iframe {
   font-family: "Gemunu Libre", sans-serif;
 }
 
+.crd_inner .inner{
+  padding:20px;
+}
+
 /* user section css */
 .gd .btn,
 .std_list .btn {
