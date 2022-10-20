@@ -41,10 +41,6 @@ require_once 'header.php';
             <!-- ./col -->
         </div>
 
-        <div class="user">
-            <h4>Admin</h4>
-            <a href="dashboard">Admin Login</a>
-        </div>
     </div>
 </div>
 <?php

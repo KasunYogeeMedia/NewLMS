@@ -37,7 +37,7 @@ if ($_GET["gid"] != null) {
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">
-            <div class="col-sm-9 col-xs-12 left_side">
+            <div class="col-md-7 col-sm-6 col-xs-12 left_side">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_practicles.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
@@ -72,9 +72,9 @@ if ($_GET["gid"] != null) {
 
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-12 right_side col-md-push-1">
+            <div class="col-sm-5 col-xs-12 right_side col-md-push-1">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6 col-sm-12">
                         <?php
                         $aaid =
                             $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr Where tid = 16");
@@ -86,6 +86,9 @@ if ($_GET["gid"] != null) {
                             $pro_img = "../dashboard/images/teacher/" . $tec_resalt['image'];
                         } ?><img src="<?php echo $pro_img; ?>" class="img-fluid">
 
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <img class="img-fluid" src="../dist/img/abiman_sir.jpg" alt="">
                     </div>
                 </div>
             </div>
