@@ -11,8 +11,8 @@
 
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="#" role="button">
-        <i class="fas fa-watsapp"></i>
+      <a class="nav-link" target="_blank" href="https://wa.me/94772879970" role="button">
+        <img class="img_icon" src="../dist/img/watsapp+icon.png" alt="">
       </a>
     </li>
     <li class="nav-item">
