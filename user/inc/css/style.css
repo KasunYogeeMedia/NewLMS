@@ -24,13 +24,22 @@
   font-size: 20px;
   padding: 20px;
 }
-.img_capt span{
+.img_capt span {
   color: #fff;
-
 }
-.right_side img{
+.right_side img {
   border-radius: 20px;
 }
-.img_name{
+.img_name {
   font-size: 16px;
+}
+.img_td img {
+  max-width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .gd a.btn.btn-secondary,
+  .std_list .btn {
+    min-height: 65px;
+  }
 }

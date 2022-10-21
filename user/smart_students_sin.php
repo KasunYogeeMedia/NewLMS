@@ -72,32 +72,32 @@ if ($_GET["gid"] != null) {
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_lessons.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Student Lesson Explanations
+                            සිසුවා විසින් සිදුකරන ලද පාඩම් පැහැදිලි කිරීම්
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_school.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Student School Papers
+                            සිසුවා විසින් පිළිතුරු සපයන ලද පාසල් ප්‍රශ්න පත්‍
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_practicles.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Student Practicals
+                            සිසුවා විසින් සිදුකරන ලද විද්‍යාව ප්‍රායෝගික පරීක්ෂණ
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_class.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Students Class Papers
+                            සිසුවා විසින් පිළිතුරු සපයන ලද විද්‍යාව පන්තියේ ප්‍රශ්න පත්‍
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="student_notes.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Students Notes
+                            සිසුවාගේ සටහන්
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a class="btn btn-secondary" href="std_achevements.php?gid=<?php echo "$gid" ?>&sid=<?php echo "$sid" ?>">
-                            Students Achevements
+                            සිසුවා විසින් ලබාගන්නා ලද ජයග්‍රහණ
                         </a>
                     </div>
 

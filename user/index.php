@@ -42,12 +42,12 @@ require_once 'navheader.php';
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">සිංහල මාධ්‍යය</h5>
                 <div class="links-3">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=1">Grade 6</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=2">Grade 7</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=3">Grade 8</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=4">Grade 9</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=5">Grade 10</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=6">Grade 11</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=1">6 ශ්‍රේණිය</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=2">7 ශ්‍රේණිය</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=3">8 ශ්‍රේණිය</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=4">9 ශ්‍රේණිය</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=5">10 ශ්‍රේණිය</a>
+                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=6">11 ශ්‍රේණිය</a>
                 </div>
             </div>
         </div>
