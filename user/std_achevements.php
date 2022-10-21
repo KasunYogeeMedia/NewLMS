@@ -26,7 +26,7 @@ if ($_GET["gid"] != null) {
 
 ?>
 
-<div class="content-wrapper p-2 ml-0 pdf">
+<div class="content-wrapper p-2 ml-0 pt-5 pdf">
     <div class="content_head pt-2">
     <table>
             <tr>

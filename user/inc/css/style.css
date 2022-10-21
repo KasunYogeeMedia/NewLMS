@@ -1,0 +1,36 @@
+.content-wrapper {
+  background-image: url("../img/backgr.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content-wrapper h4,
+.content-wrapper h5 {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-weight: bold;
+}
+.content-wrapper .mid_col {
+  padding-top: 5vw;
+}
+.content-wrapper .logo_banner {
+  background-color: rgba(240, 248, 255, 0.527);
+}
+.logo_banner .fot_logo {
+  max-width: 300px;
+}
+.content_body .right_side .btn {
+  font-size: 20px;
+  padding: 20px;
+}
+.img_capt span{
+  color: #fff;
+
+}
+.right_side img{
+  border-radius: 20px;
+}
+.img_name{
+  font-size: 16px;
+}

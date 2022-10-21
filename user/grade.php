@@ -16,14 +16,14 @@ require_once 'navheader.php';
 ?>
 
 <?php
-$gid=1;
+$gid = 1;
 if ($_GET["gid"] != null) {
-    $gid=(int)$_GET["gid"];
+    $gid = (int)$_GET["gid"];
 }
 
 ?>
 
-<div class="content-wrapper p-2 ml-0 gd">
+<div class="content-wrapper p-2 ml-0 pt-5 gd">
     <div class="content_head pt-2">
         <?php
         $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $gid);
@@ -34,7 +34,16 @@ if ($_GET["gid"] != null) {
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">
-            <div class="col-9 left_side">
+            <div class="col-sm-3 right_side">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-info" href="std_list.php?gid=<?php echo "$gid" ?>">
+                            Our Smart Students
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 left_side">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <a class="btn btn-secondary" href="video_explanation.php?gid=<?php echo "$gid" ?>">
@@ -83,15 +92,9 @@ if ($_GET["gid"] != null) {
                     </div>
                 </div>
             </div>
-            <div class="col-3 right_side">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="btn btn-info" href="std_list.php?gid=<?php echo "$gid" ?>">
-                            Our Smart Students
-                        </a>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="logo_banner text-center py-3 mt-4">
+            <img class="img-fluid fot_logo" src="inc/img/logo.png" alt="">
         </div>
     </div>
 </div>
