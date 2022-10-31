@@ -34,8 +34,6 @@ if (isset($_POST['add_classtute'])) {
 		$errMSG = "Please Select Type.";
 	} else if (empty($title)) {
 		$errMSG = "Please Select Title.";
-	} else if (empty($status)) {
-		$errMSG = "Please Select Status.";
 	} {
 		$upload_dir = 'images/classtute/'; // upload directory
 
