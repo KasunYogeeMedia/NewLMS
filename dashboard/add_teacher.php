@@ -62,7 +62,6 @@ if (isset($_POST['add_bt'])) {
 		}
 	} else {
 		$db_send_name = "";
-
 	}
 
 	mysqli_query($conn, "INSERT INTO lmstealmsr(systemid, fullname, district, contactnumber,pcontactno, school, username, password, image, town, birthday, gender, joindate, add_date, status) VALUES ('$systemid','$fullname','$district','$contactnumber','$pcontactno','$school','$username','$password','$db_send_name','$town','$birthday','$gender','$joindate','$add_date','0')");
@@ -229,7 +228,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Phone Number (User Name)</label>
-										<input type="tel" class="form-control" name="contactnumber" placeholder="Enter Contact Number" required pattern="\d*">
+										<input type="tel" class="form-control" name="contactnumber" placeholder="Enter Contact Number" required>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">
@@ -311,7 +310,18 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Password</label>
-										<input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+										<input type="password" id="myInput" class="form-control" name="password" placeholder="Enter Password" required>
+										<input class="mt-2" type="checkbox" onclick="myFunction()"> Show Password
+										<script>
+											function myFunction() {
+												var x = document.getElementById("myInput");
+												if (x.type === "password") {
+													x.type = "text";
+												} else {
+													x.type = "password";
+												}
+											}
+										</script>
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12">

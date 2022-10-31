@@ -51,7 +51,7 @@ require_once 'sidebarmenu.php';
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title">O/L Result</h4>
-								<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">+ Add Class Tute</a>
+								<a href="add_class_tute.php" class="btn btn-square btn-secondary float-right">Add O/L Result</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">

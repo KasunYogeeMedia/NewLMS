@@ -59,7 +59,7 @@ require_once 'sidebarmenu.php';
 									<table id="example1" class="table table-bordered">
 										<thead>
 											<tr>
-												<th>ID</th>
+												<!-- <th>ID</th> -->
 												<th>Option</th>
 												<th>Action</th>
 												<th>Topic</th>
@@ -88,7 +88,7 @@ require_once 'sidebarmenu.php';
 
 											?>
 													<tr>
-														<td><?php echo $row['ctuid']; ?></td>
+														<!-- <td><?php echo $row['ctuid']; ?></td> -->
 														<td>
 															<?php
 

@@ -51,14 +51,14 @@ require_once 'sidebarmenu.php';
 						<div class="card">
 							<div class="card-header">
 								<h4 class="card-title">Student Achevements</h4>
-								<a href="add_ebook.php" class="btn btn-square btn-secondary float-right">+ Add Ebook</a>
+								<a href="add_ebook.php" class="btn btn-square btn-secondary float-right">Add Achevements</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table id="example1" class="table table-bordered">
 										<thead>
 											<tr>
-												<th>ID</th>
+												<!-- <th>ID</th> -->
 												<th>Option</th>
 												<th>Action</th>
 												<th>Title</th>
@@ -88,7 +88,7 @@ require_once 'sidebarmenu.php';
 
 											?>
 													<tr>
-														<td><?php echo $row['ctuid']; ?></td>
+														<!-- <td><?php echo $row['ctuid']; ?></td> -->
 														<td>
 															<?php
 

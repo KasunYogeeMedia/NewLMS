@@ -42,4 +42,26 @@ $stmt->execute();
 $result = $stmt->fetch();
 $total_payment = $result['payment_count'];
 
+// new add
+
+$stmt = $DB_con->prepare('SELECT COUNT(*) AS ebook_count FROM lmsebook');
+$stmt->execute();
+$result = $stmt->fetch();
+$total_ebook = $result['ebook_count'];
+
+$stmt = $DB_con->prepare('SELECT COUNT(*) AS apppdf_count FROM lmsclasstute_std');
+$stmt->execute();
+$result = $stmt->fetch();
+$total_apppdf = $result['apppdf_count'];
+
+$stmt = $DB_con->prepare('SELECT COUNT(*) AS pdf_count FROM lms_pdf');
+$stmt->execute();
+$result = $stmt->fetch();
+$total_pdf = $result['pdf_count'];
+
+$stmt = $DB_con->prepare('SELECT COUNT(*) AS olresult_count FROM lmsclasstute');
+$stmt->execute();
+$result = $stmt->fetch();
+$total_olresult = $result['olresult_count'];
+
 ?>

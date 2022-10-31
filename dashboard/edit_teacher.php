@@ -250,7 +250,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="form-group">
 										<label class="form-label">Phone Number (User Name)</label>
-										<input type="tel" name="contactnumber" class="form-control" pattern="\d*" value="<?php echo "0" . $edit_resalt['contactnumber']; ?>" required>
+										<input type="tel" name="contactnumber" class="form-control" value="<?php echo $edit_resalt['contactnumber']; ?>" required>
 									</div>
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-6">

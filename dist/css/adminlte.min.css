@@ -69773,7 +69773,7 @@ iframe {
 }
 
 /* user section css */
-.img_icon{
+.img_icon {
   max-width: 20px;
   vertical-align: text-bottom;
 }
@@ -69781,6 +69781,9 @@ iframe {
 .std_list .btn {
   width: 100%;
   margin: 10px 0;
+}
+.pro_pick {
+  max-width: 200px;
 }
 .sm_st {
 }

@@ -32,26 +32,7 @@ require_once 'coutquery.php';
 			<div class="col-xl-12 col-xxl-12 col-sm-12">
 				<div class="row">
 
-					<div class="col-xl-4 col-xxl-4 col-sm-6">
-						<div class="widget-stat card bg-secondary">
-							<a href="add_teacher.php">
-								<div class="card-body">
-									<div class="media">
-										<span class="mr-3">
-											<i class="fa fa-users"></i>
-										</span>
-										<div class="media-body text-white">
-											<p class="mb-1">Student Registration</p>
-											<h3 class="text-white"><?php echo $total_teacher ?></h3>
-											<div class="progress mb-2 bg-white">
-												<div class="progress-bar progress-animated bg-light" style="width: 80%"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
+
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
 							<a href="">
@@ -94,15 +75,15 @@ require_once 'coutquery.php';
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<a href="ebook.php">
+							<a href="grade.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">
 											<i class="fa fa-users"></i>
 										</span>
 										<div class="media-body text-white">
-											<p class="mb-1">O/L Result Uploading</p>
-											<h3 class="text-white"><?php echo $total_class ?></h3>
+											<p class="mb-1">Total PDF</p>
+											<h3 class="text-white"><?php echo $total_pdf ?></h3>
 											<div class="progress mb-2 bg-white">
 												<div class="progress-bar progress-animated bg-light" style="width: 76%"></div>
 											</div>
@@ -114,15 +95,15 @@ require_once 'coutquery.php';
 					</div>
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-secondary">
-							<a href="ebook.php">
+							<a href="subject.php">
 								<div class="card-body">
 									<div class="media">
 										<span class="mr-3">
 											<i class="fa fa-users"></i>
 										</span>
 										<div class="media-body text-white">
-											<p class="mb-1">PDF Uploading</p>
-											<h3 class="text-white"><?php echo $total_class ?></h3>
+											<p class="mb-1">Total O/L Result</p>
+											<h3 class="text-white"><?php echo $total_olresult ?></h3>
 											<div class="progress mb-2 bg-white">
 												<div class="progress-bar progress-animated bg-light" style="width: 76%"></div>
 											</div>
@@ -142,7 +123,7 @@ require_once 'coutquery.php';
 										</span>
 										<div class="media-body text-white">
 											<p class="mb-1">Student Achevements</p>
-											<h3 class="text-white"><?php echo $total_subject ?></h3>
+											<h3 class="text-white"><?php echo $total_ebook ?></h3>
 											<div class="progress mb-2 bg-white">
 												<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
 											</div>
@@ -162,7 +143,7 @@ require_once 'coutquery.php';
 										</span>
 										<div class="media-body text-white">
 											<p class="mb-1">PDF Approvels</p>
-											<h3 class="text-white"><?php echo $total_lesson ?></h3>
+											<h3 class="text-white"><?php echo $total_apppdf ?></h3>
 											<div class="progress mb-2 bg-white">
 												<div class="progress-bar progress-animated bg-light" style="width: 30%"></div>
 											</div>
