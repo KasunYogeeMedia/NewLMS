@@ -63,12 +63,10 @@ require_once 'sidebarmenu.php';
 												<th>Option</th>
 												<th>Action</th>
 												<th>Topic</th>
-												<!-- <th>Student</th> -->
-												<th>Medium</th>
-												<th>Grade</th>
-
+												<th>Student</th>
+												<th>Aded Medium</th>
+												<th>Aded Grade</th>
 												<th>Class Type</th>
-
 												<th>Document</th>
 												<th>Date</th>
 											</tr>
@@ -111,7 +109,7 @@ require_once 'sidebarmenu.php';
 															</a>
 														</td>
 														<td><?php echo $row['title']; ?></td>
-														<!-- <td>
+														<td>
 															<?php
 
 															$id = $row['tid'];
@@ -125,7 +123,7 @@ require_once 'sidebarmenu.php';
 															echo $result['fullname'];
 
 															?>
-														</td> -->
+														</td>
 														<td>
 															<?php
 															$id = $row['class'];
@@ -134,6 +132,7 @@ require_once 'sidebarmenu.php';
 															$result = $query->fetch();
 															echo $result['name'];
 															?></td>
+														
 														<td>
 															<?php
 															$id = $row['subject'];
@@ -143,6 +142,7 @@ require_once 'sidebarmenu.php';
 															echo $result['name'];
 															?>
 														</td>
+														
 														<td><?php echo $row['ctype']; ?></td>
 
 														<td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" class="badge badge-primary" target="_blank">View Tute</a></td>

@@ -17,48 +17,24 @@ require_once 'navheader.php';
 
 <?php
 
-$gid=0;
+$gid = 0;
 if ($_GET["gid"] != null) {
 
-    $gid=(int)$_GET["gid"];
+    $gid = (int)$_GET["gid"];
 }
 
 ?>
 
-<style type="text/css">
-    .modal-content iframe {
-        margin: 0 auto;
-        display: block;
-    }
-
-    iframe {
-        width: 100%;
-    }
-</style>
-<script type="text/javascript">
-    $(document).ready(function() {
-        var url = $("#cartoonVideo").attr('src');
-
-        $("#myModal").on('hide.bs.modal', function() {
-            $("#cartoonVideo").attr('src', '');
-        });
-
-        $("#myModal").on('show.bs.modal', function() {
-            $("#cartoonVideo").attr('src', url);
-        });
-    });
-</script>
-
 <div class="content-wrapper p-2 ml-0">
     <div class="content_head pt-2">
-        <h4 class="text-center">Science of life</h4>
+        <h4 class="text-center">Science of life - ජිවිත විද්‍යාව </h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Topic</th>
-                    <th scope="col">Video Link</th>
+                    <th scope="col">Video</th>
 
                 </tr>
             </thead>
@@ -78,14 +54,23 @@ if ($_GET["gid"] != null) {
                 ?>
                         <tr>
                             <td><?php echo $row['title']; ?></td>
+                           
                             <td>
-                                <a href="#myModal" class="btn btn-primary" data-toggle="modal">Watch Video</a>
+                                <!-- Button HTML (to Trigger Modal) -->
+                                <a href="#myModal" class="btn btn-primary btn-sm" data-toggle="modal">Watch Video</a>
+
+                                <!-- Modal HTML -->
                                 <div id="myModal" class="modal fade">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">YouTube Video</h5>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
                                             <div class="modal-body">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/e9p4Epkqv0k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe id="cartoonVideo" class="embed-responsive-item" width="100%" height="auto" src="<?php echo $row['video']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

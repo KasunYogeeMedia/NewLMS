@@ -30,7 +30,7 @@ if ($_GET["gid"] != null) {
         $query->execute();
         $result = $query->fetch();
         ?>
-        <h4 class="text-center" data-gid-id=""><?php echo $result['name']; ?> - English Language</h4>
+        <h4 class="text-center" data-gid-id=""><?php echo $result['name']; ?> - English Medium</h4>
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">

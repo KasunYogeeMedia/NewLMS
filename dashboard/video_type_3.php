@@ -193,7 +193,7 @@ require_once 'sidebarmenu.php';
                                                 <th>Medium</th>
                                                 <th>Grade</th>
                                                 <th>Title</th>
-                                                <th>Cover</th>
+                                                <!-- <th>Cover</th> -->
                                                 <th>Video</th>
                                                 <th>Date</th>
                                                 <th>Option</th>
@@ -266,13 +266,13 @@ require_once 'sidebarmenu.php';
                                                             ?>
                                                         </td>
                                                         <td><?php echo $row['title']; ?></td>
-                                                        <td>
+                                                        <!-- <td>
                                                             <?php if ($row['cover'] == "") {
                                                                 $pro_img = "../profile/images/hd_dp.jpg";
                                                             } else {
                                                                 $pro_img = "images/lesson/cover/" . $row['cover'];
                                                             } ?><img src="<?php echo $pro_img; ?>" class="pro_pick">
-                                                        </td>
+                                                        </td> -->
                                                         <td><a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a></td>
                                                         <td><?php echo $row['add_date']; ?></td>
                                                         <td>

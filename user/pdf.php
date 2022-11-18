@@ -27,7 +27,7 @@ if ($_GET["gid"] != null) {
 
 <div class="content-wrapper p-2 ml-0 pt-5 pdf">
     <div class="content_head pt-2">
-        <h4 class="text-center">PDF List</h4>
+        <h4 class="text-center">Book and Papers</h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">

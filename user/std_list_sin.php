@@ -16,16 +16,21 @@ require_once 'navheader.php';
 ?>
 
 <?php
-$gid=1;
+$gid = 1;
 if ($_GET["gid"] != null) {
-    $gid=(int)$_GET["gid"];
+    $gid = (int)$_GET["gid"];
 }
 
 ?>
 
 <div class="content-wrapper p-2 ml-0 pt-5">
     <div class="content_head pt-2">
-        <h4 class="text-center">ශිෂ්ය ලැයිස්තුව</h4>
+        <?php
+        $query = $DB_con->prepare('SELECT name FROM lmssubject WHERE sid=' . $gid);
+        $query->execute();
+        $result = $query->fetch();
+        ?>
+        <h4 class="text-center"><?php echo $result['name']; ?> ශිෂ්‍යය ලැයිස්තුව</h4>
     </div>
     <div class="content_body text-center pt-2">
         <table class="table table-dark table-bordered">
@@ -34,12 +39,15 @@ if ($_GET["gid"] != null) {
                     <th scope="col">ID</th>
                     <th scope="col">Profile Picture </th>
                     <th scope="col">Student Name</th>
+                    <th scope="col">Details</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $count = 0;
-                $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr ORDER BY fullname");
+                // $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr ORDER BY fullname");
+                $tec_qury = mysqli_query($conn, "SELECT * FROM lmstealmsr INNER JOIN lmstealmsr_multiple ON lmstealmsr.systemid=lmstealmsr_multiple.tealmsr_system_id INNER JOIN lmssubject ON lmstealmsr_multiple.tealmsr_contain_id=lmssubject.sid WHERE lmssubject.sid = '" . $gid . "' ");
+
                 while ($tec_resalt = mysqli_fetch_array($tec_qury)) {
                     $count++;
                 ?>
@@ -55,7 +63,10 @@ if ($_GET["gid"] != null) {
                             } ?><img src="<?php echo $pro_img; ?>" class="img_fluid">
                         </td>
                         <td>
-                            <a href="smart_students_sin.php?gid=<?php echo "$gid" ?>&sid=<?php echo $tec_resalt['tid']; ?>" class="btn btn-primary"><?php echo $tec_resalt['fullname']; ?></a>
+                            <?php echo $tec_resalt['fullname']; ?>
+                        </td>
+                        <td>
+                            <a href="smart_students.php?gid=<?php echo "$gid" ?>&sid=<?php echo $tec_resalt['tid']; ?>" class="btn btn-primary">View</a>
                         </td>
                     </tr>
                 <?php

@@ -70,7 +70,25 @@ if ($_GET["gid"] != null) {
                         <tr>
                             <td><?php echo $row['title']; ?></td>
                             <td>
-                                <a class="btn btn-danger" target="_blank" href="<?php echo $row['video']; ?>">Video</a>
+                                <!-- Button HTML (to Trigger Modal) -->
+                                <a href="#myModal" class="btn btn-primary btn-sm" data-toggle="modal">Watch Video</a>
+
+                                <!-- Modal HTML -->
+                                <div id="myModal" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">YouTube Video</h5>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe id="cartoonVideo" class="embed-responsive-item" width="100%" height="auto" src="<?php echo $row['video']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                 <?php }

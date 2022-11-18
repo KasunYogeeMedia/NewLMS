@@ -43,3 +43,13 @@
     min-height: 65px;
   }
 }
+
+/* Youtube model js */
+.bs-example {
+  margin: 20px;
+}
+
+.modal-dialog iframe {
+  margin: 0 auto;
+  display: block;
+}

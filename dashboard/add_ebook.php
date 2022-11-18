@@ -73,7 +73,7 @@ if (isset($_POST['add_classtute'])) {
 
 		if ($stmt->execute()) {
 
-			$successMSG = "Ebook Successfully Added.";
+			$successMSG = "Student Achevement Successfully Added.";
 
 			header("refresh:2;ebook.php"); // redirects image view page after 5 seconds.
 

@@ -94,7 +94,7 @@ if ($_GET["gid"] != null) {
                             </td>
                             <td><?php echo $row['title']; ?></td>
 
-                            <td><a href="images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
+                            <td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
                         </tr>
                 <?php }
                 }
