@@ -88,7 +88,7 @@ if ($_GET["gid"] != null) {
 </div>
 
 <?php
-require_once '../dashboard/copyright.php';
+require_once 'copyright.php';
 ?>
 <?php
 require_once '../dashboard/footer.php';

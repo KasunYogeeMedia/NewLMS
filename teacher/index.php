@@ -60,9 +60,9 @@ require_once 'sidebarmenu.php';
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <p>
-                                        <center><img src="../dashboard/settings/logo/<?php echo $main_logo; ?>"></center>
+                                        <center><img class="img-fluid" src="../dashboard/settings/logo/<?php echo $main_logo; ?>"></center>
                                     </p>
-                                    <h4 class="text-center mb-4">Log In | Student</h4>
+                                    <h4 class="text-center mb-4">Log In | Smart Student</h4>
                                     <hr>
                                     <?php if ($error_not_found == 1) { ?> <div style="background: linear-gradient(red,darkred); color: white; padding: 10px; text-align: center;">User not found, Please try agian.</div> <?php } ?>
                                     <?php if ($error_not_match == 1) { ?> <div style="background: linear-gradient(red,darkred); color: white; padding: 10px; text-align: center;">your enterd password not match, Please try agian.</div> <?php } ?>
@@ -79,6 +79,7 @@ require_once 'sidebarmenu.php';
                                             <input type="submit" class="btn btn-primary btn-block" name="login_bt" value="Login">
                                         </div>
                                     </form>
+                                    <p class="mt-4">Smart Student ලෙස log විය හැක්කේ අභිමන් ගුරුතුමාගේ පන්ති සමග සම්බන්ධ වන දරුවන් හට පමණි. අනෙක් සියලු දරුවන් "නොමිලේ අධ්‍යාපනය" ඔස්සේ පිවිසෙන්න</p>
                                 </div>
                             </div>
                         </div>

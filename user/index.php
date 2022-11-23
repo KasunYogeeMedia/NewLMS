@@ -34,7 +34,10 @@ require_once 'navheader.php';
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 mid_col">
-                <div class="links-2 my-5">
+                <div class="links-2">
+                    <div class="mid_logo">
+                        <img class="img-fluid fot_logo px-4 py-2" src="inc/img/logo.png" alt="">
+                    </div>
                     <a class="btn btn-secondary btn-lg w-100 mb-2" href="common_video.php?gid=13">Science of Life <br> ජිවිත විද්‍යාව</a>
                     <a class="btn btn-secondary btn-lg w-100 mb-2" href="ol_result.php">O/L Result</a>
                 </div>
@@ -51,13 +54,22 @@ require_once 'navheader.php';
                 </div>
             </div>
         </div>
+        <div class="row pt-4">
+            <div class="col-sm-4">
+                <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+            </div>
+            <div class="col-sm-4">
+            <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+            </div>
+            <div class="col-sm-4">
+            <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+            </div>
+        </div>
     </div>
-    <div class="logo_banner text-center py-3 mt-4">
-        <img class="img-fluid fot_logo" src="inc/img/logo.png" alt="">
-    </div>
+
 </div>
 <?php
-require_once '../dashboard/copyright.php';
+require_once 'copyright.php';
 ?>
 <?php
 require_once '../dashboard/footer.php';

@@ -93,10 +93,19 @@ if ($_GET["gid"] != null) {
                 </div>
             </div>
         </div>
+        <div class="row pt-4">
+            <div class="col-sm-4">
+                <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+            </div>
+            <div class="col-sm-4">
+            <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+            </div>
+            <div class="col-sm-4">
+            <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+            </div>
+        </div>
     </div>
-    <div class="logo_banner text-center py-3 mt-4">
-        <img class="img-fluid fot_logo" src="inc/img/logo.png" alt="">
-    </div>
+    
 </div>
 <?php
 require_once '../dashboard/copyright.php';
