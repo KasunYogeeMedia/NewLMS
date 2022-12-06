@@ -59,10 +59,13 @@ require_once 'navheader.php';
                 <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
             </div>
             <div class="col-sm-4">
-            <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+                <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+                <script src="https://apis.google.com/js/platform.js"></script>
+
+                <div class="g-ytsubscribe" data-channelid="UCeODAbqACW-Ab8kmang9Mvw" data-layout="full" data-count="default"></div>
             </div>
             <div class="col-sm-4">
-            <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+                <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
             </div>
         </div>
     </div>
