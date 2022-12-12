@@ -25,12 +25,12 @@ require_once 'navheader.php';
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">English Medium</h5>
                 <div class="links-1">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=7">Grade 6</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=8">Grade 7</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=9">Grade 8</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=10">Grade 9</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=11">Grade 10</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade.php?gid=12">Grade 11</a>
+                    <a class="w-100" href="grade.php?gid=7"><img src="inc/img/6e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade.php?gid=8"><img src="inc/img/7e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade.php?gid=9"><img src="inc/img/8e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade.php?gid=10"><img src="inc/img/9e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade.php?gid=11"><img src="inc/img/10e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade.php?gid=12"><img src="inc/img/11e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 mid_col">
@@ -38,19 +38,19 @@ require_once 'navheader.php';
                     <div class="mid_logo">
                         <img class="img-fluid fot_logo px-4 py-2" src="inc/img/logo.png" alt="">
                     </div>
-                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="common_video.php?gid=13">Science of Life <br> ජිවිත විද්‍යාව</a>
-                    <a class="btn btn-secondary btn-lg w-100 mb-2" href="ol_result.php">O/L Result</a>
+                    <a class="w-100" href="common_video.php?gid=13"><img src="inc/img/Science of Life.png" class="img-fluid" alt="smartstudent"></a>
+                    <a class="w-100" href="ol_result.php"><img src="inc/img/OL Result.png" class="img-fluid" alt="smartstudent"></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <h5 class="pb-3">සිංහල මාධ්‍යය</h5>
                 <div class="links-3">
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=1">6 ශ්‍රේණිය</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=2">7 ශ්‍රේණිය</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=3">8 ශ්‍රේණිය</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=4">9 ශ්‍රේණිය</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=5">10 ශ්‍රේණිය</a>
-                    <a class="btn btn-primary btn-lg w-100 mb-2" href="grade_sin.php?gid=6">11 ශ්‍රේණිය</a>
+                    <a class="w-100" href="grade_sin.php?gid=1"><img src="inc/img/6s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade_sin.php?gid=2"><img src="inc/img/7s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade_sin.php?gid=3"><img src="inc/img/8s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade_sin.php?gid=4"><img src="inc/img/9s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade_sin.php?gid=5"><img src="inc/img/10s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
+                    <a class="w-100" href="grade_sin.php?gid=6"><img src="inc/img/11s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@ require_once 'navheader.php';
                 <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
                 <script src="https://apis.google.com/js/platform.js"></script>
 
-                <div class="g-ytsubscribe" data-channelid="UCeODAbqACW-Ab8kmang9Mvw" data-layout="full" data-count="default"></div>
+<div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
             </div>
             <div class="col-sm-4">
                 <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">

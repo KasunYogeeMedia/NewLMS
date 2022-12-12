@@ -34,78 +34,76 @@ if ($_GET["gid"] != null) {
     </div>
     <div class="content_body text-center pt-2">
         <div class="row">
-            <div class="col-sm-3 right_side">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="btn btn-info" href="std_list_sin.php?gid=<?php echo "$gid" ?>">
-                            අපගේ පන්තියට සම්බන්ධ වන සිසුන්
-                        </a>
-                    </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="video_explanation.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/1 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="std_lessons.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/2 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="pdf.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/3 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="video_revision.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/4 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="std_practicles.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/5 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="std_pdf_school.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/6 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="video_discussions.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/7 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" href="std_pdf_notes.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/8 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <a class="" class="btn btn-primary" href="std_pdf_class.php?gid=<?php echo "$gid" ?>">
+                    <img src="inc/img/9 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                </a>
+            </div>
+            <div class="col-md-12">
+                <div class="mx-auto col-sm-4">
+                    <a class="" href="std_list_sin.php?gid=<?php echo "$gid" ?>">
+                        <img src="inc/img/001 S.png" class="img-fluid p-2 p-sm-3" alt="smartstudent">
+                    </a>
                 </div>
             </div>
-            <div class="col-sm-9 left_side">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_explanation.php?gid=<?php echo "$gid" ?>">
-                            අභිමන් ගුරුතුමා විසින් සිදුකරන ලද පාඩම් පැහැදිලි කිරීම්
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_lessons.php?gid=<?php echo "$gid" ?>">
-                            සිසුන් විසින් සිදුකරන ලද පාඩම් පැහැදිලි කිරීම්
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="pdf.php?gid=<?php echo "$gid" ?>">
-                            පොත් සහ ප්‍රශ්න පත්‍ර
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_revision.php?gid=<?php echo "$gid" ?>">
-                            අභිමන් ගුරුතුමා විසින් සිදුකරන ලද පාඩම් පුණරීක්ෂණ
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_practicles.php?gid=<?php echo "$gid" ?>">
-                            සිසුන් විසින් සිදුකරන ලද විද්‍යාව ප්‍රායෝගික පරීක්ෂණ
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_pdf_school.php?gid=<?php echo "$gid" ?>">
-                            සිසුන් විසින් පිළිතුරු සපයන ලද පාසල් ප්‍රශ්න පත්‍ර
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="video_discussions.php?gid=<?php echo "$gid" ?>">
-                            අභිමන් ගුරුතුමා විසින් සිදුකරන ලද ප්‍රශ්න පත්‍ර සාකච්ඡා
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" href="std_pdf_notes.php?gid=<?php echo "$gid" ?>">
-                            සිසුන්ගේ සටහන්
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a class="btn btn-secondary" class="btn btn-primary" href="std_pdf_class.php?gid=<?php echo "$gid" ?>">
-                            සිසුන් විසින් පිළිතුරු සපයන ලද විද්‍යාව පන්තියේ ප්‍රශ්න පත්‍ර
-                        </a>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <div class="row pt-4">
             <div class="col-sm-4">
                 <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
             </div>
             <div class="col-sm-4">
-            <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+                <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
+                <script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
             </div>
             <div class="col-sm-4">
-            <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+                <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
             </div>
         </div>
     </div>
-    
+
 </div>
 <?php
 require_once '../dashboard/copyright.php';
