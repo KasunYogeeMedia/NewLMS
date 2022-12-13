@@ -36,7 +36,6 @@ require_once 'header.php';
                         <a href="teacher" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </a>
-
             </div>
             <!-- ./col -->
         </div>

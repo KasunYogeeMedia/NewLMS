@@ -30,7 +30,7 @@ if ($_GET["gid"] != null) {
         <h4 class="text-center">Smart Science</h4>
     </div>
     <div class="content_body text-center pt-2">
-        <table class="table table-dark table-bordered">
+        <table id="example1" class="table table-dark table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Student Name</th>

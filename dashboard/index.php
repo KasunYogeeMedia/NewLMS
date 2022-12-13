@@ -61,7 +61,7 @@ require_once 'header.php';
 							<div class="col-xl-12">
 								<div class="auth-form">
 									<p>
-										<center><img src="settings/logo/<?php echo $main_logo; ?>"></center>
+										<center><img src="settings/logo/<?php echo $main_logo; ?>" class="img-fluid"></center>
 									</p>
 									<h4 class="text-center mb-4" style="font-weight:bold;color:#000000;">Login in Admin Panel</h4>
 									<hr>

@@ -1,5 +1,5 @@
 .content-wrapper {
-  background-image: url("../img/backgr.jpg");
+  background-image: url("../img/back_1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,6 +10,7 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   font-weight: bold;
+  font-size: 30px;
 }
 .content-wrapper .mid_col {
   padding-top: 70px;

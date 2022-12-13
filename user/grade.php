@@ -90,16 +90,18 @@ if ($_GET["gid"] != null) {
         </div>
         <div class="row pt-4">
             <div class="col-sm-4">
-                <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+                <a href="https://wa.me/+772879970" target="_blank">
+                    <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+                </a>
             </div>
             <div class="col-sm-4">
                 <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
                 <script src="https://apis.google.com/js/platform.js"></script>
 
-<div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
+                <div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
             </div>
             <div class="col-sm-4">
-                <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+                <a href="https://wa.me/+778376761" target="_blank"><img class="img-fluid" src="inc/img/print _Webnote.png" alt=""></a>
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@ require_once 'sidebarmenu.php';
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <p>
-                                        <center><img class="img-fluid" src="../dashboard/settings/logo/<?php echo $main_logo; ?>"></center>
+                                        <center><img class="img-fluid" src="../dashboard/settings/logo/<?php echo $main_logo; ?>" class="img-fluid"></center>
                                     </p>
                                     <h4 class="text-center mb-4">Log In | Smart Student</h4>
                                     <hr>

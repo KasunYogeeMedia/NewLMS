@@ -8,7 +8,7 @@ include '../dashboard/conn.php';
 ?>
 
 <?php
-require_once '../dashboard/header.php';
+require_once 'header.php';
 ?>
 
 <?php

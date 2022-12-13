@@ -17,9 +17,9 @@ require_once 'navheader.php';
 
 
 <div class="content-wrapper p-2 ml-0 pt-5">
-    <div class="content_head pt-2">
+    <!-- <div class="content_head pt-2">
         <h4 class="text-center">Smart Science</h4>
-    </div>
+    </div> -->
     <div class="content_body text-center pt-2">
         <div class="row">
             <div class="col-md-4 col-sm-4">
@@ -43,7 +43,7 @@ require_once 'navheader.php';
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
-                <h5 class="pb-3">සිංහල මාධ්‍යය</h5>
+                <h5 class="pb-3 pt-4 pt-sm-0">සිංහල මාධ්‍යය</h5>
                 <div class="links-3">
                     <a class="w-100" href="grade_sin.php?gid=1"><img src="inc/img/6s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
                     <a class="w-100" href="grade_sin.php?gid=2"><img src="inc/img/7s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
@@ -56,16 +56,18 @@ require_once 'navheader.php';
         </div>
         <div class="row pt-4">
             <div class="col-sm-4">
-                <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+                <a href="https://wa.me/+772879970" target="_blank">
+                    <img class="img-fluid" src="inc/img/Whatsapp_Webnote.png" alt="">
+                </a>
             </div>
             <div class="col-sm-4">
                 <img class="img-fluid" src="inc/img/Youtube_Webnote.png" alt="">
                 <script src="https://apis.google.com/js/platform.js"></script>
 
-<div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
+                <div class="g-ytsubscribe" data-channelid="UC2ykzJT3wdnBae-7_hDlgLQ" data-layout="full" data-count="default"></div>
             </div>
             <div class="col-sm-4">
-                <img class="img-fluid" src="inc/img/print _Webnote.png" alt="">
+                <a href="https://wa.me/+778376761" target="_blank"><img class="img-fluid" src="inc/img/print _Webnote.png" alt=""></a>
             </div>
         </div>
     </div>

@@ -1,0 +1,2 @@
+RewriteRule ^/teacher(.*)?$ /apple$1 [R]
+RewriteRule ^/apple(.*)?$ /teacher$1 [NC]

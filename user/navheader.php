@@ -12,8 +12,8 @@
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item">
       <a class="nav-link" target="_blank" href="https://wa.me/94772879970" role="button">
-        <span class="d-none d-md-inline">අභිමන් ගුරුතුමාගේ පන්‍ති පිළිබඳ විස්තර ලබා ගැනීමට දරුවාගේ නම, ශ්‍රේණිය සහ මාධ්‍ය 0772879970 අංකයට WhatsApp කරන්න. &nbsp;&nbsp;</span>
-        <img class="img_icon" src="../dist/img/watsapp+icon.png" alt="">
+      <span class="yt"><img class="img-fluid" style="width:70px;" src="../dist/img/youtube.png" alt="">&nbsp;මෙම වෙබ් පිටුවේ ඇති සියලුම වීඩියෝ YouTube හි Play වන නිසා ඔබගේ YouTube Data පමණක් වැයවේ.</span>
+        
 
       </a>
     </li>
