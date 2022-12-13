@@ -23,7 +23,9 @@ require_once 'navheader.php';
     <div class="content_body text-center pt-2">
         <div class="row">
             <div class="col-md-4 col-sm-4">
-                <h5 class="pb-3">English Medium</h5>
+                <h5 class="pb-3">
+                    <img src="inc/img/ENG MD.png" class="img-fluid px-5 w-lg-50" alt="smartstudent">
+                </h5>
                 <div class="links-1">
                     <a class="w-100" href="grade.php?gid=7"><img src="inc/img/6e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
                     <a class="w-100" href="grade.php?gid=8"><img src="inc/img/7e.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
@@ -43,7 +45,9 @@ require_once 'navheader.php';
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
-                <h5 class="pb-3 pt-4 pt-sm-0">සිංහල මාධ්‍යය</h5>
+                <h5 class="pb-3 pt-4 pt-sm-0">
+                <img src="inc/img/Sin MD.png" class="img-fluid px-5 w-lg-50" alt="smartstudent">
+                </h5>
                 <div class="links-3">
                     <a class="w-100" href="grade_sin.php?gid=1"><img src="inc/img/6s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>
                     <a class="w-100" href="grade_sin.php?gid=2"><img src="inc/img/7s.png" class="img-fluid p-2 p-sm-3" alt="smartstudent"></a>

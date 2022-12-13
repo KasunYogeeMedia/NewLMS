@@ -54,3 +54,8 @@
   margin: 0 auto;
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .w-lg-50 {
+    max-width: 400px;
+  }
+}

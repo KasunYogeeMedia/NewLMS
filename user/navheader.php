@@ -12,7 +12,7 @@
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item">
       <a class="nav-link" target="_blank" href="https://wa.me/94772879970" role="button">
-      <span class="yt"><img class="img-fluid" style="width:70px;" src="../dist/img/youtube.png" alt="">&nbsp;මෙම වෙබ් පිටුවේ ඇති සියලුම වීඩියෝ YouTube හි Play වන නිසා ඔබගේ YouTube Data පමණක් වැයවේ.</span>
+      <span class="yt d-none d-md-block"><img class="img-fluid" style="width:70px;" src="../dist/img/youtube.png" alt="">&nbsp;මෙම වෙබ් පිටුවේ ඇති සියලුම වීඩියෝ YouTube හි Play වන නිසා ඔබගේ YouTube Data පමණක් වැයවේ.</span>
         
 
       </a>

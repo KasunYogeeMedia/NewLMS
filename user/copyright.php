@@ -2,7 +2,7 @@
     <strong>Copyright &copy; <script>
             document.write(new Date().getFullYear());
         </script> <a target="_blank" href="">Smart Science LMS</a>.</strong>
-    All rights reserved. Developd by <a target="_blank" href="https://mozita.digital/">Mozita Digital</a> &nbsp; | &nbsp;<span class="d-none d-md-inline">අභිමන් ගුරුතුමාගේ පන්‍ති පිළිබඳ විස්තර ලබා ගැනීමට දරුවාගේ නම, ශ්‍රේණිය සහ මාධ්‍ය 0772879970 අංකයට WhatsApp කරන්න. &nbsp;&nbsp;</span>
+    All rights reserved. Developd by <a target="_blank" href="https://mozita.digital/">Mozita Digital</a> &nbsp; | &nbsp;<span class="d-inline">අභිමන් ගුරුතුමාගේ පන්‍ති පිළිබඳ විස්තර ලබා ගැනීමට දරුවාගේ නම, ශ්‍රේණිය සහ මාධ්‍ය 0772879970 අංකයට WhatsApp කරන්න. &nbsp;&nbsp;</span>
         <img class="img_icon" src="../dist/img/watsapp+icon.png" alt="">
 </footer>
 
