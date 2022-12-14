@@ -33,7 +33,7 @@ require_once 'header.php';
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="teacher" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="student" class="small-box-footer">Get Started <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </a>
             </div>
