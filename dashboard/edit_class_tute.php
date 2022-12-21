@@ -12,7 +12,7 @@ if (isset($_GET['cttid']) && !empty($_GET['cttid'])) {
 
 	$id = $_GET['cttid'];
 
-	$stmt_edit = $DB_con->prepare('SELECT * FROM lmsclasstute WHERE ctuid =:cttid');
+	$stmt_edit = $DB_con->prepare('SELECT * FROM ol_result WHERE ctuid =:cttid');
 
 	$stmt_edit->execute(array(':cttid' => $id));
 
@@ -26,7 +26,7 @@ if (isset($_GET['cttid']) && !empty($_GET['cttid'])) {
 
 if (isset($_POST['update'])) {
 
-	$tid = $_POST['tid'];
+	$stName = $_POST['stName'];
 	$title = $_POST['title'];
 	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
 
 		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
-		$userpic = rand(1, 1000000) . "." . $imgExt;
+		$userpic = $imgFile . "." . $imgExt;
 
 		if (in_array($imgExt, $valid_extensions)) {
 
@@ -72,9 +72,9 @@ if (isset($_POST['update'])) {
 
 	if (!isset($errMSG)) {
 
-		$stmt = $DB_con->prepare('UPDATE lmsclasstute
+		$stmt = $DB_con->prepare('UPDATE ol_result
 
-									     SET tid=:tid,							 											 
+									     SET stName=:stName,							 											 
 											 month=:month,
 											 ctype=:ctype,
 											 title=:title,
@@ -82,7 +82,7 @@ if (isset($_POST['update'])) {
 											 status=:status
 								       WHERE ctuid=:cttid');
 
-		$stmt->bindParam(':tid', $tid);
+		$stmt->bindParam(':stName', $stName);
 		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
 		$stmt->bindParam(':title', $title);
@@ -170,51 +170,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Student Name</label>
-										<select class="form-control" name="tid" required>
-											<option value="<?php
-
-															$id = $tid;
-
-															$query = $DB_con->prepare('SELECT tid FROM lmstealmsr WHERE tid=' . $id);
-
-															$query->execute();
-
-															$result = $query->fetch();
-
-															echo $result['tid'];
-
-															?>"><?php
-
-																$id = $tid;
-
-																$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
-
-																$query->execute();
-
-																$result = $query->fetch();
-
-																echo $result['fullname'];
-
-																?></option>
-											<?php
-											require_once 'dbconfig4.php';
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
-
-											$stmt->execute();
-
-											if ($stmt->rowCount() > 0) {
-
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-													extract($row);
-
-											?>
-													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php }
-											}
-											?>
-										</select>
+										<input type="text" class="form-control" name="stName" value="<?php echo $stName; ?>">
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-5 col-sm-12">
@@ -225,7 +181,8 @@ require_once 'sidebarmenu.php';
 								</div>
 								<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
 									<label class="form-label">Index Number</label>
-									<input name="ctype" type="text" class="form-control" value="<?php echo $ctype; ?>">								</div>
+									<input name="ctype" type="text" class="form-control" value="<?php echo $ctype; ?>">
+								</div>
 								<div class="col-lg-3 col-md-3 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Science Result</label>

@@ -46,7 +46,7 @@ if (isset($_POST['update'])) {
 
 		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
-		$userpic = rand(1, 1000000) . "." . $imgExt;
+		$userpic = $imgFile . "." . $imgExt;
 
 		if (in_array($imgExt, $valid_extensions)) {
 

@@ -44,7 +44,7 @@ if ($_GET["gid"] != null) {
                         <div class="img_capt mt-2">
                             <span>Smart Teacher</span>
                             <br>
-                            <span class="img_name"><?php echo $result['fullname']; ?></span>
+                            <span class="img_name">Abhiman Withakshana</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">

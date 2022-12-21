@@ -43,7 +43,7 @@ if ($_GET["gid"] != null) {
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmsclasstute ORDER BY ctuid');
+                $stmt = $DB_con->prepare('SELECT * FROM ol_result ORDER BY ctuid');
 
                 $stmt->execute();
 
@@ -55,21 +55,7 @@ if ($_GET["gid"] != null) {
 
                 ?>
                         <tr>
-                            <td>
-                                <?php
-
-                                $id = $row['tid'];
-
-                                $query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
-
-                                $query->execute();
-
-                                $result = $query->fetch();
-
-                                echo $result['fullname'];
-
-                                ?>
-                            </td>
+                            <td><?php echo $row['stName']; ?></td>
                             <td><?php echo $row['title']; ?></td>
                             <td><?php echo $row['ctype']; ?></td>
                             <td><?php echo $row['month']; ?></td>

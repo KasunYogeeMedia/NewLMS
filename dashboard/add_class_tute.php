@@ -14,7 +14,7 @@ $msg5 = '';
 
 if (isset($_POST['add_classtute'])) {
 
-	$tid = $_POST['tid'];
+	$stName = $_POST['stName'];
 	$title = $_POST['title'];
 	$month = $_POST['month'];
 	$ctype = $_POST['ctype'];
@@ -26,10 +26,12 @@ if (isset($_POST['add_classtute'])) {
 	$tmp_dir = $_FILES['user_image']['tmp_name'];
 	$imgSize = $_FILES['user_image']['size'];
 
-	 if (empty($month)) {
+	if (empty($month)) {
 		$errMSG = "Please Select Month.";
 	} else if (empty($ctype)) {
 		$errMSG = "Please Select Type.";
+	} else if (empty($stName)) {
+		$errMSG = "Please Select Name.";
 	} else if (empty($title)) {
 		$errMSG = "Please Select Title.";
 	} else if (empty($status)) {
@@ -37,13 +39,12 @@ if (isset($_POST['add_classtute'])) {
 	} {
 		$upload_dir = 'images/classtute/'; // upload directory
 
-		$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
-
+		$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION));
 		// valid image extensions
 		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
 		// rename uploading image
-		$userpic = rand(1, 1000000) . "." . $imgExt;
+		$userpic = $imgFile . "." . $imgExt;
 
 		// allow valid image file formats
 		if (in_array($imgExt, $valid_extensions)) {
@@ -59,10 +60,10 @@ if (isset($_POST['add_classtute'])) {
 	}
 	// if no error occured, continue ....
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmsclasstute(tid,month,ctype,title,tdocument,status) VALUES(:tid,:month,:ctype,:title,:upic,:status)');
-		$stmt->bindParam(':tid', $tid);
+		$stmt = $DB_con->prepare('INSERT INTO ol_result(month,stName,ctype,title,tdocument,status) VALUES(:month,:stName,:ctype,:title,:upic,:status)');
 		$stmt->bindParam(':month', $month);
 		$stmt->bindParam(':ctype', $ctype);
+		$stmt->bindParam(':stName', $stName);
 		$stmt->bindParam(':title', $title);
 		$stmt->bindParam(':upic', $userpic);
 		$stmt->bindParam(':status', $status);
@@ -150,26 +151,7 @@ require_once 'sidebarmenu.php';
 								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Student Name</label>
-										<select class="form-control" name="tid" required>
-											<?php
-
-											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr where status="1" ORDER BY tid');
-
-											$stmt->execute();
-
-											if ($stmt->rowCount() > 0) {
-
-												while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-													extract($row);
-
-											?>
-													<option value="<?php echo $row['tid']; ?>"><?php echo $row['fullname']; ?></option>
-											<?php
-												}
-											}
-											?>
-										</select>
+										<input type="text" class="form-control" name="stName" placeholder="Enter Student Name" required>
 									</div>
 								</div>
 								<div class="col-lg-5 col-md-5 col-sm-12">

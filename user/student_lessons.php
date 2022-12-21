@@ -23,6 +23,7 @@ if ($_GET["gid"] != null) {
 ?>
 
 <div class="content-wrapper p-2 ml-0 pt-5 video">
+<button onclick="history.back()" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"> </i></button>
     <div class="content_head pt-2">
         <table>
             <tr>

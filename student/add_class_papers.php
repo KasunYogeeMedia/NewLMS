@@ -42,6 +42,7 @@ if (isset($_POST['add_classtute'])) {
 	$subject = $_POST['subject'];
 	$ctype = $_POST['ctype'];
 	$title = $_POST['title'];
+	
 
 	date_default_timezone_set("Asia/Colombo");
 
@@ -66,7 +67,7 @@ if (isset($_POST['add_classtute'])) {
 		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
 		// rename uploading image
-		$userpic = rand(1, 1000000) . "." . $imgExt;
+		$userpic = $imgFile . "." . $imgExt;
 
 		// allow valid image file formats
 		if (in_array($imgExt, $valid_extensions)) {

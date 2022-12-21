@@ -44,7 +44,7 @@ if (isset($_POST['save'])) {
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
         // rename uploading image
-        $userpic = rand(1, 1000000) . "." . $imgExt;
+        $userpic = $imgFile . "." . $imgExt;
 
         // allow valid image file formats
         if (in_array($imgExt, $valid_extensions)) {

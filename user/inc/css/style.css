@@ -28,9 +28,7 @@
 .img_capt span {
   color: #fff;
 }
-.right_side img {
-  border-radius: 20px;
-}
+
 .img_name {
   font-size: 16px;
 }
@@ -69,4 +67,5 @@
   height: 250px;
   overflow: hidden;
   margin: auto;
+  border-radius: 10px;
 }
