@@ -42,42 +42,42 @@ if (isset($_POST['update'])) {
 	date_default_timezone_set("Asia/Colombo");
 
 
-	$imgFile = $_FILES['user_image']['name'];
-	$tmp_dir = $_FILES['user_image']['tmp_name'];
-	$imgSize = $_FILES['user_image']['size'];
+	// $imgFile = $_FILES['user_image']['name'];
+	// $tmp_dir = $_FILES['user_image']['tmp_name'];
+	// $imgSize = $_FILES['user_image']['size'];
 
-	if ($imgFile) {
+	// if ($imgFile) {
 
-		$upload_dir = 'images/lesson/cover/'; // upload directory	
+	// 	$upload_dir = 'images/lesson/cover/'; // upload directory	
 
-		$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
+	// 	$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
 
-		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
+	// 	$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
 
-		$userpic = rand(1, 1000000) . "." . $imgExt;
+	// 	$userpic = rand(1, 1000000) . "." . $imgExt;
 
-		if (in_array($imgExt, $valid_extensions)) {
+	// 	if (in_array($imgExt, $valid_extensions)) {
 
-			if ($imgSize < 5000000) {
+	// 		if ($imgSize < 5000000) {
 
-				unlink($upload_dir . $edit_row['cover']);
+	// 			unlink($upload_dir . $edit_row['cover']);
 
-				move_uploaded_file($tmp_dir, $upload_dir . $userpic);
-			} else {
+	// 			move_uploaded_file($tmp_dir, $upload_dir . $userpic);
+	// 		} else {
 
-				$errMSG = "Sorry, your file is too large it lmsould be less then 5MB";
-			}
-		} else {
+	// 			$errMSG = "Sorry, your file is too large it lmsould be less then 5MB";
+	// 		}
+	// 	} else {
 
-			$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-		}
-	} else {
+	// 		$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+	// 	}
+	// } else {
 
-		// if no image selected the old image remain as it is.
+	// 	// if no image selected the old image remain as it is.
 
-		$userpic = $edit_row['cover']; // old image from database
+	// 	$userpic = $edit_row['cover']; // old image from database
 
-	}
+	// }
 
 	if (!isset($errMSG)) {
 
@@ -93,7 +93,7 @@ if (isset($_POST['update'])) {
 											 
 											 title=:title,
 
-											 cover=:upic,
+											--  cover=:upic,
 
 											 video=:video,
 											 
@@ -111,7 +111,7 @@ if (isset($_POST['update'])) {
 
 		$stmt->bindParam(':title', $title);
 
-		$stmt->bindParam(':upic', $userpic);
+		// $stmt->bindParam(':upic', $userpic);
 
 		$stmt->bindParam(':video', $video);
 
@@ -217,17 +217,17 @@ require_once 'sidebarmenu.php';
 
 															?>"><?php
 
-							$id = $tid;
+																$id = $tid;
 
-							$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
+																$query = $DB_con->prepare('SELECT fullname FROM lmstealmsr WHERE tid=' . $id);
 
-							$query->execute();
+																$query->execute();
 
-							$result = $query->fetch();
+																$result = $query->fetch();
 
-							echo $result['fullname'];
+																echo $result['fullname'];
 
-							?></option>
+																?></option>
 											<?php
 											$stmt = $DB_con->prepare('SELECT * FROM lmstealmsr ORDER BY tid');
 
@@ -280,17 +280,17 @@ require_once 'sidebarmenu.php';
 
 															?>" hidden="lms"><?php
 
-											$id = $class;
+																				$id = $class;
 
-											$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
+																				$query = $DB_con->prepare('SELECT name FROM lmsclass WHERE cid=' . $id);
 
-											$query->execute();
+																				$query->execute();
 
-											$result = $query->fetch();
+																				$result = $query->fetch();
 
-											echo $result['name'];
+																				echo $result['name'];
 
-											?>
+																				?>
 											</option>
 											<?php
 
@@ -331,7 +331,6 @@ require_once 'sidebarmenu.php';
 										<label class="form-label">Class Subject</label>
 										<span id="subject_dis">
 											<select name="subject" id="" required class="form-control">
-
 												<?php
 												if ($_GET['leid']) {
 													$sub_qury = mysqli_query($conn, "SELECT * FROM lmslesson WHERE lid='$_GET[leid]'");
@@ -347,28 +346,28 @@ require_once 'sidebarmenu.php';
 										</span>
 									</div>
 								</div>
-								<div class="col-lg-8 col-md-8 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Title</label>
 										<input type="text" class="form-control" name="title" value="<?php echo $title; ?>" required>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12">
+								<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Cover Image</label>
 										<input type="file" class="form-control" name="user_image">
 										<hr>
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - Jpg|Png"</p>
 									</div>
-								</div>
-								<div class="col-lg-10 col-md-10 col-sm-12">
+								</div> -->
+								<div class="col-lg-6 col-md-6 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Video URL</label>
 										<input class="form-control" type="text" name="video" placeholder="Video URL" value="<?php echo $video; ?>" required>
 									</div>
 								</div>
 
-				
+
 
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">

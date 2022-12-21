@@ -72,10 +72,10 @@ if ($_GET["gid"] != null) {
                             </td>
                             <td>
                                 <!-- Button HTML (to Trigger Modal) -->
-                                <a href="#myModal" class="btn btn-primary btn-sm" data-toggle="modal">Watch Video</a>
+                                <a href="#myModal<?php echo $row['lid']; ?>" class="btn btn-primary btn-sm" data-toggle="modal">Watch Video</a>
 
                                 <!-- Modal HTML -->
-                                <div id="myModal" class="modal fade">
+                                <div id="myModal<?php echo $row['lid']; ?>" class="modal fade">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

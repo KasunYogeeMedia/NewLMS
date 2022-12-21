@@ -23,9 +23,9 @@ if (isset($_POST['add_lesson'])) {
 
 	date_default_timezone_set("Asia/Colombo");
 
-	$imgFile = $_FILES['user_image']['name'];
-	$tmp_dir = $_FILES['user_image']['tmp_name'];
-	$imgSize = $_FILES['user_image']['size'];
+	// $imgFile = $_FILES['user_image']['name'];
+	// $tmp_dir = $_FILES['user_image']['tmp_name'];
+	// $imgSize = $_FILES['user_image']['size'];
 	if (empty($type)) {
 		$errMSG = "Please Select Type.";
 	} else if (empty($class)) {
@@ -39,33 +39,33 @@ if (isset($_POST['add_lesson'])) {
 	} else if (empty($status)) {
 		$errMSG = "Please Select Status.";
 	} {
-		$upload_dir = 'images/lesson/cover/'; // upload directory
+		// $upload_dir = 'images/lesson/cover/'; // upload directory
 
-		$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
-		// valid image extensions
-		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
-		// rename uploading image
-		$userpic = rand(1, 1000000) . "." . $imgExt;
-		// allow valid image file formats
-		if (in_array($imgExt, $valid_extensions)) {
-			// check file size '5MB'
-			if ($imgSize < 5000000) {
-				move_uploaded_file($tmp_dir, $upload_dir . $userpic);
-			} else {
-				$errMSG = "Sorry, your file is too large.";
-			}
-		} else {
-			$errMSG = "Sorry, only JPG, JPEG, PNG & GIF , DOCX & PDF files are allowed.";
-		}
+		// $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
+		// // valid image extensions
+		// $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'docx', 'pdf', 'video', 'mp3'); // valid extensions
+		// // rename uploading image
+		// $userpic = rand(1, 1000000) . "." . $imgExt;
+		// // allow valid image file formats
+		// if (in_array($imgExt, $valid_extensions)) {
+		// 	// check file size '5MB'
+		// 	if ($imgSize < 5000000) {
+		// 		move_uploaded_file($tmp_dir, $upload_dir . $userpic);
+		// 	} else {
+		// 		$errMSG = "Sorry, your file is too large.";
+		// 	}
+		// } else {
+		// 	$errMSG = "Sorry, only JPG, JPEG, PNG & GIF , DOCX & PDF files are allowed.";
+		// }
 	}
 	if (!isset($errMSG)) {
-		$stmt = $DB_con->prepare('INSERT INTO lmslesson(tid,type,class,subject,title,cover,video,status) VALUES(:tid,:type,:class,:subject,:title,:upic,:video,:status)');
+		$stmt = $DB_con->prepare('INSERT INTO lmslesson(tid,type,class,subject,title,video,status) VALUES(:tid,:type,:class,:subject,:title,:video,:status)');
 		$stmt->bindParam(':tid', $tid);
 		$stmt->bindParam(':type', $type);
 		$stmt->bindParam(':class', $class);
 		$stmt->bindParam(':subject', $subject);
 		$stmt->bindParam(':title', $title);
-		$stmt->bindParam(':upic', $userpic);
+		// $stmt->bindParam(':upic', $userpic);
 		$stmt->bindParam(':video', $video);
 		$stmt->bindParam(':status', $status);
 
@@ -231,21 +231,21 @@ require_once 'sidebarmenu.php';
 										</span>
 									</div>
 								</div>
-								<div class="col-lg-8 col-md-8 col-sm-12">
+								<div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Title</label>
 										<input type="text" class="form-control" name="title" placeholder="Enter Title" required>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12">
+								<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Cover Image</label>
 										<input type="file" class="form-control" name="user_image">
 										<hr>
 										<p style="font-weight:bold;color:red;">Note : "Only Upload - Jpg|Png"</p>
 									</div>
-								</div>
-								<div class="col-lg-10 col-md-10 col-sm-12">
+								</div> -->
+								<div class="col-lg-6 col-md-6 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Video URL</label>
 										<input class="form-control" type="text" name="video" placeholder="Video URL" required>

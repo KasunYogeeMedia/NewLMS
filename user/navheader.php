@@ -5,6 +5,9 @@
     <li class="nav-item">
       <a class="nav-link" href="index.php"><i class="fa fa-home"></i></a>
     </li>
+    <li class="nav-item">
+    <button onclick="history.back()" class="btn btn-secondary">Go Back</button>
+    </li>
   </ul>
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">

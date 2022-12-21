@@ -69794,3 +69794,18 @@ iframe {
 
 .video {
 }
+
+.media img {
+  height: 200px !important;
+  width: auto !important;
+}
+
+.card-body .media_img{
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+}
+.card-body .media_img img{
+  width: 100%;
+}

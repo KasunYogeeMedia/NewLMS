@@ -59,3 +59,14 @@
     max-width: 400px;
   }
 }
+
+.dt-buttons {
+  display: none;
+}
+
+.equl_img {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: auto;
+}

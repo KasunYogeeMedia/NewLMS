@@ -15,7 +15,7 @@ require_once 'header.php';
 require_once 'navheader.php';
 ?>
 
-<?php
+<!-- <?php
 
 $gid=0;
 if ($_GET["gid"] != null) {
@@ -23,7 +23,7 @@ if ($_GET["gid"] != null) {
     $gid=(int)$_GET["gid"];
 }
 
-?> 
+?>  -->
 
 <div class="content-wrapper p-2 ml-0 pt-5">
     <div class="content_head pt-2">
@@ -73,7 +73,7 @@ if ($_GET["gid"] != null) {
                             <td><?php echo $row['title']; ?></td>
                             <td><?php echo $row['ctype']; ?></td>
                             <td><?php echo $row['month']; ?></td>
-                            <td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Tute</a></td>
+                            <td><a href="../dashboard/images/classtute/<?php echo $row['tdocument']; ?>" target="_blank">View Result Sheet</a></td>
                         </tr>
                 <?php
                     }

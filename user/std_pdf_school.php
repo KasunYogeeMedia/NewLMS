@@ -46,7 +46,7 @@ if ($_GET["gid"] != null) {
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std WHERE ctype = "School Papers" AND subject = "' . $gid . '" ORDER BY ctuid');
+                $stmt = $DB_con->prepare('SELECT * FROM lmsclasstute_std WHERE ctype = "School Papers" AND status ="1" AND subject = "' . $gid . '" ORDER BY ctuid');
 
                 $stmt->execute();
 

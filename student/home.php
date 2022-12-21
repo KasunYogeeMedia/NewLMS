@@ -96,7 +96,7 @@ require_once 'sidebarmenu.php';
 							</a>
 						</div>
 					</div>
-					
+
 					<div class="col-xl-4 col-xxl-4 col-sm-6">
 						<div class="widget-stat card bg-primary">
 							<a href="school_papers.php">
@@ -188,7 +188,9 @@ require_once 'sidebarmenu.php';
 						<a href="">
 							<div class="card-body">
 								<div class="media">
-									<img class="img-fluid mx-auto" src="../dist/img/abiman_sir.jpg" alt="">
+									<div class="media_img">
+										<img class="img-fluid mx-auto" src="../dist/img/abiman_sir.jpg" alt="">
+									</div>
 								</div>
 							</div>
 						</a>
@@ -199,7 +201,9 @@ require_once 'sidebarmenu.php';
 						<a href="">
 							<div class="card-body">
 								<div class="media">
-									<img src="<?php echo $image_path; ?>" class="img-fluid mx-auto">
+									<div class="media_img">
+										<img src="<?php echo $image_path; ?>" class="img-fluid mx-auto">
+									</div>
 								</div>
 							</div>
 						</a>

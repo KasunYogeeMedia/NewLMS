@@ -19,7 +19,7 @@ if (isset($_POST['login_bt'])) {
 
     $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
 
-    $usr_check = mysqli_query($conn, "SELECT * FROM lmstealmsr WHERE contactnumber  ='$username'");
+    $usr_check = mysqli_query($conn, "SELECT * FROM lmstealmsr WHERE contactnumber +'0' ='$username'");
 
     if (mysqli_num_rows($usr_check) > 0) {
 
