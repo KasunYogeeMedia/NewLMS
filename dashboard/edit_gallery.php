@@ -233,8 +233,8 @@ require_once 'sidebarmenu.php';
                                         <label class="form-label">Status</label>
                                         <select class="form-control" id="input-6" name="status" required>
                                             <option><?php echo $status; ?></option>
-                                            <option>Publish</option>
-                                            <option>Unpublished</option>
+                                            <option value="1">Publish</option>
+                                            <option value="0">Unpublished</option>
                                         </select>
                                     </div>
                                 </div>

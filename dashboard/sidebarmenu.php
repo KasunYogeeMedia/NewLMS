@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="../dist/img/logo.png" alt="AdminLTE Logo" class="img-fluid" style="opacity: .8">
+  <a href="index.php" class="brand-link">
+    <img src="../dist/img/logo.png" alt="AdminLTE Logo" class="img-fluid p-2" style="opacity: .8">
   </a>
 
   <!-- Sidebar -->
@@ -57,7 +57,7 @@
           ?>
         </li>
         <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
+          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Filters

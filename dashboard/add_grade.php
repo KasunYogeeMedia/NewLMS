@@ -121,8 +121,8 @@ require_once 'sidebarmenu.php';
                                     <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" required>
-                                            <option>Publish</option>
-                                            <option>Unpublish</option>
+                                            <option value="1">Publish</option>
+                                            <option value="0">Unpublish</option>
                                         </select>
                                     </div>
                                 </div>

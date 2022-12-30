@@ -73,7 +73,7 @@ require_once 'sidebarmenu.php';
 												<tbody>
 								<?php
 
-								$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute where tid='".$_SESSION['tid']."' ORDER BY ctuid');
+								$stmt = $DB_con->prepare('SELECT * FROM lmsclasstute where tid='.$_SESSION['tid'].' ORDER BY ctuid');
 
 								$stmt->execute();
 

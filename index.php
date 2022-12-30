@@ -25,7 +25,7 @@ require_once 'header.php';
             <!-- ./col -->
             <div class="col-lg-6 col-sm-6">
                 <!-- small box -->
-                <a class="crd_inner" href="user">
+                <a class="crd_inner" href="student">
                     <div class="small-box bg-success">
                         <div class="inner">
                             <h3>Smart Science <br> Student Login</h3>

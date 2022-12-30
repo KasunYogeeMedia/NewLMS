@@ -32,10 +32,10 @@ $stmt->execute();
 $result = $stmt->fetch();
 $total_lesson = $result['lesson_count'];
 
-$stmt = $DB_con->prepare('SELECT COUNT(*) AS class_schlmsle_count FROM lmsclass_schlmsle');
-$stmt->execute();
-$result = $stmt->fetch();
-$total_class_schedule = $result['class_schlmsle_count'];
+// $stmt = $DB_con->prepare('SELECT COUNT(*) AS class_schlmsle_count FROM lmsclass_schlmsle');
+// $stmt->execute();
+// $result = $stmt->fetch();
+// $total_class_schedule = $result['class_schlmsle_count'];
 
 $stmt = $DB_con->prepare('SELECT COUNT(*) AS payment_count FROM lmspayment');
 $stmt->execute();
