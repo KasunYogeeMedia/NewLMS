@@ -151,8 +151,8 @@ require_once 'sidebarmenu.php';
 										<p style="color:red;">Only JPG</p>
 										<input type="hidden" name="systemid" id="" value="<?php echo $systemid_val; ?>">
 
-										<label for="fileName"><img src="../profile/images/hd_dp.jpg" id="yourImgTag" class="pro_pick img-fluid"></label>
-										<input type="file" name="image" id="fileName" hidden="lms" onChange="dis_name();">
+										<label for="fileName"><img src="../dist/img/hd_dp.jpg" id="yourImgTag" class="pro_pick img-fluid"></label>
+										<input type="file" name="image" id="fileName"  onChange="dis_name();">
 
 										<script>
 											function dis_name() {

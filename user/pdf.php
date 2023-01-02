@@ -42,7 +42,7 @@ if ($_GET["gid"] != null) {
             <tbody>
                 <?php
 
-                $stmt = $DB_con->prepare('SELECT * FROM lms_pdf WHERE status ="1" ORDER BY ctuid' );
+                $stmt = $DB_con->prepare("SELECT * FROM lms_pdf WHERE status ='1' AND subject= '".$gid."' ORDER BY ctuid" );
 
                 $stmt->execute();
 

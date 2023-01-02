@@ -252,19 +252,15 @@ require_once 'sidebarmenu.php';
 									</div>
 								</div>
 
-				
-
 								<div class="col-lg-2 col-md-2 col-sm-12">
 									<div class="form-group">
 										<label class="form-label">Status</label>
-										<select class="form-control" id="input-6" name="status" required>
+										<select class="form-control" id="input-6" name="status">
 											<option value="1">Published</option>
 											<option value="0">Unpublshed</option>
 										</select>
 									</div>
 								</div>
-
-							
 
 								<div class="col-lg-12 col-md-12 col-sm-12">
 									<input type="submit" name="add_lesson" class="btn btn-primary" value="Save changes">
