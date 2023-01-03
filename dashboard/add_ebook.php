@@ -235,7 +235,6 @@ require_once 'sidebarmenu.php';
 										<select class="form-control" name="ctype" required>
 											<option style="display:none;">Select Achevements Type</option>
 											<option>Student Achevements</option>
-
 										</select>
 									</div>
 								</div>
