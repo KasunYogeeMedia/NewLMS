@@ -55,6 +55,15 @@ require_once 'sidebarmenu.php';
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
+									<div>
+										<form class="form-horizontal" action="functions.php" method="post" name="upload_excel" enctype="multipart/form-data">
+											<div class="form-group">
+												<div class="col-md-12 col-md-offset-4" style="text-align:right;">
+													<input type="submit" name="Export" class="btn btn-success" value="export to excel" />
+												</div>
+											</div>
+										</form>
+									</div>
 									<table id="example1" class="table table-bordered">
 										<thead>
 											<tr>
