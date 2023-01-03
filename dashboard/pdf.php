@@ -48,7 +48,7 @@ require_once 'sidebarmenu.php';
 			<div class="col-lg-12">
 				<div class="row tab-content">
 					<div id="list-view" class="tab-pane fade active show col-lg-12">
-						<div class="card">
+						<div class="card mt-3">
 							<div class="card-header">
 								<h4 class="card-title">All PDF</h4>
 								<a href="add_pdf.php" class="btn btn-square btn-secondary float-right">+ Add PDF</a>
