@@ -40,22 +40,22 @@ require_once 'sidebarmenu.php';
 
 		<div class="row">
 			<div class="col-lg-12">
-				<ul class="nav nav-pills mb-3">
+				<!-- <ul class="nav nav-pills mb-3">
 					<li class="nav-item"><a href="#list-view" data-toggle="tab" class="btn btn-primary mr-1 show active">List View</a></li>
-					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-primary">Grid View</a></li>
-				</ul>
+					<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="btn btn-secondary">Grid View</a></li>
+				</ul> -->
 			</div>
 			<div class="col-lg-12">
 				<div class="row tab-content">
 					<div id="list-view" class="tab-pane fade active show col-lg-12">
-						<div class="card">
+						<div class="card mt-3">
 							<div class="card-header">
 								<h4 class="card-title">All PDF</h4>
 								<a href="add_pdf.php" class="btn btn-square btn-secondary float-right">+ Add PDF</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example1" class="table table-bordered">
+								<table id="example1" class="table table-bordered">
 										<thead>
 											<tr>
 												<!-- <th>ID</th> -->
